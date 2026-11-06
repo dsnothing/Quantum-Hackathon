@@ -39,3 +39,11 @@ The introduction was clicked through all three steps. Independent and linked sce
 Automated pointer dragging did not confirm the swipe path in this browser environment. On-screen mobile controls work. Physical touch hardware, screen-reader behavior, external participant usability, a full human playthrough to 2048, native PowerPoint rendering, strategic balance and educational impact were not tested. The PPTX was rendered and re-imported with Artifact Tool, not opened in PowerPoint. No physical quantum hardware was used. No event registration or organizer upload has been performed.
 
 GitHub publication is separately authorized by the user and occurs only after these core checks. Git credentials, Gmail contents, private correspondence and session tokens are excluded from the project.
+
+## Startup and connection fix
+
+Directly opening `web/index.html` used a `file://` URL, so relative API requests could not reach Python. Added a Windows double-click launcher and a Python launcher that starts the engine, opens its HTTP address, and reuses a healthy running game without resetting it. A health endpoint identifies the running game. Server startup now reports readiness after binding succeeds.
+
+The frontend renders 16 waiting cells immediately, avoids API calls entirely under `file://`, shows explicit launch guidance, guards input until state loads, times out unavailable requests, and offers reconnection. Reconnection fetches the current board without replaying an uncertain move.
+
+Validation: all 10 quantum/game tests still pass; JavaScript syntax and Python compilation pass. `node tests/test_web_startup.mjs` verifies direct-file guidance without any fetch, disabled input while disconnected, friendly offline feedback, and successful reconnect with rendered tiles. A real running-server check verifies that the launcher reuses the game without changing state. Browser verification at `http://127.0.0.1:8000/` loaded tiles, displayed a linked forecast, committed a merge, and displayed the next forecast. Screenshot: `evidence/startup-fixed.jpg`. The browser automation policy prevented inspecting the `file://` tab directly; that branch was exercised by the JavaScript regression test.

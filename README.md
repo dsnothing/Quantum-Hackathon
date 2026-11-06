@@ -6,17 +6,20 @@ A playable 2048 variant with uncertain 2/4 tiles, linked pairs, and exact merge 
 
 Python 3.12 recommended. No IBM account, hardware, Aer, paid services, or internet connection needed after dependency installation.
 
+**Windows quick start after setup:** double-click **Launch Quantum 2048.cmd**. It starts the engine and opens the correct browser address, or reuses an already running game. Keep its window open while playing. Opening `web/index.html` directly shows launch instructions because the Python engine supplies the tiles and forecasts.
+
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe server.py
+.\.venv\Scripts\python.exe launch.py
 ```
 
-Open http://127.0.0.1:8000. On macOS/Linux use `python3 -m venv .venv` and `.venv/bin/python` in place of the Windows executable. A full tested dependency snapshot is in `requirements-lock.txt`; use it in place of `requirements.txt` to pin transitive packages too.
+The launcher opens http://127.0.0.1:8000. For a server without opening a browser, run `python server.py`. On macOS/Linux use `python3 -m venv .venv` and `.venv/bin/python` in place of the Windows executable. A full tested dependency snapshot is in `requirements-lock.txt`; use it in place of `requirements.txt` to pin transitive packages too.
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 .\.venv\Scripts\python.exe execute_notebook.py
+node tests/test_web_startup.mjs
 ```
 
 The notebook runs in a fresh kernel from the project root, imports the same game core, and never launches the web server. Open the executed file in any Jupyter-compatible notebook viewer. To edit and run interactively, install JupyterLab or use an existing notebook editor with this Python environment. `make_notebook.py` regenerates the notebook source and clears its outputs; run `execute_notebook.py` afterward.
@@ -33,6 +36,7 @@ Matching diamonds and link IDs identify shared states without relying on color. 
 
 - `quantum2048.py`: Qiskit state preparation, probabilities, partial measurement, shared merge reducer, branch forecasts and interference comparison.
 - `server.py`: Python standard-library local HTTP server, single in-memory game, JSON interface.
+- `launch.py` and `Launch Quantum 2048.cmd`: start the engine and open its HTTP page, reusing a healthy running game.
 - `web/`: original HTML, CSS and JavaScript client. Quantum results always come from Python.
 - `Quantum_2048.ipynb`: executed primary artifact, model, actual outputs, checks, limitations and citations.
 - `output/`: editable slides, viewing export and slide preview gallery.
@@ -51,6 +55,7 @@ Original 2048 concept: [Gabriele Cirulli](https://github.com/gabrielecirulli/204
 
 - Use the virtual environment's Python if imports fail. The tested Qiskit API is 2.6.2.
 - Port occupied: stop the previous task server with Ctrl+C, then retry. Bind remains loopback-only. Do not use this development server as a public service.
+- Tiles missing or a connection banner: use the launcher and its HTTP address. Direct `file://` access cannot run the game. If the engine stopped, start it again, then select Reconnect to load its current board. A failed move is not automatically replayed.
 - Two tabs share one game. Restarting from either tab changes that game. Refresh a stale tab. Closing the server discards progress.
 - The environment used for validation required running server/kernel outside sandbox network isolation. Ordinary local Python environments should not need this. Notebook runtime/config folders go into ignored `build/` to avoid modifying user settings.
 - If the browser fails during the talk, use notebook sections 2–6. Slides and their PDF work independently of the server.

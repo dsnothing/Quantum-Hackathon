@@ -3,6 +3,8 @@ from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 from threading import Lock
 import json
+import argparse
+import webbrowser
 from quantum2048 import Game
 
 ROOT = Path(__file__).parent
@@ -14,7 +16,9 @@ class Handler(SimpleHTTPRequestHandler):
         super().__init__(*args, directory=str(ROOT / 'web'), **kwargs)
 
     def do_GET(self):
-        if self.path == '/api/state':
+        if self.path == '/api/health':
+            self.send_json({'app': 'quantum-2048', 'ready': True})
+        elif self.path == '/api/state':
             with lock: self.send_json(game.view(True))
         else: super().do_GET()
 
@@ -43,6 +47,19 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_json(result)
         except (ValueError, KeyError, TypeError) as exc: self.send_json({'error': str(exc)}, 400)
 
-if __name__ == '__main__':
+def run(open_browser=False):
+    httpd = ThreadingHTTPServer(('127.0.0.1', 8000), Handler)
     print('Quantum 2048: http://127.0.0.1:8000 (Ctrl+C to stop)', flush=True)
-    ThreadingHTTPServer(('127.0.0.1', 8000), Handler).serve_forever()
+    if open_browser:
+        webbrowser.open('http://127.0.0.1:8000/')
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        httpd.server_close()
+
+if __name__ == '__main__':
+    parser=argparse.ArgumentParser(description='Quantum 2048 local game server')
+    parser.add_argument('--open',action='store_true',help='Open the game in your browser')
+    run(parser.parse_args().open)
