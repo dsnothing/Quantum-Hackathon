@@ -1,6 +1,6 @@
 # Quantum 2048: planning with shared fate
 
-A playable 2048 variant with uncertain 2/4 tiles, linked pairs, and exact merge forecasts from Qiskit. The primary submission is [the executed notebook](Quantum_2048.ipynb). Slides: [editable PowerPoint](output/Quantum_2048_Slides.pptx) and [viewing PDF](output/Quantum_2048_Slides.pdf).
+A playable 2048 variant with uncertain 2/4 tiles, linked pairs, and exact merge forecasts from Qiskit. The primary submission is [the executed notebook](Quantum_2048.ipynb). Presentation: [editable five-minute PowerPoint](output/Quantum_2048_Five_Minute.pptx), [viewing PDF](output/Quantum_2048_Five_Minute.pdf), and [detailed speaker notes](output/Quantum_2048_Five_Minute_Speaker_Notes.md). Present slides 1–6 for the main talk; slides 7–10 are optional technical appendix material.
 
 ## Run locally
 

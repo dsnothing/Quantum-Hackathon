@@ -7,7 +7,7 @@ Official sources checked November 6, 2026, starting around **03:36 EST in Waterl
 | Requirement | Package evidence |
 |---|---|
 | Python notebook bridging quantum and another field | `Quantum_2048.ipynb`, shared `quantum2048.py`, game development bridge |
-| Explanatory slides | `output/Quantum_2048_Slides.pptx`, viewing PDF |
+| Explanatory slides | `output/Quantum_2048_Five_Minute.pptx`, matching viewing PDF and detailed speaker notes |
 | Judges use simulator; hardware optional | Everything runs locally, no credentials; only simulator outputs claimed |
 | Individual registration | Human action for every team member |
 | Live presentation for chance at physical certificate | Human action |
@@ -17,7 +17,7 @@ The event page lists November 6 **18:30–21:00**, DC 1351. Registration lists *
 ## Unresolved organizer requirements
 
 - [ ] Confirm exact cutoff and upload destination. Neither appears on accessible public pages.
-- [ ] Confirm talk duration. Current deck defaults to roughly four minutes for slides 1–7; slides 8–9 are optional appendix.
+- [ ] Confirm talk duration. Current deck targets five minutes for slides 1–6; slides 7–10 are optional appendix.
 - [ ] Confirm accepted file extensions. Notebook/slides are verified; PPTX and PDF are chosen deliverable formats, not confirmed requirements.
 - [ ] Confirm AI assistance and pre-existing/reused work rules. AI use is disclosed. No earlier game source or assets copied.
 - [ ] Resolve presentation time conflict from organizer communications.
@@ -39,6 +39,6 @@ The event page lists November 6 **18:30–21:00**, DC 1351. Registration lists *
 | Clean notebook | `execute_notebook.py`, fresh-kernel execution, no error cells |
 | JavaScript syntax | `node --check web/app.js` |
 | Browser desktop/mobile | real interface exercises and screenshots under `evidence/`; details in `VERIFICATION.md` |
-| Slides | rendered previews in `output/slide-previews/`, package validation in build record |
+| Slides | latest rendered previews in `output/Quantum_2048_Five_Minute_Previews/`, package validation in build record |
 
 No organizer submission or registration is automated. Repository push was separately authorized by the user. Usability study, physical touch-device testing, physical hardware execution, formal strategic balance evaluation and learning efficacy measurement remain undone and are not claimed.
