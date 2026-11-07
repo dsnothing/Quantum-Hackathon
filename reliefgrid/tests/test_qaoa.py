@@ -4,11 +4,12 @@ from itertools import combinations
 import numpy as np
 import pytest
 from qiskit.quantum_info import Operator, Statevector
+from qiskit.circuit import ParameterVector
 
 from backend.domain import PlanningRequest, PreparedProblem, QaoaOptions
 from backend.objective import evaluate_plan
 from backend.solvers.qaoa import (
-    bitstring_hubs, build_cost_circuit, build_mixer, build_preparation,
+    bitstring_hubs, build_cost_circuit, build_mixer, build_preparation, build_qaoa_circuit,
     coverage_terms, qaoa_probabilities, ring_edges, run_ablations, solve_qaoa,
 )
 
@@ -139,3 +140,52 @@ def test_empty_problem_and_request_validation():
     assert result.runHash == solve_qaoa(problem, request(problem, shots=2)).runHash
     implicit = request(problem).model_copy(update={"qaoa": None})
     assert solve_qaoa(problem, implicit).runHash == solve_qaoa(problem, request(problem)).runHash
+
+
+def test_parameter_binding_matches_direct_circuit_and_scaled_search_is_bounded():
+    problem = fixture()
+    g, b = ParameterVector('g', 2), ParameterVector('b', 2)
+    template = build_qaoa_circuit(problem, g, b)
+    binding = {g[0]: 7.3, g[1]: -4.2, b[0]: .8, b[1]: -.6}
+    actual = Statevector.from_instruction(template.assign_parameters(binding))
+    expected = Statevector.from_instruction(build_qaoa_circuit(problem, [7.3, -4.2], [.8, -.6]))
+    assert actual.equiv(expected)
+    result = solve_qaoa(problem, request(problem, phaseScale=6, maxEvaluations=9, starts=3, shots=16))
+    assert result.diagnostics['evaluations'] <= 9
+    assert all(abs(x) <= 6 * np.pi for x in result.diagnostics['gammas'])
+    assert result.diagnostics['parameterizedCircuitReuse']
+    assert result.runHash != solve_qaoa(problem, request(problem, maxEvaluations=9, starts=3, shots=16)).runHash
+
+
+def test_greedy_warm_start_is_feasible_coherent_and_disclosed():
+    problem = fixture()
+    state = Statevector.from_instruction(build_preparation(problem, initial_hub_ids=('h00', 'h03')))
+    assert sum(p for i, p in enumerate(state.probabilities()) if i.bit_count() != 2) < 1e-12
+    assert np.count_nonzero(state.probabilities() > 1e-10) > 1
+    with pytest.raises(ValueError, match='feasible'):
+        build_preparation(problem, initial_hub_ids=('h00',))
+    result = solve_qaoa(problem, request(problem, warmStartGreedy=True, maxEvaluations=3, shots=16))
+    assert result.diagnostics['warmStart']['method'] == 'greedy'
+    assert result.provenance.parameters['warmStartGreedy'] is True
+
+
+@pytest.mark.parametrize('n,k', [(1, 1), (3, 1), (5, 2), (6, 4)])
+def test_random_weighted_neighborhood_phases_and_compilation(n, k):
+    from qiskit import transpile
+    from backend.solvers.qaoa import COMPILATION_BASIS
+    rng = np.random.default_rng(900 + n)
+    rows = tuple(tuple(bool(x) for x in row) for row in rng.integers(0, 2, size=(7, n)))
+    weights = tuple(float(x) for x in rng.uniform(.1, 19, size=7))
+    problem = PreparedProblem(scenarioRevision='random-fixture', problemHash='random-fixture',
+        hubIds=tuple(f'h{i}' for i in range(n)), communityIds=tuple(f'c{i}' for i in range(7)),
+        hubCount=k, responseTimeMinutes=2, coverageMatrix=rows, demandWeights=weights, populations=weights,
+        travelMinutes=tuple(tuple(1. if x else None for x in row) for row in rows))
+    gamma = 4.7
+    unitary = Operator(build_cost_circuit(problem, gamma)).data
+    for index in range(2**n):
+        ids = [hub for j, hub in enumerate(problem.hubIds) if index & (1 << j)]
+        score = evaluate_plan(problem, ids)['weightedCoverage']
+        assert np.allclose(unitary[index, index] / unitary[0, 0], np.exp(1j * gamma * score / sum(weights)))
+    circuit = build_qaoa_circuit(problem, [gamma, -.8], [.3, -.9])
+    compiled = transpile(circuit, basis_gates=COMPILATION_BASIS, optimization_level=1, seed_transpiler=18)
+    assert Statevector.from_instruction(compiled).equiv(Statevector.from_instruction(circuit))

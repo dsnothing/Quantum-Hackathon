@@ -30,6 +30,18 @@
           "minimum": 1,
           "title": "Starts",
           "type": "integer"
+        },
+        "phaseScale": {
+          "default": 1,
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Phasescale",
+          "type": "number"
+        },
+        "warmStartGreedy": {
+          "default": false,
+          "title": "Warmstartgreedy",
+          "type": "boolean"
         }
       },
       "title": "QaoaOptions",

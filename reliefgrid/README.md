@@ -1,5 +1,7 @@
 # ReliefGrid
 
+November 7 review: [optimization and Qiskit audit](docs/Optimization_Review.md). The standalone notebook now includes a matched-budget greedy warm-start comparison on both synthetic scenarios. `QaoaOptions(warmStartGreedy=True)` enables it; defaults retain the original first-k experiment. `backend.solvers.portfolio.solve_portfolio` separately provides a transparent classical safeguard. Use the reviewed six-slide deck `output/ReliefGrid_Improved.pptx`. The web interface retains its original QAOA request settings.
+
 ReliefGrid selects exactly **k emergency supply hub sites** to maximize population covered within a road travel-time threshold. Closing a road changes directed shortest paths and may change the best deployment. Both bundled regions and all populations are **synthetic**. This is a preparedness prototype, not an emergency dispatch system.
 
 The **primary submission is [ReliefGrid_Submission.ipynb](../output/ReliefGrid_Submission.ipynb)** in the repository, or [at the root of the submission zip](../ReliefGrid_Submission.ipynb) after extraction. It contains readable implementation cells, embedded scenarios, measured results, figures and verification. It runs independently of this repository and the optional web app. The Flask/React companion provides an interactive map and evidence exports.

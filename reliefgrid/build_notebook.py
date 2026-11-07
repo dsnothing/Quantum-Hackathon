@@ -68,6 +68,8 @@ For community i with weight wᵢ and covering hubs Nᵢ, coverage is Σᵢ wᵢ[
 
 Preparation excites the first k qubits and applies two fixed XY ring sweeps at π/7 and π/11. Cost phases preserve the basis support; ordered XY mixer gates preserve Hamming weight. Hub j is qubit j, the **rightmost** printed bit. Bounded Powell optimization maximizes expected coverage; recommendation selects the best feasible finite-shot sample. The expected score and best-sample score are different quantities. The post-training exact audit supplies approximation ratios and optimum probabilities only.""")
     code(embedded_source(ROOT / "backend" / "solvers" / "qaoa.py"))
+    md("## Safeguarded recommendation\nThe portfolio keeps raw QAOA results separate and retains a classical deployment whenever its coverage is higher or tied. The greedy guard guarantees parity with greedy only. An optional bounded exact guard guarantees the optimum on supported small instances. These guarantees come from classical comparison, not quantum advantage.")
+    code(embedded_source(ROOT / "backend" / "solvers" / "portfolio.py"))
     md("## Evidence helpers\nTables include losses against the exact optimum. SVG maps use the embedded road geometry and reconstructed shortest service paths; they require no basemap downloads.")
     code('''from html import escape
 from IPython.display import display, HTML, SVG
@@ -170,6 +172,27 @@ for case, closures in cases.items():
 show_table(benchmark_rows)
 show_table(stress_rows)
 ''')
+    md("## Greedy warm-start experiment\nA classical greedy deployment can replace the arbitrary first-k starting bitstring before the same coherent XY sweeps. This is a fixed-cardinality warm start inspired by classical initialization of quantum optimization, not the continuous-relaxation mixer in the IBM tutorial. Compare both initializations with the same p=1, 24 evaluations, 256 shots and seeds. Both synthetic scenarios and both bridge conditions appear below. Exact answers audit results after training. Finite sampling gives no universal optimum guarantee. Source: https://quantum.cloud.ibm.com/docs/en/tutorials/warm-start-qaoa")
+    code('''warm_rows, warm_runs = [], []
+for sid in ("riverbend", "upland"):
+    warm_scenario = load_scenario(sid)
+    warm_bridge = next(edge.id for edge in warm_scenario.edges if "bridge" in edge.id)
+    for closures in ((), (warm_bridge,)):
+        for seed in (42, 7):
+            base_request = request_for(warm_scenario, closures, seed)
+            problem = prepare_problem(warm_scenario, base_request)
+            exact = solve_exact(problem, base_request)
+            for warm in (False, True):
+                options = base_request.qaoa.model_copy(update={"warmStartGreedy": warm})
+                req = base_request.model_copy(update={"qaoa": options})
+                result = solve_qaoa(problem, req)
+                assert evaluate_plan(problem, result.selectedHubIds)["weightedCoverage"] == result.weightedCoverage
+                row = result_row(sid + (" bridge closed" if closures else " nominal"), result, exact.weightedCoverage)
+                row.update({"seed": seed, "initialization": "greedy" if warm else "first-k"})
+                warm_rows.append(row)
+                warm_runs.append({"request": req.model_dump(mode="json"), "result": result.model_dump(mode="json")})
+show_table(warm_rows)
+''')
     md("## Convergence and compiled resources\nConvergence records actual expectation evaluations, including evaluations that worsen the score. Compilation uses rz/sx/x/cx at optimization level 1; gate counts depend on synthesis and installed Qiskit version. Statevector simulation and general controlled phases scale exponentially, so these eight-hub measurements do not establish performance on large networks.")
     code('''resource_rows = []
 for run in benchmark_runs:
@@ -202,6 +225,7 @@ for mode in ("coherent","gammaZero","dephased"):
     md("## Interpretation and optional interface\nBest-sample recommendations can match the exact optimum even when expected coverage is substantially lower; use the distribution metrics to interpret that distinction. Small fixed-k random search can also find the optimum. The recorded losses, runtimes, and compiled gate counts are the evidence; no operational benefit is extrapolated from them. Uncovered demand may remain because of disconnected roads, thresholds, or limited hub count.\n\nThe optional Flask interface is a separate local application. From the extracted source package, run `python reliefgrid/launch.py --setup`, then open `http://127.0.0.1:8010`. Setup requires Python 3.12, Node.js 20.19+ or 22.12+, and pnpm. After setup, `python reliefgrid/launch.py` starts the local companion. It is not required by any notebook cell. The notebook is the primary submission.")
     code('''evidence = {"schemaVersion":"1", "scenarioRevision":scenario_revision(scenario), "primary":primary_rows,
             "benchmark":benchmark_rows, "runs":benchmark_runs, "heldOut":stress_rows, "ablations":ablation,
+            "warmStartComparison":warm_rows, "warmStartRuns":warm_runs,
             "resources":resource_rows, "versions":{name:version(name) for name in ("qiskit","numpy","scipy","pydantic","networkx")}}
 print("Verification complete: all deployments independently rescored, fixed-k feasibility checked, and coherence ablations passed.")
 display({"application/json": evidence}, raw=True)

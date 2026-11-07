@@ -68,7 +68,7 @@ def test_embedded_implementation_matches_current_sources():
     from reliefgrid.build_notebook import embedded_source
     notebook = nbformat.read(NOTEBOOK, as_version=4)
     code = [cell.source for cell in notebook.cells if cell.cell_type == "code"]
-    for relative in ("domain.py", "objective.py", "graph.py", "solvers/classical.py", "solvers/qaoa.py"):
+    for relative in ("domain.py", "objective.py", "graph.py", "solvers/classical.py", "solvers/qaoa.py", "solvers/portfolio.py"):
         assert embedded_source(ROOT / "backend" / relative) in code
     scenario_cell = next(source for source in code if source.startswith("SCENARIOS = "))
     scenario_assignment = ast.parse(scenario_cell).body[0]
@@ -78,3 +78,24 @@ def test_embedded_implementation_matches_current_sources():
     }
     assert notebook.metadata["standaloneVerification"]["freshKernel"] is True
     assert notebook.metadata["standaloneVerification"]["pythonPathRemoved"] is True
+
+
+def test_warm_start_comparison_uses_matched_budgets_and_independent_scoring():
+    from reliefgrid.backend.domain import PlanningRequest
+    from reliefgrid.backend.graph import load_scenario, prepare_problem
+    from reliefgrid.backend.objective import evaluate_plan
+    evidence = json.loads((ROOT / "benchmarks" / "notebook-evidence.json").read_text(encoding="utf-8"))
+    runs = evidence['warmStartRuns']
+    assert len(runs) == 16
+    assert {r['request']['scenarioId'] for r in runs} == {'riverbend', 'upland'}
+    for cold, warm in zip(runs[::2], runs[1::2]):
+        assert cold['request']['qaoa']['warmStartGreedy'] is False
+        assert warm['request']['qaoa']['warmStartGreedy'] is True
+        for key in ('layers', 'maxEvaluations', 'shots', 'starts', 'phaseScale'):
+            assert cold['request']['qaoa'][key] == warm['request']['qaoa'][key]
+        for run in (cold, warm):
+            req = PlanningRequest.model_validate(run['request'])
+            problem = prepare_problem(load_scenario(req.scenarioId), req)
+            metrics = evaluate_plan(problem, run['result']['selectedHubIds'])
+            assert metrics['feasible']
+            assert metrics['weightedCoverage'] == run['result']['weightedCoverage']

@@ -13,12 +13,14 @@ from time import perf_counter
 
 import numpy as np
 from qiskit import QuantumCircuit, transpile
+from qiskit.circuit import ParameterVector
 from qiskit.circuit.library import XXPlusYYGate
 from qiskit.quantum_info import DensityMatrix, Statevector
 from scipy.optimize import minimize
 
 from ..domain import PlanResult, PlanningRequest, PreparedProblem, Provenance, QaoaOptions, Timing, run_hash
 from ..objective import evaluate_plan
+from .classical import solve_greedy
 
 MAX_QUBITS = 12
 MAX_DENSITY_QUBITS = 8
@@ -51,15 +53,22 @@ def ring_edges(n: int) -> tuple[tuple[int, int], ...]:
     return tuple(edges)
 
 
-def build_preparation(problem: PreparedProblem) -> QuantumCircuit:
-    """Publishable fixed recipe: |1^k 0^(n-k)> and two XY ring sweeps.
+def build_preparation(problem: PreparedProblem, *, initial_hub_ids=None) -> QuantumCircuit:
+    """A feasible bitstring followed by two coherent XY ring sweeps.
 
     Sweep angles pi/7 and pi/11 are fixed independently of problem weights,
-    optimum and training seed. Both sweeps follow ring_edges ordering.
+    optimum and training seed. The default bitstring excites the first k hubs;
+    callers may supply a disclosed classical warm start. Both sweeps follow ring_edges ordering.
     """
     n = _validate(problem)
     circuit = QuantumCircuit(n, name="coherent_feasible_preparation")
-    for j in range(problem.hubCount):
+    if initial_hub_ids is None:
+        initial_indices = range(problem.hubCount)
+    else:
+        if not evaluate_plan(problem, initial_hub_ids)["feasible"]:
+            raise ValueError("initial_hub_ids must identify a feasible fixed-k deployment")
+        initial_indices = [problem.hubIds.index(hub) for hub in initial_hub_ids]
+    for j in initial_indices:
         circuit.x(j)
     for angle in (pi / 7, pi / 11):
         for a, b in ring_edges(n):
@@ -81,7 +90,7 @@ def build_cost_circuit(problem: PreparedProblem, gamma: float) -> QuantumCircuit
     for neighbors, weight in coverage_terms(problem):
         for j in neighbors:
             circuit.x(j)
-        angle = -float(gamma) * weight / total
+        angle = -gamma * (weight / total)
         if len(neighbors) == 1:
             circuit.p(angle, neighbors[0])
         else:
@@ -94,28 +103,28 @@ def build_cost_circuit(problem: PreparedProblem, gamma: float) -> QuantumCircuit
 def build_mixer(problem: PreparedProblem, beta: float) -> QuantumCircuit:
     circuit = QuantumCircuit(len(problem.hubIds), name="ordered_XY_ring")
     for a, b in ring_edges(len(problem.hubIds)):
-        circuit.append(XXPlusYYGate(2 * float(beta)), [a, b])
+        circuit.append(XXPlusYYGate(2 * beta), [a, b])
     return circuit
 
 
-def build_qaoa_circuit(problem: PreparedProblem, gammas, betas) -> QuantumCircuit:
+def build_qaoa_circuit(problem: PreparedProblem, gammas, betas, *, initial_hub_ids=None) -> QuantumCircuit:
     if len(gammas) != len(betas) or not 1 <= len(gammas) <= 3:
         raise ValueError("provide matching gamma/beta arrays of length 1..3")
-    circuit = build_preparation(problem)
+    circuit = build_preparation(problem, initial_hub_ids=initial_hub_ids)
     for gamma, beta in zip(gammas, betas):
         circuit.compose(build_cost_circuit(problem, gamma), inplace=True)
         circuit.compose(build_mixer(problem, beta), inplace=True)
     return circuit
 
 
-def qaoa_probabilities(problem: PreparedProblem, gammas, betas, *, dephase_after_cost=False) -> np.ndarray:
+def qaoa_probabilities(problem: PreparedProblem, gammas, betas, *, dephase_after_cost=False, initial_hub_ids=None) -> np.ndarray:
     """Complete basis dephasing after every cost, bounded to eight hubs."""
     _validate(problem, density=dephase_after_cost)
     if not dephase_after_cost:
-        return Statevector.from_instruction(build_qaoa_circuit(problem, gammas, betas)).probabilities()
+        return Statevector.from_instruction(build_qaoa_circuit(problem, gammas, betas, initial_hub_ids=initial_hub_ids)).probabilities()
     if len(gammas) != len(betas) or not 1 <= len(gammas) <= 3:
         raise ValueError("provide matching gamma/beta arrays of length 1..3")
-    state = DensityMatrix(Statevector.from_instruction(build_preparation(problem)))
+    state = DensityMatrix(Statevector.from_instruction(build_preparation(problem, initial_hub_ids=initial_hub_ids)))
     for gamma, beta in zip(gammas, betas):
         state = state.evolve(build_cost_circuit(problem, gamma))
         state = DensityMatrix(np.diag(np.diag(state.data)))
@@ -139,11 +148,11 @@ def bitstring_hubs(problem: PreparedProblem, bitstring: str) -> tuple[str, ...]:
     return tuple(hub for j, hub in enumerate(problem.hubIds) if bitstring[-1 - j] == "1")
 
 
-def run_ablations(problem: PreparedProblem, gammas, betas) -> dict:
+def run_ablations(problem: PreparedProblem, gammas, betas, *, initial_hub_ids=None) -> dict:
     """Same angles/preparation/mixer; remove phases or remove coherence."""
-    coherent = qaoa_probabilities(problem, gammas, betas)
-    zero = qaoa_probabilities(problem, np.zeros(len(gammas)), betas)
-    dephased = qaoa_probabilities(problem, gammas, betas, dephase_after_cost=True)
+    coherent = qaoa_probabilities(problem, gammas, betas, initial_hub_ids=initial_hub_ids)
+    zero = qaoa_probabilities(problem, np.zeros(len(gammas)), betas, initial_hub_ids=initial_hub_ids)
+    dephased = qaoa_probabilities(problem, gammas, betas, dephase_after_cost=True, initial_hub_ids=initial_hub_ids)
     return {
         "gammas": list(gammas), "betas": list(betas),
         "coherent": {"expectedWeightedCoverage": expected_coverage(problem, coherent), "probabilities": coherent.tolist()},
@@ -166,8 +175,19 @@ def solve_qaoa(problem: PreparedProblem, request: PlanningRequest) -> PlanResult
     rng = np.random.default_rng(request.seed)
     sample_seed = int(rng.integers(0, 2**32))
     construction_start = perf_counter()
-    preparation = build_preparation(problem)
+    warm_start = solve_greedy(problem, request) if options.warmStartGreedy else None
+    initial_hub_ids = warm_start.selectedHubIds if warm_start else None
+    preparation = build_preparation(problem, initial_hub_ids=initial_hub_ids)
     p = options.layers
+    gamma_parameters, beta_parameters = ParameterVector("gamma", p), ParameterVector("beta", p)
+    template = build_qaoa_circuit(problem, gamma_parameters, beta_parameters, initial_hub_ids=initial_hub_ids)
+
+    def bound_circuit(angles):
+        # Reuse the gate structure. Binding never uses an enumerated energy oracle.
+        bindings = dict(zip(gamma_parameters, angles[:p]))
+        bindings.update(zip(beta_parameters, angles[p:]))
+        return template.assign_parameters(bindings)
+
     convergence, start_records = [], []
     best_value, best_angles = -1.0, np.zeros(2 * p)
     construction_ms = (perf_counter() - construction_start) * 1000
@@ -178,13 +198,14 @@ def solve_qaoa(problem: PreparedProblem, request: PlanningRequest) -> PlanResult
     if not trivial:
         for restart in range(starts):
             budget = options.maxEvaluations // starts + (restart < options.maxEvaluations % starts)
-            initial = np.concatenate([rng.uniform(-pi, pi, p), rng.uniform(-pi / 2, pi / 2, p)])
+            gamma_bound = pi * options.phaseScale
+            initial = np.concatenate([rng.uniform(-gamma_bound, gamma_bound, p), rng.uniform(-pi / 2, pi / 2, p)])
             used = 0
 
             def loss(angles):
                 nonlocal used, best_value, best_angles
                 used += 1
-                probabilities = qaoa_probabilities(problem, angles[:p], angles[p:])
+                probabilities = Statevector.from_instruction(bound_circuit(angles)).probabilities()
                 value = expected_coverage(problem, probabilities)
                 if value > best_value:
                     best_value, best_angles = value, np.array(angles)
@@ -192,7 +213,7 @@ def solve_qaoa(problem: PreparedProblem, request: PlanningRequest) -> PlanResult
                                     "expectedWeightedCoverage": value, "bestExpectedWeightedCoverage": best_value})
                 return -value / sum(problem.demandWeights)
 
-            fit = minimize(loss, initial, method="Powell", bounds=[(-pi, pi)] * p + [(-pi / 2, pi / 2)] * p,
+            fit = minimize(loss, initial, method="Powell", bounds=[(-gamma_bound, gamma_bound)] * p + [(-pi / 2, pi / 2)] * p,
                            options={"maxfev": int(budget), "xtol": 0.01, "ftol": 0.0001})
             start_records.append({"start": restart, "initialAngles": initial.tolist(), "evaluations": used,
                                   "success": bool(fit.success), "message": str(fit.message)})
@@ -206,7 +227,7 @@ def solve_qaoa(problem: PreparedProblem, request: PlanningRequest) -> PlanResult
         for j in range(problem.hubCount):
             circuit.x(j)
     else:
-        circuit = build_qaoa_circuit(problem, best_angles[:p], best_angles[p:])
+        circuit = bound_circuit(best_angles)
         probabilities = Statevector.from_instruction(circuit).probabilities()
     probabilities = np.maximum(probabilities, 0)
     probabilities /= probabilities.sum()
@@ -256,8 +277,12 @@ def solve_qaoa(problem: PreparedProblem, request: PlanningRequest) -> PlanResult
                       "operationCounts": dict(compiled.count_ops()), "basisGates": COMPILATION_BASIS,
                       "preparationDepth": prep_compiled.depth(), "preparationTwoQubitGates": sum(1 for inst in prep_compiled.data if inst.operation.num_qubits == 2),
                       "uniqueCoverageNeighborhoods": len(coverage_terms(problem)), "compilationOptimizationLevel": 1},
-        "preparationRecipe": "first k qubits excited; ordered ring XY sweeps at pi/7 then pi/11",
+        "preparationRecipe": ("greedy deployment" if warm_start else "first k qubits") + " excited; ordered ring XY sweeps at pi/7 then pi/11",
         "optimizer": "bounded scipy Powell; total maxfev split across starts",
+        "gammaBounds": [-pi * options.phaseScale, pi * options.phaseScale],
+        "parameterizedCircuitReuse": True,
+        "warmStart": {"method": "greedy" if warm_start else "first-k", "hubIds": list(initial_hub_ids or problem.hubIds[:problem.hubCount]),
+                      "classicalWeightedCoverage": warm_start.weightedCoverage if warm_start else None},
         "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
         "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
         "timingBreakdownMs": {"postTrainingExactAudit": audit_ms, "compilation": compilation_ms},

@@ -1,5 +1,11 @@
 # ReliefGrid session handoff
 
+## November 7 review update
+
+Yichen's linked branch at `86d1f159` was fetched and fast-forwarded into the clean checkout. New changes remain local and unpushed. Read `reliefgrid/docs/Optimization_Review.md` and the November 7 section of `reliefgrid/docs/VERIFICATION.md` before relying on the older checkpoint below. The improved deck is `output/ReliefGrid_Improved.pptx`; the notebook now contains 14 freshly executed code cells, including the matched-budget warm-start comparison. QAOA supports `warmStartGreedy` and `phaseScale` with original defaults preserved; a separate portfolio helper retains a classical guard. Full suite: 75 passed. Warm-start QAOA matched exact sampled quality in 8/8 runs, but classical exact remains much faster. No hardware advantage is claimed. The optional web UI still uses original first-k settings.
+
+User preference: communicate significant progress to Yichen Xiao by email, avoiding trivial updates. Always delegate email updates to a subagent and continue main work without pausing for email. The verified account is ds9808781@gmail.com, Yichen is yichenxiao08@gmail.com, and the current ReliefGrid thread is `1a1b45c3d9ec081f`. Outbound email remains limited to authorized project updates.
+
 ## User's current requirements
 
 Continue building ReliefGrid from `plan.md`, preserving the existing Quantum 2048 submission. The user stopped this session to conserve the remaining 10% usage and requested a new-session handoff. Do not treat the app as complete or pushed.

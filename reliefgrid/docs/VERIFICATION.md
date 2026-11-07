@@ -1,5 +1,16 @@
 # ReliefGrid verification record
 
+## November 7 optimization review
+
+- Retrieved Yichen's linked commit `86d1f159` and incorporated it by fast-forward. The reviewed changes remain local and unpushed.
+- Final full regression suite: **75 passed in 60.98 seconds**, using the dedicated environment and a new temporary test directory. This includes new warm-start, symbolic binding, weighted-neighborhood phase, compiled-statevector equivalence, portfolio and notebook comparison checks.
+- Standalone notebook: **14 code cells**, all executed in a fresh kernel with a temporary working directory outside the repository and PYTHONPATH removed; **557,185 bytes**. All four notebook release checks passed independently. Embedded source matches the current backend, including the portfolio helper.
+- Matched-budget benchmark: greedy warm-started QAOA found an exact-optimal best sample in **8/8 seeded runs** versus **7/8** for first-k initialization. These are four synthetic planning instances, each with two seeds, at p=1, 24 evaluations and 256 samples. Distributions, settings, failures and timings remain in benchmark JSON. The wider-angle, 120-evaluation, three-start alternative found only **6/8** optima and was not adopted as a recommended setting.
+- The reusable `slide-readability` skill was installed under the user's Codex skills directory. Its audit helper was exercised against the source and revised decks, and the skill's frontmatter/naming validator passed. Small attribution/page-number text remains intentionally smaller than presentation body text.
+- Warm-start selection is available through notebook/Python/API options, with original defaults preserved. The optional web UI still submits original QAOA settings. No new browser behavior or hardware execution is claimed.
+- See `Optimization_Review.md` for findings, reproduction commands, limitations and research sources.
+- Improved deck: six slides, two native editable comparison tables, original template artwork/credit, corrected hub-to-community direction and cited speaker notes. Finalizer package integrity, geometry/font policy, slide count, table ownership and re-import checks pass with zero findings. All six slide bodies and the revised footer placements were rendered and visually inspected. Native PowerPoint was not exercised. Final deck SHA256: `65f2be1e6acab9a8ca757ec5035ec50acc42d4604d342a82652a32e94e5c6a1c`.
+
 Record date: November 6, 2026. This record describes the local `codex/reliefgrid` checkout; nothing from this session was committed or pushed.
 
 ## Official project requirements

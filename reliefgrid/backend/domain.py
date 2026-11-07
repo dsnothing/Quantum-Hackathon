@@ -99,6 +99,8 @@ class QaoaOptions(Contract):
     shots: int = Field(default=512, ge=1, le=8192)
     maxEvaluations: int = Field(default=40, ge=1, le=300)
     starts: int = Field(default=1, ge=1, le=4)
+    phaseScale: float = Field(default=1, ge=1, le=20)
+    warmStartGreedy: bool = False
 
 
 class PlanningRequest(Contract):

@@ -9,7 +9,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parent
 NOTEBOOK = REPO / "output/ReliefGrid_Submission.ipynb"
-PRESENTATION = REPO / "output/ReliefGrid_Presentation.pptx"
+PRESENTATION = REPO / "output/ReliefGrid_Improved.pptx"
 DESTINATION = REPO / "output/ReliefGrid_Submission.zip"
 
 
@@ -29,9 +29,9 @@ def files(presentation):
     yield presentation, presentation.name
     yield REPO / "Launch ReliefGrid.cmd", "Launch ReliefGrid.cmd"
     # Explicit source roots prevent accidental inclusion of build/private files.
-    for name in ("README.md", "__init__.py", "requirements.txt", "requirements-lock.txt", "pytest.ini", "launch.py", "package_submission.py", "build_notebook.py"):
+    for name in ("README.md", "__init__.py", "requirements.txt", "requirements-lock.txt", "pytest.ini", "launch.py", "package_submission.py", "build_notebook.py", "benchmark_optimization.py"):
         yield ROOT / name, "reliefgrid/" + name
-    for directory in ("backend", "contracts", "scenarios", "tests", "docs", "benchmarks"):
+    for directory in ("backend", "contracts", "scenarios", "tests", "docs", "benchmarks", "skills"):
         for path in sorted((ROOT / directory).rglob("*")):
             if path.is_file() and not any(part.startswith(".") or part == "__pycache__" for part in path.relative_to(ROOT).parts) and path.suffix != ".pyc":
                 yield path, "reliefgrid/" + path.relative_to(ROOT).as_posix()
@@ -59,7 +59,7 @@ def main():
     readme = ("# ReliefGrid submission\n\n"
               "The primary deliverable is [ReliefGrid_Submission.ipynb](ReliefGrid_Submission.ipynb). "
               "Its implementation, scenarios and measured outputs are self-contained.\n\n"
-              "The five-minute presentation is [ReliefGrid_Presentation.pptx](ReliefGrid_Presentation.pptx).\n\n"
+              f"The five-minute presentation is [{presentation.name}]({presentation.name}).\n\n"
               "See [setup, model and reproduction instructions](reliefgrid/README.md) and "
               "[recorded verification](reliefgrid/docs/VERIFICATION.md). "
               "The optional Flask workbench includes a compiled frontend. "

@@ -95,6 +95,8 @@ export type QaoaOptions = {
   shots?: number;
   maxEvaluations?: number;
   starts?: number;
+  phaseScale?: number;
+  warmStartGreedy?: boolean;
 };
 
 export type Scenario = {
