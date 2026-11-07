@@ -3,3 +3,7 @@ __pycache__/
 .ipynb_checkpoints/
 build/
 node_modules/
+reliefgrid/frontend/dist/
+reliefgrid/frontend/.tools/
+reliefgrid/.pytest_cache/
+reliefgrid/**/.pytest_cache/

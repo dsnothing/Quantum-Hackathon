@@ -1,0 +1,55 @@
+{
+  "modelVersion": "1",
+  "scenarioRevision": "a4bd9675633c328e2352bfd727c42595bb39d4241bee76b3a9344172734ab3c0",
+  "problemHash": "4cf8eb9c808566c8c6f4c0983f602f5595625e5212ee272361dbc24342416c3e",
+  "hubIds": [
+    "a",
+    "b"
+  ],
+  "communityIds": [
+    "c0",
+    "c1",
+    "c2"
+  ],
+  "hubCount": 1,
+  "demandWeights": [
+    100.0,
+    60.0,
+    40.0
+  ],
+  "populations": [
+    100.0,
+    60.0,
+    40.0
+  ],
+  "coverageMatrix": [
+    [
+      true,
+      false
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      false
+    ]
+  ],
+  "travelMinutes": [
+    [
+      0.0,
+      5.0
+    ],
+    [
+      5.0,
+      0.0
+    ],
+    [
+      null,
+      null
+    ]
+  ],
+  "responseTimeMinutes": 4.0,
+  "closedEdgeIds": []
+}

@@ -1,0 +1,63 @@
+{
+  "runId": "golden-success",
+  "status": "succeeded",
+  "problemHash": "4cf8eb9c808566c8c6f4c0983f602f5595625e5212ee272361dbc24342416c3e",
+  "runHash": "7e42e6bdf5577f0ef12ee508ee011320133401c91ecf451c35c20e469e2fa89b",
+  "result": {
+    "solver": "greedy",
+    "problemHash": "4cf8eb9c808566c8c6f4c0983f602f5595625e5212ee272361dbc24342416c3e",
+    "runHash": "7e42e6bdf5577f0ef12ee508ee011320133401c91ecf451c35c20e469e2fa89b",
+    "selectedHubIds": [
+      "a"
+    ],
+    "feasible": true,
+    "deployedHubCount": 1,
+    "coveredPopulation": 100.0,
+    "totalPopulation": 200.0,
+    "weightedCoverage": 100.0,
+    "uncoveredCommunityIds": [
+      "c1",
+      "c2"
+    ],
+    "assignments": [
+      {
+        "communityId": "c0",
+        "hubId": "a",
+        "travelMinutes": 0.0,
+        "covered": true
+      },
+      {
+        "communityId": "c1",
+        "hubId": null,
+        "travelMinutes": null,
+        "covered": false
+      },
+      {
+        "communityId": "c2",
+        "hubId": null,
+        "travelMinutes": null,
+        "covered": false
+      }
+    ],
+    "timing": {
+      "preprocessMs": 0.0,
+      "constructionMs": 0.0,
+      "optimizationMs": 0.0,
+      "samplingMs": 0.0,
+      "totalMs": 0.0
+    },
+    "provenance": {
+      "scenarioRevision": "a4bd9675633c328e2352bfd727c42595bb39d4241bee76b3a9344172734ab3c0",
+      "modelVersion": "1",
+      "codeRevision": "working-tree",
+      "versions": {},
+      "executionMode": "contract-fixture",
+      "seed": 42,
+      "parameters": {
+        "label": "Fixed golden example, not a live computation"
+      }
+    },
+    "diagnostics": {}
+  },
+  "error": null
+}

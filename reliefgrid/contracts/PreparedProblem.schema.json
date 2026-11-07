@@ -1,0 +1,106 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "modelVersion": {
+      "const": "1",
+      "default": "1",
+      "title": "Modelversion",
+      "type": "string"
+    },
+    "scenarioRevision": {
+      "title": "Scenariorevision",
+      "type": "string"
+    },
+    "problemHash": {
+      "title": "Problemhash",
+      "type": "string"
+    },
+    "hubIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Hubids",
+      "type": "array"
+    },
+    "communityIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Communityids",
+      "type": "array"
+    },
+    "hubCount": {
+      "minimum": 0,
+      "title": "Hubcount",
+      "type": "integer"
+    },
+    "demandWeights": {
+      "items": {
+        "type": "number"
+      },
+      "title": "Demandweights",
+      "type": "array"
+    },
+    "populations": {
+      "items": {
+        "type": "number"
+      },
+      "title": "Populations",
+      "type": "array"
+    },
+    "coverageMatrix": {
+      "items": {
+        "items": {
+          "type": "boolean"
+        },
+        "type": "array"
+      },
+      "title": "Coveragematrix",
+      "type": "array"
+    },
+    "travelMinutes": {
+      "items": {
+        "items": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "type": "array"
+      },
+      "title": "Travelminutes",
+      "type": "array"
+    },
+    "responseTimeMinutes": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Responsetimeminutes",
+      "type": "number"
+    },
+    "closedEdgeIds": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Closededgeids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "scenarioRevision",
+    "problemHash",
+    "hubIds",
+    "communityIds",
+    "hubCount",
+    "demandWeights",
+    "populations",
+    "coverageMatrix",
+    "travelMinutes"
+  ],
+  "title": "PreparedProblem",
+  "type": "object"
+}

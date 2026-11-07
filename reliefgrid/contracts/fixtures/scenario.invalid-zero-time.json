@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1",
+  "id": "golden-tiny",
+  "title": "Synthetic three-community contract fixture",
+  "description": null,
+  "crs": "EPSG:4326",
+  "provenance": {
+    "kind": "synthetic",
+    "sources": [],
+    "license": "CC0-1.0",
+    "retrievedAt": null,
+    "transformationNotes": "Invented coordinates and populations; no operational use."
+  },
+  "nodes": [
+    {
+      "id": "n0",
+      "lon": -80.0,
+      "lat": 43.0,
+      "name": null
+    },
+    {
+      "id": "n1",
+      "lon": -79.99,
+      "lat": 43.0,
+      "name": null
+    },
+    {
+      "id": "n2",
+      "lon": -79.98,
+      "lat": 43.0,
+      "name": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "bridge",
+      "fromNodeId": "n0",
+      "toNodeId": "n1",
+      "travelMinutes": 0,
+      "bidirectional": true,
+      "geometry": null,
+      "name": null
+    }
+  ],
+  "communities": [
+    {
+      "id": "c0",
+      "nodeId": "n0",
+      "population": 100.0,
+      "priorityMultiplier": 1.0,
+      "name": null
+    },
+    {
+      "id": "c1",
+      "nodeId": "n1",
+      "population": 60.0,
+      "priorityMultiplier": 1.0,
+      "name": null
+    },
+    {
+      "id": "c2",
+      "nodeId": "n2",
+      "population": 40.0,
+      "priorityMultiplier": 1.0,
+      "name": null
+    }
+  ],
+  "candidateHubs": [
+    {
+      "id": "a",
+      "nodeId": "n0",
+      "name": null
+    },
+    {
+      "id": "b",
+      "nodeId": "n1",
+      "name": null
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "scenarioId": "golden-tiny",
+  "scenarioRevision": "a4bd9675633c328e2352bfd727c42595bb39d4241bee76b3a9344172734ab3c0",
+  "closedEdgeIds": [],
+  "hubCount": 1,
+  "responseTimeMinutes": 4.0,
+  "solver": "greedy",
+  "seed": 42,
+  "qaoa": null
+}

@@ -1,0 +1,308 @@
+{
+  "$defs": {
+    "Community": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "nodeId": {
+          "title": "Nodeid",
+          "type": "string"
+        },
+        "population": {
+          "minimum": 0,
+          "title": "Population",
+          "type": "number"
+        },
+        "priorityMultiplier": {
+          "default": 1,
+          "minimum": 0,
+          "title": "Prioritymultiplier",
+          "type": "number"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        }
+      },
+      "required": [
+        "id",
+        "nodeId",
+        "population"
+      ],
+      "title": "Community",
+      "type": "object"
+    },
+    "Edge": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "fromNodeId": {
+          "title": "Fromnodeid",
+          "type": "string"
+        },
+        "toNodeId": {
+          "title": "Tonodeid",
+          "type": "string"
+        },
+        "travelMinutes": {
+          "exclusiveMinimum": 0,
+          "title": "Travelminutes",
+          "type": "number"
+        },
+        "bidirectional": {
+          "title": "Bidirectional",
+          "type": "boolean"
+        },
+        "geometry": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Geometry"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        }
+      },
+      "required": [
+        "id",
+        "fromNodeId",
+        "toNodeId",
+        "travelMinutes",
+        "bidirectional"
+      ],
+      "title": "Edge",
+      "type": "object"
+    },
+    "Hub": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "nodeId": {
+          "title": "Nodeid",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        }
+      },
+      "required": [
+        "id",
+        "nodeId"
+      ],
+      "title": "Hub",
+      "type": "object"
+    },
+    "Node": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "lon": {
+          "maximum": 180,
+          "minimum": -180,
+          "title": "Lon",
+          "type": "number"
+        },
+        "lat": {
+          "maximum": 90,
+          "minimum": -90,
+          "title": "Lat",
+          "type": "number"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        }
+      },
+      "required": [
+        "id",
+        "lon",
+        "lat"
+      ],
+      "title": "Node",
+      "type": "object"
+    },
+    "ScenarioProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "synthetic",
+            "open-data"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "license": {
+          "title": "License",
+          "type": "string"
+        },
+        "retrievedAt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Retrievedat"
+        },
+        "transformationNotes": {
+          "title": "Transformationnotes",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "license",
+        "transformationNotes"
+      ],
+      "title": "ScenarioProvenance",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "1",
+      "default": "1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Description"
+    },
+    "crs": {
+      "const": "EPSG:4326",
+      "default": "EPSG:4326",
+      "title": "Crs",
+      "type": "string"
+    },
+    "provenance": {
+      "$ref": "#/$defs/ScenarioProvenance"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/Node"
+      },
+      "title": "Nodes",
+      "type": "array"
+    },
+    "edges": {
+      "items": {
+        "$ref": "#/$defs/Edge"
+      },
+      "title": "Edges",
+      "type": "array"
+    },
+    "communities": {
+      "items": {
+        "$ref": "#/$defs/Community"
+      },
+      "title": "Communities",
+      "type": "array"
+    },
+    "candidateHubs": {
+      "items": {
+        "$ref": "#/$defs/Hub"
+      },
+      "title": "Candidatehubs",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "provenance",
+    "nodes",
+    "edges",
+    "communities",
+    "candidateHubs"
+  ],
+  "title": "Scenario",
+  "type": "object"
+}

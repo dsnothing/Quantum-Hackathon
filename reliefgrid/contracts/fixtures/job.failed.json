@@ -1,0 +1,12 @@
+{
+  "runId": "golden-failure",
+  "status": "failed",
+  "problemHash": "4cf8eb9c808566c8c6f4c0983f602f5595625e5212ee272361dbc24342416c3e",
+  "runHash": "7e42e6bdf5577f0ef12ee508ee011320133401c91ecf451c35c20e469e2fa89b",
+  "result": null,
+  "error": {
+    "code": "SOLVER_FAILED",
+    "message": "Golden mock failure. Retry with greedy.",
+    "retryable": true
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "$defs": {
+    "QaoaOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "layers": {
+          "default": 1,
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Layers",
+          "type": "integer"
+        },
+        "shots": {
+          "default": 512,
+          "maximum": 8192,
+          "minimum": 1,
+          "title": "Shots",
+          "type": "integer"
+        },
+        "maxEvaluations": {
+          "default": 40,
+          "maximum": 300,
+          "minimum": 1,
+          "title": "Maxevaluations",
+          "type": "integer"
+        },
+        "starts": {
+          "default": 1,
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Starts",
+          "type": "integer"
+        }
+      },
+      "title": "QaoaOptions",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "scenarioId": {
+      "title": "Scenarioid",
+      "type": "string"
+    },
+    "scenarioRevision": {
+      "title": "Scenariorevision",
+      "type": "string"
+    },
+    "closedEdgeIds": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Closededgeids",
+      "type": "array"
+    },
+    "hubCount": {
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Hubcount",
+      "type": "integer"
+    },
+    "responseTimeMinutes": {
+      "maximum": 10000,
+      "minimum": 0,
+      "title": "Responsetimeminutes",
+      "type": "number"
+    },
+    "solver": {
+      "default": "greedy",
+      "enum": [
+        "exact",
+        "greedy",
+        "random",
+        "qaoa"
+      ],
+      "title": "Solver",
+      "type": "string"
+    },
+    "seed": {
+      "default": 42,
+      "maximum": 4294967295,
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "qaoa": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/QaoaOptions"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "scenarioId",
+    "scenarioRevision",
+    "hubCount",
+    "responseTimeMinutes"
+  ],
+  "title": "PlanningRequest",
+  "type": "object"
+}

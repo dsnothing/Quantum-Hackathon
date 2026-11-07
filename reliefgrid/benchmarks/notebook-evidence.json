@@ -1,0 +1,5607 @@
+{
+  "schemaVersion": "1",
+  "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+  "primary": [
+    {
+      "case": "nominal",
+      "method": "exact",
+      "hubs": "hub-01, hub-07, hub-08",
+      "score": 9060.0,
+      "loss": 0.0,
+      "expected score": 9060.0,
+      "population": 9060.0,
+      "feasible": true,
+      "total ms": 1.9739999988814816
+    },
+    {
+      "case": "nominal",
+      "method": "greedy",
+      "hubs": "hub-01, hub-07, hub-08",
+      "score": 9060.0,
+      "loss": 0.0,
+      "expected score": 9060.0,
+      "population": 9060.0,
+      "feasible": true,
+      "total ms": 0.30730000435141847
+    },
+    {
+      "case": "nominal",
+      "method": "random",
+      "hubs": "hub-01, hub-07, hub-08",
+      "score": 9060.0,
+      "loss": 0.0,
+      "expected score": 6684.921875,
+      "population": 9060.0,
+      "feasible": true,
+      "total ms": 3.8563999987673014
+    },
+    {
+      "case": "nominal",
+      "method": "qaoa",
+      "hubs": "hub-01, hub-05, hub-07",
+      "score": 8680.0,
+      "loss": 380.0,
+      "expected score": 6579.552477651985,
+      "population": 8680.0,
+      "feasible": true,
+      "total ms": 1891.2137000006624
+    },
+    {
+      "case": "bridge closed",
+      "method": "exact",
+      "hubs": "hub-01, hub-02, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 8140.0,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 1.530300003651064
+    },
+    {
+      "case": "bridge closed",
+      "method": "greedy",
+      "hubs": "hub-01, hub-02, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 8140.0,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 0.3133999998681247
+    },
+    {
+      "case": "bridge closed",
+      "method": "random",
+      "hubs": "hub-01, hub-02, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 6366.2890625,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 4.0312999990419485
+    },
+    {
+      "case": "bridge closed",
+      "method": "qaoa",
+      "hubs": "hub-01, hub-03, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 6497.864874653036,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 1419.5231999983662
+    }
+  ],
+  "benchmark": [
+    {
+      "case": "nominal",
+      "method": "qaoa",
+      "hubs": "hub-01, hub-05, hub-07",
+      "score": 8680.0,
+      "loss": 380.0,
+      "expected score": 6579.552477651985,
+      "population": 8680.0,
+      "feasible": true,
+      "total ms": 1682.6585000017076,
+      "p": 1,
+      "seed": 42
+    },
+    {
+      "case": "nominal",
+      "method": "random",
+      "hubs": "hub-01, hub-07, hub-08",
+      "score": 9060.0,
+      "loss": 0.0,
+      "expected score": 6684.921875,
+      "population": 9060.0,
+      "feasible": true,
+      "total ms": 5.085800003143959,
+      "p": 1,
+      "seed": 42
+    },
+    {
+      "case": "nominal",
+      "method": "qaoa",
+      "hubs": "hub-01, hub-07, hub-08",
+      "score": 9060.0,
+      "loss": 0.0,
+      "expected score": 6620.330096911343,
+      "population": 9060.0,
+      "feasible": true,
+      "total ms": 1662.1169000063674,
+      "p": 1,
+      "seed": 7
+    },
+    {
+      "case": "nominal",
+      "method": "random",
+      "hubs": "hub-01, hub-07, hub-08",
+      "score": 9060.0,
+      "loss": 0.0,
+      "expected score": 6722.7734375,
+      "population": 9060.0,
+      "feasible": true,
+      "total ms": 4.929399998218287,
+      "p": 1,
+      "seed": 7
+    },
+    {
+      "case": "nominal",
+      "method": "qaoa",
+      "hubs": "hub-01, hub-07, hub-08",
+      "score": 9060.0,
+      "loss": 0.0,
+      "expected score": 6650.900127368633,
+      "population": 9060.0,
+      "feasible": true,
+      "total ms": 3876.768699999957,
+      "p": 2,
+      "seed": 42
+    },
+    {
+      "case": "nominal",
+      "method": "random",
+      "hubs": "hub-01, hub-07, hub-08",
+      "score": 9060.0,
+      "loss": 0.0,
+      "expected score": 6684.921875,
+      "population": 9060.0,
+      "feasible": true,
+      "total ms": 6.308700001682155,
+      "p": 2,
+      "seed": 42
+    },
+    {
+      "case": "nominal",
+      "method": "qaoa",
+      "hubs": "hub-01, hub-06, hub-08",
+      "score": 8500.0,
+      "loss": 560.0,
+      "expected score": 6610.155655100564,
+      "population": 8500.0,
+      "feasible": true,
+      "total ms": 3824.675299998489,
+      "p": 2,
+      "seed": 7
+    },
+    {
+      "case": "nominal",
+      "method": "random",
+      "hubs": "hub-01, hub-07, hub-08",
+      "score": 9060.0,
+      "loss": 0.0,
+      "expected score": 6722.7734375,
+      "population": 9060.0,
+      "feasible": true,
+      "total ms": 2.997000003233552,
+      "p": 2,
+      "seed": 7
+    },
+    {
+      "case": "bridge closed",
+      "method": "qaoa",
+      "hubs": "hub-01, hub-03, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 6497.864874653036,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 1381.1736999996356,
+      "p": 1,
+      "seed": 42
+    },
+    {
+      "case": "bridge closed",
+      "method": "random",
+      "hubs": "hub-01, hub-02, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 6366.2890625,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 4.308899995521642,
+      "p": 1,
+      "seed": 42
+    },
+    {
+      "case": "bridge closed",
+      "method": "qaoa",
+      "hubs": "hub-01, hub-02, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 6548.7837262824605,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 1274.876099996618,
+      "p": 1,
+      "seed": 7
+    },
+    {
+      "case": "bridge closed",
+      "method": "random",
+      "hubs": "hub-01, hub-02, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 6510.703125,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 5.149199998413678,
+      "p": 1,
+      "seed": 7
+    },
+    {
+      "case": "bridge closed",
+      "method": "qaoa",
+      "hubs": "hub-01, hub-02, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 6347.458461449891,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 1768.6094000018784,
+      "p": 2,
+      "seed": 42
+    },
+    {
+      "case": "bridge closed",
+      "method": "random",
+      "hubs": "hub-01, hub-02, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 6366.2890625,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 2.61799999861978,
+      "p": 2,
+      "seed": 42
+    },
+    {
+      "case": "bridge closed",
+      "method": "qaoa",
+      "hubs": "hub-01, hub-02, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 6566.228490626393,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 1993.3842999962508,
+      "p": 2,
+      "seed": 7
+    },
+    {
+      "case": "bridge closed",
+      "method": "random",
+      "hubs": "hub-01, hub-02, hub-07",
+      "score": 8140.0,
+      "loss": 0.0,
+      "expected score": 6510.703125,
+      "population": 8140.0,
+      "feasible": true,
+      "total ms": 4.6828999984427355,
+      "p": 2,
+      "seed": 7
+    }
+  ],
+  "runs": [
+    {
+      "case": "nominal",
+      "request": {
+        "scenarioId": "riverbend",
+        "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+        "closedEdgeIds": [],
+        "hubCount": 3,
+        "responseTimeMinutes": 12.0,
+        "solver": "greedy",
+        "seed": 42,
+        "qaoa": {
+          "layers": 1,
+          "shots": 256,
+          "maxEvaluations": 24,
+          "starts": 1
+        }
+      },
+      "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+      "qaoa": {
+        "solver": "qaoa",
+        "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+        "runHash": "739358165c58c71f28275c9497acdffcfc687f693bad29081c693e93664a5e6d",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-05",
+          "hub-07"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 8680.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 8680.0,
+        "uncoveredCommunityIds": [
+          "community-14",
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-01",
+            "travelMinutes": 9.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-07",
+            "travelMinutes": 11.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": "hub-05",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-05",
+            "travelMinutes": 3.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 39.01570000016363,
+          "optimizationMs": 1557.0034999982454,
+          "samplingMs": 65.39820000034524,
+          "totalMs": 1682.6585000017076
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "qiskit": "2.6.2",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "executionMode": "ideal-simulator optimization with sampled evaluation",
+          "seed": 42,
+          "parameters": {
+            "layers": 1,
+            "shots": 256,
+            "maxEvaluations": 24,
+            "starts": 1
+          }
+        },
+        "diagnostics": {
+          "counts": {
+            "00000111": 5,
+            "00001011": 5,
+            "00001101": 5,
+            "00001110": 3,
+            "00010011": 9,
+            "00010101": 5,
+            "00010110": 3,
+            "00011001": 2,
+            "00011010": 1,
+            "00011100": 1,
+            "00100101": 2,
+            "00100110": 1,
+            "00101001": 1,
+            "00101100": 2,
+            "00110001": 4,
+            "00110100": 2,
+            "01000011": 6,
+            "01000110": 5,
+            "01001001": 4,
+            "01001010": 1,
+            "01001100": 3,
+            "01010001": 11,
+            "01010010": 2,
+            "01010100": 11,
+            "01101000": 1,
+            "01110000": 1,
+            "10000101": 1,
+            "10000110": 10,
+            "10001001": 9,
+            "10001010": 10,
+            "10001100": 25,
+            "10010001": 11,
+            "10010010": 19,
+            "10010100": 44,
+            "10100001": 1,
+            "10100100": 8,
+            "10101000": 5,
+            "10110000": 5,
+            "11000010": 3,
+            "11001000": 3,
+            "11010000": 6
+          },
+          "shots": 256,
+          "samplingSeed": 383329928,
+          "bitOrder": "rightmost bit is hubIds[0]; qubit j is hubIds[j]",
+          "expectedWeightedCoverage": 6579.552477651985,
+          "sampledExpectedWeightedCoverage": 6635.2734375,
+          "feasibleFraction": 1.0,
+          "idealFeasibleProbability": 1.0,
+          "infeasibleCounts": {},
+          "idealInfeasibleProbability": 3.618156323902658e-31,
+          "optimalWeightedCoverage": 9060.0,
+          "optimalHubSets": [
+            [
+              "hub-01",
+              "hub-07",
+              "hub-08"
+            ]
+          ],
+          "optimumProbability": 0.0022247596911525633,
+          "sampledOptimumProbability": 0.0,
+          "expectedApproximationRatio": 0.7262199202706385,
+          "evaluations": 24,
+          "convergence": [
+            {
+              "evaluation": 1,
+              "start": 0,
+              "expectedWeightedCoverage": 6231.8589953754345,
+              "bestExpectedWeightedCoverage": 6231.8589953754345
+            },
+            {
+              "evaluation": 2,
+              "start": 0,
+              "expectedWeightedCoverage": 6231.951830326841,
+              "bestExpectedWeightedCoverage": 6231.951830326841
+            },
+            {
+              "evaluation": 3,
+              "start": 0,
+              "expectedWeightedCoverage": 6231.951830326841,
+              "bestExpectedWeightedCoverage": 6231.951830326841
+            },
+            {
+              "evaluation": 4,
+              "start": 0,
+              "expectedWeightedCoverage": 6232.464980702636,
+              "bestExpectedWeightedCoverage": 6232.464980702636
+            },
+            {
+              "evaluation": 5,
+              "start": 0,
+              "expectedWeightedCoverage": 6232.987957727772,
+              "bestExpectedWeightedCoverage": 6232.987957727772
+            },
+            {
+              "evaluation": 6,
+              "start": 0,
+              "expectedWeightedCoverage": 6233.39417936004,
+              "bestExpectedWeightedCoverage": 6233.39417936004
+            },
+            {
+              "evaluation": 7,
+              "start": 0,
+              "expectedWeightedCoverage": 6233.678296069633,
+              "bestExpectedWeightedCoverage": 6233.678296069633
+            },
+            {
+              "evaluation": 8,
+              "start": 0,
+              "expectedWeightedCoverage": 6233.866884697419,
+              "bestExpectedWeightedCoverage": 6233.866884697419
+            },
+            {
+              "evaluation": 9,
+              "start": 0,
+              "expectedWeightedCoverage": 6233.988496540336,
+              "bestExpectedWeightedCoverage": 6233.988496540336
+            },
+            {
+              "evaluation": 10,
+              "start": 0,
+              "expectedWeightedCoverage": 6234.065611926418,
+              "bestExpectedWeightedCoverage": 6234.065611926418
+            },
+            {
+              "evaluation": 11,
+              "start": 0,
+              "expectedWeightedCoverage": 6234.11402430388,
+              "bestExpectedWeightedCoverage": 6234.11402430388
+            },
+            {
+              "evaluation": 12,
+              "start": 0,
+              "expectedWeightedCoverage": 6234.1442335658085,
+              "bestExpectedWeightedCoverage": 6234.1442335658085
+            },
+            {
+              "evaluation": 13,
+              "start": 0,
+              "expectedWeightedCoverage": 6234.163014539569,
+              "bestExpectedWeightedCoverage": 6234.163014539569
+            },
+            {
+              "evaluation": 14,
+              "start": 0,
+              "expectedWeightedCoverage": 6234.174664150919,
+              "bestExpectedWeightedCoverage": 6234.174664150919
+            },
+            {
+              "evaluation": 15,
+              "start": 0,
+              "expectedWeightedCoverage": 6234.181880194034,
+              "bestExpectedWeightedCoverage": 6234.181880194034
+            },
+            {
+              "evaluation": 16,
+              "start": 0,
+              "expectedWeightedCoverage": 6234.187109701532,
+              "bestExpectedWeightedCoverage": 6234.187109701532
+            },
+            {
+              "evaluation": 17,
+              "start": 0,
+              "expectedWeightedCoverage": 5684.887395759203,
+              "bestExpectedWeightedCoverage": 6234.187109701532
+            },
+            {
+              "evaluation": 18,
+              "start": 0,
+              "expectedWeightedCoverage": 6443.355996087997,
+              "bestExpectedWeightedCoverage": 6443.355996087997
+            },
+            {
+              "evaluation": 19,
+              "start": 0,
+              "expectedWeightedCoverage": 6535.691546042568,
+              "bestExpectedWeightedCoverage": 6535.691546042568
+            },
+            {
+              "evaluation": 20,
+              "start": 0,
+              "expectedWeightedCoverage": 6570.796619303617,
+              "bestExpectedWeightedCoverage": 6570.796619303617
+            },
+            {
+              "evaluation": 21,
+              "start": 0,
+              "expectedWeightedCoverage": 6578.899425063363,
+              "bestExpectedWeightedCoverage": 6578.899425063363
+            },
+            {
+              "evaluation": 22,
+              "start": 0,
+              "expectedWeightedCoverage": 6579.552477651908,
+              "bestExpectedWeightedCoverage": 6579.552477651908
+            },
+            {
+              "evaluation": 23,
+              "start": 0,
+              "expectedWeightedCoverage": 6579.543646606468,
+              "bestExpectedWeightedCoverage": 6579.552477651908
+            },
+            {
+              "evaluation": 24,
+              "start": 0,
+              "expectedWeightedCoverage": 6579.520598368215,
+              "bestExpectedWeightedCoverage": 6579.552477651908
+            }
+          ],
+          "starts": [
+            {
+              "start": 0,
+              "initialAngles": [
+                -0.38403808930179695,
+                1.1265685907861802
+              ],
+              "evaluations": 24,
+              "success": false,
+              "message": "Maximum number of function evaluations has been exceeded."
+            }
+          ],
+          "gammas": [
+            3.13747266526428
+          ],
+          "betas": [
+            0.680183456092478
+          ],
+          "trivialBypass": false,
+          "resources": {
+            "qubits": 8,
+            "layers": 1,
+            "depth": 266,
+            "twoQubitGates": 166,
+            "operationCounts": {
+              "rz": 344,
+              "sx": 166,
+              "cx": 166,
+              "x": 8
+            },
+            "basisGates": [
+              "rz",
+              "sx",
+              "x",
+              "cx"
+            ],
+            "preparationDepth": 39,
+            "preparationTwoQubitGates": 32,
+            "uniqueCoverageNeighborhoods": 12,
+            "compilationOptimizationLevel": 1
+          },
+          "preparationRecipe": "first k qubits excited; ordered ring XY sweeps at pi/7 then pi/11",
+          "optimizer": "bounded scipy Powell; total maxfev split across starts",
+          "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
+          "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
+          "timingBreakdownMs": {
+            "postTrainingExactAudit": 3.1466000000364147,
+            "compilation": 38.04890000174055
+          }
+        }
+      },
+      "random": {
+        "solver": "random",
+        "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+        "runHash": "9a7b1f150b86ee96fd30c31caeb509c053fc9f58be4e6df481e3eaffcb921a72",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-07",
+          "hub-08"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 9060.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 9060.0,
+        "uncoveredCommunityIds": [
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-01",
+            "travelMinutes": 9.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-07",
+            "travelMinutes": 11.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": "hub-08",
+            "travelMinutes": 9.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": "hub-08",
+            "travelMinutes": 8.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 0.0,
+          "optimizationMs": 0.0,
+          "samplingMs": 5.085800003143959,
+          "totalMs": 5.085800003143959
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "python": "3.12.14"
+          },
+          "executionMode": "classical",
+          "seed": 42,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        },
+        "diagnostics": {
+          "evaluations": 56,
+          "sampleCount": 256,
+          "counts": {
+            "00000111": 2,
+            "00001011": 8,
+            "00010011": 4,
+            "00100011": 6,
+            "01000011": 2,
+            "10000011": 4,
+            "00001101": 5,
+            "00010101": 5,
+            "00100101": 4,
+            "01000101": 4,
+            "10000101": 3,
+            "00011001": 3,
+            "00101001": 3,
+            "01001001": 3,
+            "10001001": 2,
+            "00110001": 2,
+            "01010001": 13,
+            "10010001": 5,
+            "01100001": 5,
+            "10100001": 5,
+            "11000001": 6,
+            "00001110": 4,
+            "00010110": 1,
+            "00100110": 7,
+            "01000110": 4,
+            "10000110": 1,
+            "00011010": 5,
+            "00101010": 3,
+            "01001010": 6,
+            "10001010": 6,
+            "00110010": 6,
+            "01010010": 4,
+            "10010010": 7,
+            "01100010": 6,
+            "10100010": 5,
+            "11000010": 7,
+            "00011100": 3,
+            "00101100": 7,
+            "01001100": 6,
+            "10001100": 5,
+            "00110100": 3,
+            "01010100": 4,
+            "10010100": 2,
+            "01100100": 5,
+            "10100100": 2,
+            "11000100": 4,
+            "00111000": 4,
+            "01011000": 5,
+            "10011000": 4,
+            "01101000": 7,
+            "10101000": 4,
+            "11001000": 1,
+            "01110000": 10,
+            "10110000": 4,
+            "11010000": 5,
+            "11100000": 5
+          },
+          "feasibleFraction": 1.0,
+          "expectedWeightedCoverage": 6684.921875,
+          "bestSampleWeightedCoverage": 9060.0,
+          "provenOptimal": false,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        }
+      }
+    },
+    {
+      "case": "nominal",
+      "request": {
+        "scenarioId": "riverbend",
+        "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+        "closedEdgeIds": [],
+        "hubCount": 3,
+        "responseTimeMinutes": 12.0,
+        "solver": "greedy",
+        "seed": 7,
+        "qaoa": {
+          "layers": 1,
+          "shots": 256,
+          "maxEvaluations": 24,
+          "starts": 1
+        }
+      },
+      "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+      "qaoa": {
+        "solver": "qaoa",
+        "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+        "runHash": "e43afc15874903e34a1567c060071ef6385d24c1a48930b413f951b39f3d7b33",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-07",
+          "hub-08"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 9060.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 9060.0,
+        "uncoveredCommunityIds": [
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-01",
+            "travelMinutes": 9.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-07",
+            "travelMinutes": 11.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": "hub-08",
+            "travelMinutes": 9.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": "hub-08",
+            "travelMinutes": 8.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 43.93299999355804,
+          "optimizationMs": 1534.3408000044292,
+          "samplingMs": 60.70020000333898,
+          "totalMs": 1662.1169000063674
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "qiskit": "2.6.2",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "executionMode": "ideal-simulator optimization with sampled evaluation",
+          "seed": 7,
+          "parameters": {
+            "layers": 1,
+            "shots": 256,
+            "maxEvaluations": 24,
+            "starts": 1
+          }
+        },
+        "diagnostics": {
+          "counts": {
+            "00000111": 5,
+            "00001011": 7,
+            "00001101": 2,
+            "00001110": 1,
+            "00010011": 9,
+            "00010101": 11,
+            "00010110": 6,
+            "00100101": 5,
+            "00101001": 2,
+            "00101010": 1,
+            "00101100": 2,
+            "00110001": 2,
+            "00110100": 6,
+            "01000011": 2,
+            "01000110": 6,
+            "01001001": 4,
+            "01001010": 4,
+            "01001100": 6,
+            "01010001": 3,
+            "01010010": 4,
+            "01010100": 6,
+            "01100001": 1,
+            "01100100": 2,
+            "10000011": 1,
+            "10000101": 1,
+            "10000110": 10,
+            "10001001": 12,
+            "10001010": 17,
+            "10001100": 20,
+            "10010001": 16,
+            "10010010": 19,
+            "10010100": 44,
+            "10100100": 7,
+            "10101000": 4,
+            "10110000": 2,
+            "11000001": 2,
+            "11000010": 1,
+            "11010000": 3
+          },
+          "shots": 256,
+          "samplingSeed": 4058335883,
+          "bitOrder": "rightmost bit is hubIds[0]; qubit j is hubIds[j]",
+          "expectedWeightedCoverage": 6620.330096911343,
+          "sampledExpectedWeightedCoverage": 6685.390625,
+          "feasibleFraction": 1.0,
+          "idealFeasibleProbability": 1.0,
+          "infeasibleCounts": {},
+          "idealInfeasibleProbability": 3.3160331993208855e-31,
+          "optimalWeightedCoverage": 9060.0,
+          "optimalHubSets": [
+            [
+              "hub-01",
+              "hub-07",
+              "hub-08"
+            ]
+          ],
+          "optimumProbability": 0.0019982846746831764,
+          "sampledOptimumProbability": 0.0078125,
+          "expectedApproximationRatio": 0.7307207612484926,
+          "evaluations": 24,
+          "convergence": [
+            {
+              "evaluation": 1,
+              "start": 0,
+              "expectedWeightedCoverage": 6516.497619295599,
+              "bestExpectedWeightedCoverage": 6516.497619295599
+            },
+            {
+              "evaluation": 2,
+              "start": 0,
+              "expectedWeightedCoverage": 6525.43699316983,
+              "bestExpectedWeightedCoverage": 6525.43699316983
+            },
+            {
+              "evaluation": 3,
+              "start": 0,
+              "expectedWeightedCoverage": 6525.43699316983,
+              "bestExpectedWeightedCoverage": 6525.43699316983
+            },
+            {
+              "evaluation": 4,
+              "start": 0,
+              "expectedWeightedCoverage": 6521.912762008588,
+              "bestExpectedWeightedCoverage": 6525.43699316983
+            },
+            {
+              "evaluation": 5,
+              "start": 0,
+              "expectedWeightedCoverage": 6526.330173673913,
+              "bestExpectedWeightedCoverage": 6526.330173673913
+            },
+            {
+              "evaluation": 6,
+              "start": 0,
+              "expectedWeightedCoverage": 6526.330155580828,
+              "bestExpectedWeightedCoverage": 6526.330173673913
+            },
+            {
+              "evaluation": 7,
+              "start": 0,
+              "expectedWeightedCoverage": 6526.330155580828,
+              "bestExpectedWeightedCoverage": 6526.330173673913
+            },
+            {
+              "evaluation": 8,
+              "start": 0,
+              "expectedWeightedCoverage": 5602.35017112609,
+              "bestExpectedWeightedCoverage": 6526.330173673913
+            },
+            {
+              "evaluation": 9,
+              "start": 0,
+              "expectedWeightedCoverage": 6503.948310554409,
+              "bestExpectedWeightedCoverage": 6526.330173673913
+            },
+            {
+              "evaluation": 10,
+              "start": 0,
+              "expectedWeightedCoverage": 6555.098741561599,
+              "bestExpectedWeightedCoverage": 6555.098741561599
+            },
+            {
+              "evaluation": 11,
+              "start": 0,
+              "expectedWeightedCoverage": 6619.823491764306,
+              "bestExpectedWeightedCoverage": 6619.823491764306
+            },
+            {
+              "evaluation": 12,
+              "start": 0,
+              "expectedWeightedCoverage": 6620.103879897547,
+              "bestExpectedWeightedCoverage": 6620.103879897547
+            },
+            {
+              "evaluation": 13,
+              "start": 0,
+              "expectedWeightedCoverage": 6620.330096911269,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 14,
+              "start": 0,
+              "expectedWeightedCoverage": 6620.3115536317455,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 15,
+              "start": 0,
+              "expectedWeightedCoverage": 6620.308815061838,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 16,
+              "start": 0,
+              "expectedWeightedCoverage": 6502.569599421443,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 17,
+              "start": 0,
+              "expectedWeightedCoverage": 6617.841998683106,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 18,
+              "start": 0,
+              "expectedWeightedCoverage": 6617.841998683108,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 19,
+              "start": 0,
+              "expectedWeightedCoverage": 6607.991972970825,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 20,
+              "start": 0,
+              "expectedWeightedCoverage": 6620.330096911267,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 21,
+              "start": 0,
+              "expectedWeightedCoverage": 6620.330046544202,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 22,
+              "start": 0,
+              "expectedWeightedCoverage": 6620.330046544203,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 23,
+              "start": 0,
+              "expectedWeightedCoverage": 5602.350171126092,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            },
+            {
+              "evaluation": 24,
+              "start": 0,
+              "expectedWeightedCoverage": 6503.948310554409,
+              "bestExpectedWeightedCoverage": 6620.330096911269
+            }
+          ],
+          "starts": [
+            {
+              "start": 0,
+              "initialAngles": [
+                2.4957679180609933,
+                0.8660921391741314
+              ],
+              "evaluations": 24,
+              "success": false,
+              "message": "Maximum number of function evaluations has been exceeded."
+            }
+          ],
+          "gammas": [
+            0.0
+          ],
+          "betas": [
+            0.6439966536354652
+          ],
+          "trivialBypass": false,
+          "resources": {
+            "qubits": 8,
+            "layers": 1,
+            "depth": 213,
+            "twoQubitGates": 148,
+            "operationCounts": {
+              "rz": 294,
+              "sx": 160,
+              "cx": 148,
+              "x": 8
+            },
+            "basisGates": [
+              "rz",
+              "sx",
+              "x",
+              "cx"
+            ],
+            "preparationDepth": 39,
+            "preparationTwoQubitGates": 32,
+            "uniqueCoverageNeighborhoods": 12,
+            "compilationOptimizationLevel": 1
+          },
+          "preparationRecipe": "first k qubits excited; ordered ring XY sweeps at pi/7 then pi/11",
+          "optimizer": "bounded scipy Powell; total maxfev split across starts",
+          "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
+          "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
+          "timingBreakdownMs": {
+            "postTrainingExactAudit": 2.6409999991301447,
+            "compilation": 43.13159999583149
+          }
+        }
+      },
+      "random": {
+        "solver": "random",
+        "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+        "runHash": "9ed20a6e3da3cbcb3d6d060b8c8cb02dec1c5a7dd81c7b843b71d015722f950c",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-07",
+          "hub-08"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 9060.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 9060.0,
+        "uncoveredCommunityIds": [
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-01",
+            "travelMinutes": 9.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-07",
+            "travelMinutes": 11.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": "hub-08",
+            "travelMinutes": 9.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": "hub-08",
+            "travelMinutes": 8.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 0.0,
+          "optimizationMs": 0.0,
+          "samplingMs": 4.929399998218287,
+          "totalMs": 4.929399998218287
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "python": "3.12.14"
+          },
+          "executionMode": "classical",
+          "seed": 7,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        },
+        "diagnostics": {
+          "evaluations": 56,
+          "sampleCount": 256,
+          "counts": {
+            "00000111": 4,
+            "00001011": 5,
+            "00010011": 8,
+            "00100011": 3,
+            "01000011": 5,
+            "10000011": 2,
+            "00001101": 9,
+            "00010101": 8,
+            "00100101": 5,
+            "01000101": 3,
+            "10000101": 8,
+            "00011001": 3,
+            "00101001": 4,
+            "01001001": 4,
+            "10001001": 7,
+            "00110001": 5,
+            "01010001": 7,
+            "10010001": 5,
+            "01100001": 1,
+            "10100001": 7,
+            "11000001": 4,
+            "00001110": 5,
+            "00010110": 6,
+            "00100110": 6,
+            "01000110": 4,
+            "10000110": 5,
+            "00011010": 6,
+            "00101010": 5,
+            "01001010": 4,
+            "10001010": 4,
+            "00110010": 4,
+            "01010010": 1,
+            "10010010": 5,
+            "01100010": 4,
+            "10100010": 7,
+            "11000010": 4,
+            "00011100": 3,
+            "00101100": 4,
+            "01001100": 3,
+            "10001100": 5,
+            "00110100": 4,
+            "01010100": 5,
+            "10010100": 3,
+            "01100100": 2,
+            "10100100": 6,
+            "11000100": 5,
+            "00111000": 4,
+            "01011000": 3,
+            "10011000": 6,
+            "01101000": 3,
+            "10101000": 4,
+            "11001000": 5,
+            "01110000": 1,
+            "10110000": 5,
+            "11010000": 4,
+            "11100000": 4
+          },
+          "feasibleFraction": 1.0,
+          "expectedWeightedCoverage": 6722.7734375,
+          "bestSampleWeightedCoverage": 9060.0,
+          "provenOptimal": false,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        }
+      }
+    },
+    {
+      "case": "nominal",
+      "request": {
+        "scenarioId": "riverbend",
+        "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+        "closedEdgeIds": [],
+        "hubCount": 3,
+        "responseTimeMinutes": 12.0,
+        "solver": "greedy",
+        "seed": 42,
+        "qaoa": {
+          "layers": 2,
+          "shots": 256,
+          "maxEvaluations": 24,
+          "starts": 1
+        }
+      },
+      "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+      "qaoa": {
+        "solver": "qaoa",
+        "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+        "runHash": "08fb6a82699b5252e1b31458a8cc4b5f6fcbcd18434d1b70c24b6947abaf5657",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-07",
+          "hub-08"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 9060.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 9060.0,
+        "uncoveredCommunityIds": [
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-01",
+            "travelMinutes": 9.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-07",
+            "travelMinutes": 11.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": "hub-08",
+            "travelMinutes": 9.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": "hub-08",
+            "travelMinutes": 8.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 74.23660000495147,
+          "optimizationMs": 3641.313399995852,
+          "samplingMs": 127.37320000451291,
+          "totalMs": 3876.768699999957
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "qiskit": "2.6.2",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "executionMode": "ideal-simulator optimization with sampled evaluation",
+          "seed": 42,
+          "parameters": {
+            "layers": 2,
+            "shots": 256,
+            "maxEvaluations": 24,
+            "starts": 1
+          }
+        },
+        "diagnostics": {
+          "counts": {
+            "00000111": 11,
+            "00001011": 7,
+            "00001110": 5,
+            "00010011": 6,
+            "00010101": 2,
+            "00010110": 5,
+            "00011001": 15,
+            "00011010": 1,
+            "00011100": 3,
+            "00100011": 4,
+            "00100110": 15,
+            "00101010": 14,
+            "00101100": 1,
+            "00110010": 11,
+            "00110100": 1,
+            "00111000": 9,
+            "01000011": 10,
+            "01000101": 12,
+            "01000110": 1,
+            "01001001": 5,
+            "01001100": 1,
+            "01010001": 19,
+            "01010100": 3,
+            "01011000": 1,
+            "01100001": 2,
+            "01100010": 6,
+            "01100100": 4,
+            "01101000": 9,
+            "01110000": 14,
+            "10000011": 2,
+            "10000101": 2,
+            "10000110": 12,
+            "10010001": 3,
+            "10010010": 3,
+            "10010100": 6,
+            "10100001": 1,
+            "10100010": 13,
+            "10100100": 2,
+            "10110000": 3,
+            "11000001": 2,
+            "11000100": 2,
+            "11100000": 8
+          },
+          "shots": 256,
+          "samplingSeed": 383329928,
+          "bitOrder": "rightmost bit is hubIds[0]; qubit j is hubIds[j]",
+          "expectedWeightedCoverage": 6650.900127368633,
+          "sampledExpectedWeightedCoverage": 6731.2109375,
+          "feasibleFraction": 1.0,
+          "idealFeasibleProbability": 0.9999999999999999,
+          "infeasibleCounts": {},
+          "idealInfeasibleProbability": 6.206391649955465e-31,
+          "optimalWeightedCoverage": 9060.0,
+          "optimalHubSets": [
+            [
+              "hub-01",
+              "hub-07",
+              "hub-08"
+            ]
+          ],
+          "optimumProbability": 0.012429600622172736,
+          "sampledOptimumProbability": 0.0078125,
+          "expectedApproximationRatio": 0.7340949367956549,
+          "evaluations": 24,
+          "convergence": [
+            {
+              "evaluation": 1,
+              "start": 0,
+              "expectedWeightedCoverage": 6598.471482973376,
+              "bestExpectedWeightedCoverage": 6598.471482973376
+            },
+            {
+              "evaluation": 2,
+              "start": 0,
+              "expectedWeightedCoverage": 6596.070176634783,
+              "bestExpectedWeightedCoverage": 6598.471482973376
+            },
+            {
+              "evaluation": 3,
+              "start": 0,
+              "expectedWeightedCoverage": 6608.89627098847,
+              "bestExpectedWeightedCoverage": 6608.89627098847
+            },
+            {
+              "evaluation": 4,
+              "start": 0,
+              "expectedWeightedCoverage": 6620.148941313313,
+              "bestExpectedWeightedCoverage": 6620.148941313313
+            },
+            {
+              "evaluation": 5,
+              "start": 0,
+              "expectedWeightedCoverage": 6628.060066477163,
+              "bestExpectedWeightedCoverage": 6628.060066477163
+            },
+            {
+              "evaluation": 6,
+              "start": 0,
+              "expectedWeightedCoverage": 6633.2240987371615,
+              "bestExpectedWeightedCoverage": 6633.2240987371615
+            },
+            {
+              "evaluation": 7,
+              "start": 0,
+              "expectedWeightedCoverage": 6636.497245439383,
+              "bestExpectedWeightedCoverage": 6636.497245439383
+            },
+            {
+              "evaluation": 8,
+              "start": 0,
+              "expectedWeightedCoverage": 6638.545598361246,
+              "bestExpectedWeightedCoverage": 6638.545598361246
+            },
+            {
+              "evaluation": 9,
+              "start": 0,
+              "expectedWeightedCoverage": 6639.819885446756,
+              "bestExpectedWeightedCoverage": 6639.819885446756
+            },
+            {
+              "evaluation": 10,
+              "start": 0,
+              "expectedWeightedCoverage": 6640.610292481768,
+              "bestExpectedWeightedCoverage": 6640.610292481768
+            },
+            {
+              "evaluation": 11,
+              "start": 0,
+              "expectedWeightedCoverage": 6641.099802874688,
+              "bestExpectedWeightedCoverage": 6641.099802874688
+            },
+            {
+              "evaluation": 12,
+              "start": 0,
+              "expectedWeightedCoverage": 6641.402704935329,
+              "bestExpectedWeightedCoverage": 6641.402704935329
+            },
+            {
+              "evaluation": 13,
+              "start": 0,
+              "expectedWeightedCoverage": 6641.590044881081,
+              "bestExpectedWeightedCoverage": 6641.590044881081
+            },
+            {
+              "evaluation": 14,
+              "start": 0,
+              "expectedWeightedCoverage": 6641.70587831318,
+              "bestExpectedWeightedCoverage": 6641.70587831318
+            },
+            {
+              "evaluation": 15,
+              "start": 0,
+              "expectedWeightedCoverage": 6641.777486538247,
+              "bestExpectedWeightedCoverage": 6641.777486538247
+            },
+            {
+              "evaluation": 16,
+              "start": 0,
+              "expectedWeightedCoverage": 6641.829313927158,
+              "bestExpectedWeightedCoverage": 6641.829313927158
+            },
+            {
+              "evaluation": 17,
+              "start": 0,
+              "expectedWeightedCoverage": 6605.482786889537,
+              "bestExpectedWeightedCoverage": 6641.829313927158
+            },
+            {
+              "evaluation": 18,
+              "start": 0,
+              "expectedWeightedCoverage": 6622.695920790636,
+              "bestExpectedWeightedCoverage": 6641.829313927158
+            },
+            {
+              "evaluation": 19,
+              "start": 0,
+              "expectedWeightedCoverage": 6634.3246273515415,
+              "bestExpectedWeightedCoverage": 6641.829313927158
+            },
+            {
+              "evaluation": 20,
+              "start": 0,
+              "expectedWeightedCoverage": 6641.477765919015,
+              "bestExpectedWeightedCoverage": 6641.829313927158
+            },
+            {
+              "evaluation": 21,
+              "start": 0,
+              "expectedWeightedCoverage": 6645.782636885285,
+              "bestExpectedWeightedCoverage": 6645.782636885285
+            },
+            {
+              "evaluation": 22,
+              "start": 0,
+              "expectedWeightedCoverage": 6648.37422647948,
+              "bestExpectedWeightedCoverage": 6648.37422647948
+            },
+            {
+              "evaluation": 23,
+              "start": 0,
+              "expectedWeightedCoverage": 6649.94375676809,
+              "bestExpectedWeightedCoverage": 6649.94375676809
+            },
+            {
+              "evaluation": 24,
+              "start": 0,
+              "expectedWeightedCoverage": 6650.900127368467,
+              "bestExpectedWeightedCoverage": 6650.900127368467
+            }
+          ],
+          "starts": [
+            {
+              "start": 0,
+              "initialAngles": [
+                -0.38403808930179695,
+                2.2531371815723604,
+                0.6200499501463943,
+                -1.2749294625364866
+              ],
+              "evaluations": 24,
+              "success": false,
+              "message": "Maximum number of function evaluations has been exceeded."
+            }
+          ],
+          "gammas": [
+            3.13747266526428,
+            3.007847286724765
+          ],
+          "betas": [
+            0.6200499501463943,
+            -1.2749294625364866
+          ],
+          "trivialBypass": false,
+          "resources": {
+            "qubits": 8,
+            "layers": 2,
+            "depth": 492,
+            "twoQubitGates": 300,
+            "operationCounts": {
+              "rz": 564,
+              "cx": 300,
+              "sx": 236,
+              "x": 14
+            },
+            "basisGates": [
+              "rz",
+              "sx",
+              "x",
+              "cx"
+            ],
+            "preparationDepth": 39,
+            "preparationTwoQubitGates": 32,
+            "uniqueCoverageNeighborhoods": 12,
+            "compilationOptimizationLevel": 1
+          },
+          "preparationRecipe": "first k qubits excited; ordered ring XY sweeps at pi/7 then pi/11",
+          "optimizer": "bounded scipy Powell; total maxfev split across starts",
+          "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
+          "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
+          "timingBreakdownMs": {
+            "postTrainingExactAudit": 3.0155999993439764,
+            "compilation": 73.32400000450434
+          }
+        }
+      },
+      "random": {
+        "solver": "random",
+        "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+        "runHash": "62a23a67f43a5d22f255724034dc119fbad262c7947b2e195a74c3092641bef3",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-07",
+          "hub-08"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 9060.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 9060.0,
+        "uncoveredCommunityIds": [
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-01",
+            "travelMinutes": 9.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-07",
+            "travelMinutes": 11.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": "hub-08",
+            "travelMinutes": 9.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": "hub-08",
+            "travelMinutes": 8.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 0.0,
+          "optimizationMs": 0.0,
+          "samplingMs": 6.308700001682155,
+          "totalMs": 6.308700001682155
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "python": "3.12.14"
+          },
+          "executionMode": "classical",
+          "seed": 42,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        },
+        "diagnostics": {
+          "evaluations": 56,
+          "sampleCount": 256,
+          "counts": {
+            "00000111": 2,
+            "00001011": 8,
+            "00010011": 4,
+            "00100011": 6,
+            "01000011": 2,
+            "10000011": 4,
+            "00001101": 5,
+            "00010101": 5,
+            "00100101": 4,
+            "01000101": 4,
+            "10000101": 3,
+            "00011001": 3,
+            "00101001": 3,
+            "01001001": 3,
+            "10001001": 2,
+            "00110001": 2,
+            "01010001": 13,
+            "10010001": 5,
+            "01100001": 5,
+            "10100001": 5,
+            "11000001": 6,
+            "00001110": 4,
+            "00010110": 1,
+            "00100110": 7,
+            "01000110": 4,
+            "10000110": 1,
+            "00011010": 5,
+            "00101010": 3,
+            "01001010": 6,
+            "10001010": 6,
+            "00110010": 6,
+            "01010010": 4,
+            "10010010": 7,
+            "01100010": 6,
+            "10100010": 5,
+            "11000010": 7,
+            "00011100": 3,
+            "00101100": 7,
+            "01001100": 6,
+            "10001100": 5,
+            "00110100": 3,
+            "01010100": 4,
+            "10010100": 2,
+            "01100100": 5,
+            "10100100": 2,
+            "11000100": 4,
+            "00111000": 4,
+            "01011000": 5,
+            "10011000": 4,
+            "01101000": 7,
+            "10101000": 4,
+            "11001000": 1,
+            "01110000": 10,
+            "10110000": 4,
+            "11010000": 5,
+            "11100000": 5
+          },
+          "feasibleFraction": 1.0,
+          "expectedWeightedCoverage": 6684.921875,
+          "bestSampleWeightedCoverage": 9060.0,
+          "provenOptimal": false,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        }
+      }
+    },
+    {
+      "case": "nominal",
+      "request": {
+        "scenarioId": "riverbend",
+        "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+        "closedEdgeIds": [],
+        "hubCount": 3,
+        "responseTimeMinutes": 12.0,
+        "solver": "greedy",
+        "seed": 7,
+        "qaoa": {
+          "layers": 2,
+          "shots": 256,
+          "maxEvaluations": 24,
+          "starts": 1
+        }
+      },
+      "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+      "qaoa": {
+        "solver": "qaoa",
+        "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+        "runHash": "de5034feb45b782608facd6c3677919951f9f633cf07a7dd0bc28568fc57fc45",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-06",
+          "hub-08"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 8500.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 8500.0,
+        "uncoveredCommunityIds": [
+          "community-13",
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-06",
+            "travelMinutes": 7.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-06",
+            "travelMinutes": 3.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-06",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": "hub-08",
+            "travelMinutes": 9.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-06",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-06",
+            "travelMinutes": 9.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-14",
+            "hubId": "hub-08",
+            "travelMinutes": 8.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 65.65229999978328,
+          "optimizationMs": 3527.062399996794,
+          "samplingMs": 205.32149999780813,
+          "totalMs": 3824.675299998489
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "qiskit": "2.6.2",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "executionMode": "ideal-simulator optimization with sampled evaluation",
+          "seed": 7,
+          "parameters": {
+            "layers": 2,
+            "shots": 256,
+            "maxEvaluations": 24,
+            "starts": 1
+          }
+        },
+        "diagnostics": {
+          "counts": {
+            "00000111": 30,
+            "00001011": 4,
+            "00001110": 2,
+            "00010011": 1,
+            "00010101": 2,
+            "00010110": 8,
+            "00011001": 1,
+            "00011010": 1,
+            "00100011": 6,
+            "00100101": 1,
+            "00100110": 3,
+            "00101010": 1,
+            "00110010": 1,
+            "00110100": 1,
+            "01000011": 1,
+            "01000101": 1,
+            "01000110": 15,
+            "01001001": 1,
+            "01001010": 4,
+            "01010100": 1,
+            "01100010": 1,
+            "10000011": 3,
+            "10000101": 11,
+            "10000110": 86,
+            "10001001": 3,
+            "10001010": 9,
+            "10001100": 3,
+            "10010001": 1,
+            "10010100": 7,
+            "10011000": 3,
+            "10100001": 2,
+            "10100010": 16,
+            "10100100": 3,
+            "10110000": 4,
+            "11000100": 17,
+            "11001000": 1,
+            "11100000": 1
+          },
+          "shots": 256,
+          "samplingSeed": 4058335883,
+          "bitOrder": "rightmost bit is hubIds[0]; qubit j is hubIds[j]",
+          "expectedWeightedCoverage": 6610.155655100564,
+          "sampledExpectedWeightedCoverage": 6700.4296875,
+          "feasibleFraction": 1.0,
+          "idealFeasibleProbability": 1.0,
+          "infeasibleCounts": {},
+          "idealInfeasibleProbability": 9.748632527812998e-31,
+          "optimalWeightedCoverage": 9060.0,
+          "optimalHubSets": [
+            [
+              "hub-01",
+              "hub-07",
+              "hub-08"
+            ]
+          ],
+          "optimumProbability": 0.0007960842491227111,
+          "sampledOptimumProbability": 0.0,
+          "expectedApproximationRatio": 0.7295977544261109,
+          "evaluations": 24,
+          "convergence": [
+            {
+              "evaluation": 1,
+              "start": 0,
+              "expectedWeightedCoverage": 6594.153480829369,
+              "bestExpectedWeightedCoverage": 6594.153480829369
+            },
+            {
+              "evaluation": 2,
+              "start": 0,
+              "expectedWeightedCoverage": 6546.949911999993,
+              "bestExpectedWeightedCoverage": 6594.153480829369
+            },
+            {
+              "evaluation": 3,
+              "start": 0,
+              "expectedWeightedCoverage": 6561.746610869337,
+              "bestExpectedWeightedCoverage": 6594.153480829369
+            },
+            {
+              "evaluation": 4,
+              "start": 0,
+              "expectedWeightedCoverage": 6576.839302502305,
+              "bestExpectedWeightedCoverage": 6594.153480829369
+            },
+            {
+              "evaluation": 5,
+              "start": 0,
+              "expectedWeightedCoverage": 6588.210332873295,
+              "bestExpectedWeightedCoverage": 6594.153480829369
+            },
+            {
+              "evaluation": 6,
+              "start": 0,
+              "expectedWeightedCoverage": 6595.951502657391,
+              "bestExpectedWeightedCoverage": 6595.951502657391
+            },
+            {
+              "evaluation": 7,
+              "start": 0,
+              "expectedWeightedCoverage": 6600.990915987068,
+              "bestExpectedWeightedCoverage": 6600.990915987068
+            },
+            {
+              "evaluation": 8,
+              "start": 0,
+              "expectedWeightedCoverage": 6604.19856765393,
+              "bestExpectedWeightedCoverage": 6604.19856765393
+            },
+            {
+              "evaluation": 9,
+              "start": 0,
+              "expectedWeightedCoverage": 6606.215528036,
+              "bestExpectedWeightedCoverage": 6606.215528036
+            },
+            {
+              "evaluation": 10,
+              "start": 0,
+              "expectedWeightedCoverage": 6607.4750136080675,
+              "bestExpectedWeightedCoverage": 6607.4750136080675
+            },
+            {
+              "evaluation": 11,
+              "start": 0,
+              "expectedWeightedCoverage": 6608.2582996498795,
+              "bestExpectedWeightedCoverage": 6608.2582996498795
+            },
+            {
+              "evaluation": 12,
+              "start": 0,
+              "expectedWeightedCoverage": 6608.744247294958,
+              "bestExpectedWeightedCoverage": 6608.744247294958
+            },
+            {
+              "evaluation": 13,
+              "start": 0,
+              "expectedWeightedCoverage": 6609.045282828971,
+              "bestExpectedWeightedCoverage": 6609.045282828971
+            },
+            {
+              "evaluation": 14,
+              "start": 0,
+              "expectedWeightedCoverage": 6609.231600890649,
+              "bestExpectedWeightedCoverage": 6609.231600890649
+            },
+            {
+              "evaluation": 15,
+              "start": 0,
+              "expectedWeightedCoverage": 6609.34685391487,
+              "bestExpectedWeightedCoverage": 6609.34685391487
+            },
+            {
+              "evaluation": 16,
+              "start": 0,
+              "expectedWeightedCoverage": 6609.43030270422,
+              "bestExpectedWeightedCoverage": 6609.43030270422
+            },
+            {
+              "evaluation": 17,
+              "start": 0,
+              "expectedWeightedCoverage": 6576.3149592045675,
+              "bestExpectedWeightedCoverage": 6609.43030270422
+            },
+            {
+              "evaluation": 18,
+              "start": 0,
+              "expectedWeightedCoverage": 6601.9663643787635,
+              "bestExpectedWeightedCoverage": 6609.43030270422
+            },
+            {
+              "evaluation": 19,
+              "start": 0,
+              "expectedWeightedCoverage": 6609.151553188423,
+              "bestExpectedWeightedCoverage": 6609.43030270422
+            },
+            {
+              "evaluation": 20,
+              "start": 0,
+              "expectedWeightedCoverage": 6610.147427752504,
+              "bestExpectedWeightedCoverage": 6610.147427752504
+            },
+            {
+              "evaluation": 21,
+              "start": 0,
+              "expectedWeightedCoverage": 6610.155648538483,
+              "bestExpectedWeightedCoverage": 6610.155648538483
+            },
+            {
+              "evaluation": 22,
+              "start": 0,
+              "expectedWeightedCoverage": 6610.155655100406,
+              "bestExpectedWeightedCoverage": 6610.155655100406
+            },
+            {
+              "evaluation": 23,
+              "start": 0,
+              "expectedWeightedCoverage": 6610.155569324225,
+              "bestExpectedWeightedCoverage": 6610.155655100406
+            },
+            {
+              "evaluation": 24,
+              "start": 0,
+              "expectedWeightedCoverage": 6115.493202723114,
+              "bestExpectedWeightedCoverage": 6610.155655100406
+            }
+          ],
+          "starts": [
+            {
+              "start": 0,
+              "initialAngles": [
+                2.4957679180609933,
+                1.7321842783482628,
+                -0.8632870731848524,
+                -0.6277961312624499
+              ],
+              "evaluations": 24,
+              "success": false,
+              "message": "Maximum number of function evaluations has been exceeded."
+            }
+          ],
+          "gammas": [
+            3.137472622549854,
+            2.148706867831394
+          ],
+          "betas": [
+            -0.8632870731848524,
+            -0.6277961312624499
+          ],
+          "trivialBypass": false,
+          "resources": {
+            "qubits": 8,
+            "layers": 2,
+            "depth": 492,
+            "twoQubitGates": 300,
+            "operationCounts": {
+              "rz": 564,
+              "cx": 300,
+              "sx": 236,
+              "x": 14
+            },
+            "basisGates": [
+              "rz",
+              "sx",
+              "x",
+              "cx"
+            ],
+            "preparationDepth": 39,
+            "preparationTwoQubitGates": 32,
+            "uniqueCoverageNeighborhoods": 12,
+            "compilationOptimizationLevel": 1
+          },
+          "preparationRecipe": "first k qubits excited; ordered ring XY sweeps at pi/7 then pi/11",
+          "optimizer": "bounded scipy Powell; total maxfev split across starts",
+          "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
+          "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
+          "timingBreakdownMs": {
+            "postTrainingExactAudit": 2.656699994986411,
+            "compilation": 64.87180000112858
+          }
+        }
+      },
+      "random": {
+        "solver": "random",
+        "problemHash": "05cbc9a7e3967c42498931800735e2a005cf38f7d6e5c36a2a7ca7433df7cd71",
+        "runHash": "1167b6d459d5e00ec6190616a233da8d9a6ff4a19d13e59449c9f3272856c65b",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-07",
+          "hub-08"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 9060.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 9060.0,
+        "uncoveredCommunityIds": [
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-01",
+            "travelMinutes": 9.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-07",
+            "travelMinutes": 11.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": "hub-08",
+            "travelMinutes": 9.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": "hub-08",
+            "travelMinutes": 8.75,
+            "covered": true
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 0.0,
+          "optimizationMs": 0.0,
+          "samplingMs": 2.997000003233552,
+          "totalMs": 2.997000003233552
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "python": "3.12.14"
+          },
+          "executionMode": "classical",
+          "seed": 7,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        },
+        "diagnostics": {
+          "evaluations": 56,
+          "sampleCount": 256,
+          "counts": {
+            "00000111": 4,
+            "00001011": 5,
+            "00010011": 8,
+            "00100011": 3,
+            "01000011": 5,
+            "10000011": 2,
+            "00001101": 9,
+            "00010101": 8,
+            "00100101": 5,
+            "01000101": 3,
+            "10000101": 8,
+            "00011001": 3,
+            "00101001": 4,
+            "01001001": 4,
+            "10001001": 7,
+            "00110001": 5,
+            "01010001": 7,
+            "10010001": 5,
+            "01100001": 1,
+            "10100001": 7,
+            "11000001": 4,
+            "00001110": 5,
+            "00010110": 6,
+            "00100110": 6,
+            "01000110": 4,
+            "10000110": 5,
+            "00011010": 6,
+            "00101010": 5,
+            "01001010": 4,
+            "10001010": 4,
+            "00110010": 4,
+            "01010010": 1,
+            "10010010": 5,
+            "01100010": 4,
+            "10100010": 7,
+            "11000010": 4,
+            "00011100": 3,
+            "00101100": 4,
+            "01001100": 3,
+            "10001100": 5,
+            "00110100": 4,
+            "01010100": 5,
+            "10010100": 3,
+            "01100100": 2,
+            "10100100": 6,
+            "11000100": 5,
+            "00111000": 4,
+            "01011000": 3,
+            "10011000": 6,
+            "01101000": 3,
+            "10101000": 4,
+            "11001000": 5,
+            "01110000": 1,
+            "10110000": 5,
+            "11010000": 4,
+            "11100000": 4
+          },
+          "feasibleFraction": 1.0,
+          "expectedWeightedCoverage": 6722.7734375,
+          "bestSampleWeightedCoverage": 9060.0,
+          "provenOptimal": false,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        }
+      }
+    },
+    {
+      "case": "bridge closed",
+      "request": {
+        "scenarioId": "riverbend",
+        "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+        "closedEdgeIds": [
+          "bridge-main"
+        ],
+        "hubCount": 3,
+        "responseTimeMinutes": 12.0,
+        "solver": "greedy",
+        "seed": 42,
+        "qaoa": {
+          "layers": 1,
+          "shots": 256,
+          "maxEvaluations": 24,
+          "starts": 1
+        }
+      },
+      "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+      "qaoa": {
+        "solver": "qaoa",
+        "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+        "runHash": "0b48ce87206d8a837cefe207c3ed4a9f21bdc912c1046cc8312cd193210afa14",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-03",
+          "hub-07"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 8140.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 8140.0,
+        "uncoveredCommunityIds": [
+          "community-10",
+          "community-14",
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-01",
+            "travelMinutes": 9.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-03",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-03",
+            "travelMinutes": 9.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-03",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 37.03210000094259,
+          "optimizationMs": 1271.392399998149,
+          "samplingMs": 51.3379000040004,
+          "totalMs": 1381.1736999996356
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "qiskit": "2.6.2",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "executionMode": "ideal-simulator optimization with sampled evaluation",
+          "seed": 42,
+          "parameters": {
+            "layers": 1,
+            "shots": 256,
+            "maxEvaluations": 24,
+            "starts": 1
+          }
+        },
+        "diagnostics": {
+          "counts": {
+            "00000111": 12,
+            "00001011": 14,
+            "00001101": 10,
+            "00010011": 9,
+            "00010101": 14,
+            "00010110": 2,
+            "00011001": 1,
+            "00011010": 3,
+            "00100101": 5,
+            "00101001": 2,
+            "00101100": 4,
+            "00110001": 2,
+            "00110100": 1,
+            "01000101": 2,
+            "01000110": 4,
+            "01001001": 7,
+            "01001010": 2,
+            "01001100": 4,
+            "01010001": 2,
+            "01010010": 3,
+            "01010100": 7,
+            "10000011": 2,
+            "10000101": 3,
+            "10000110": 20,
+            "10001001": 8,
+            "10001010": 23,
+            "10001100": 15,
+            "10010001": 8,
+            "10010010": 19,
+            "10010100": 32,
+            "10011000": 2,
+            "10100001": 2,
+            "10100100": 5,
+            "10110000": 2,
+            "11000100": 1,
+            "11001000": 2,
+            "11010000": 1,
+            "11100000": 1
+          },
+          "shots": 256,
+          "samplingSeed": 383329928,
+          "bitOrder": "rightmost bit is hubIds[0]; qubit j is hubIds[j]",
+          "expectedWeightedCoverage": 6497.864874653036,
+          "sampledExpectedWeightedCoverage": 6543.203125,
+          "feasibleFraction": 1.0,
+          "idealFeasibleProbability": 0.9999999999999999,
+          "infeasibleCounts": {},
+          "idealInfeasibleProbability": 4.2680680700844055e-32,
+          "optimalWeightedCoverage": 8140.0,
+          "optimalHubSets": [
+            [
+              "hub-01",
+              "hub-02",
+              "hub-07"
+            ],
+            [
+              "hub-01",
+              "hub-03",
+              "hub-07"
+            ],
+            [
+              "hub-01",
+              "hub-04",
+              "hub-07"
+            ]
+          ],
+          "optimumProbability": 0.019717231360922384,
+          "sampledOptimumProbability": 0.03515625,
+          "expectedApproximationRatio": 0.7982634981146236,
+          "evaluations": 24,
+          "convergence": [
+            {
+              "evaluation": 1,
+              "start": 0,
+              "expectedWeightedCoverage": 5715.068027738504,
+              "bestExpectedWeightedCoverage": 5715.068027738504
+            },
+            {
+              "evaluation": 2,
+              "start": 0,
+              "expectedWeightedCoverage": 5715.477757681775,
+              "bestExpectedWeightedCoverage": 5715.477757681775
+            },
+            {
+              "evaluation": 3,
+              "start": 0,
+              "expectedWeightedCoverage": 5715.477757681774,
+              "bestExpectedWeightedCoverage": 5715.477757681775
+            },
+            {
+              "evaluation": 4,
+              "start": 0,
+              "expectedWeightedCoverage": 5717.719740552726,
+              "bestExpectedWeightedCoverage": 5717.719740552726
+            },
+            {
+              "evaluation": 5,
+              "start": 0,
+              "expectedWeightedCoverage": 5719.966065904751,
+              "bestExpectedWeightedCoverage": 5719.966065904751
+            },
+            {
+              "evaluation": 6,
+              "start": 0,
+              "expectedWeightedCoverage": 5721.685030051608,
+              "bestExpectedWeightedCoverage": 5721.685030051608
+            },
+            {
+              "evaluation": 7,
+              "start": 0,
+              "expectedWeightedCoverage": 5722.874283443502,
+              "bestExpectedWeightedCoverage": 5722.874283443502
+            },
+            {
+              "evaluation": 8,
+              "start": 0,
+              "expectedWeightedCoverage": 5723.657898292643,
+              "bestExpectedWeightedCoverage": 5723.657898292643
+            },
+            {
+              "evaluation": 9,
+              "start": 0,
+              "expectedWeightedCoverage": 5724.160807428598,
+              "bestExpectedWeightedCoverage": 5724.160807428598
+            },
+            {
+              "evaluation": 10,
+              "start": 0,
+              "expectedWeightedCoverage": 5724.478739758378,
+              "bestExpectedWeightedCoverage": 5724.478739758378
+            },
+            {
+              "evaluation": 11,
+              "start": 0,
+              "expectedWeightedCoverage": 5724.6779536582835,
+              "bestExpectedWeightedCoverage": 5724.6779536582835
+            },
+            {
+              "evaluation": 12,
+              "start": 0,
+              "expectedWeightedCoverage": 5724.802114469983,
+              "bestExpectedWeightedCoverage": 5724.802114469983
+            },
+            {
+              "evaluation": 13,
+              "start": 0,
+              "expectedWeightedCoverage": 5724.879247391129,
+              "bestExpectedWeightedCoverage": 5724.879247391129
+            },
+            {
+              "evaluation": 14,
+              "start": 0,
+              "expectedWeightedCoverage": 5724.927069951859,
+              "bestExpectedWeightedCoverage": 5724.927069951859
+            },
+            {
+              "evaluation": 15,
+              "start": 0,
+              "expectedWeightedCoverage": 5724.956683907322,
+              "bestExpectedWeightedCoverage": 5724.956683907322
+            },
+            {
+              "evaluation": 16,
+              "start": 0,
+              "expectedWeightedCoverage": 5724.978141192614,
+              "bestExpectedWeightedCoverage": 5724.978141192614
+            },
+            {
+              "evaluation": 17,
+              "start": 0,
+              "expectedWeightedCoverage": 5684.639469379614,
+              "bestExpectedWeightedCoverage": 5724.978141192614
+            },
+            {
+              "evaluation": 18,
+              "start": 0,
+              "expectedWeightedCoverage": 6429.136825778409,
+              "bestExpectedWeightedCoverage": 6429.136825778409
+            },
+            {
+              "evaluation": 19,
+              "start": 0,
+              "expectedWeightedCoverage": 6309.952533511073,
+              "bestExpectedWeightedCoverage": 6429.136825778409
+            },
+            {
+              "evaluation": 20,
+              "start": 0,
+              "expectedWeightedCoverage": 6482.482347947592,
+              "bestExpectedWeightedCoverage": 6482.482347947592
+            },
+            {
+              "evaluation": 21,
+              "start": 0,
+              "expectedWeightedCoverage": 6496.702106373446,
+              "bestExpectedWeightedCoverage": 6496.702106373446
+            },
+            {
+              "evaluation": 22,
+              "start": 0,
+              "expectedWeightedCoverage": 6497.500221178765,
+              "bestExpectedWeightedCoverage": 6497.500221178765
+            },
+            {
+              "evaluation": 23,
+              "start": 0,
+              "expectedWeightedCoverage": 6497.864874653014,
+              "bestExpectedWeightedCoverage": 6497.864874653014
+            },
+            {
+              "evaluation": 24,
+              "start": 0,
+              "expectedWeightedCoverage": 6497.844584175166,
+              "bestExpectedWeightedCoverage": 6497.864874653014
+            }
+          ],
+          "starts": [
+            {
+              "start": 0,
+              "initialAngles": [
+                -0.38403808930179695,
+                1.1265685907861802
+              ],
+              "evaluations": 24,
+              "success": false,
+              "message": "Maximum number of function evaluations has been exceeded."
+            }
+          ],
+          "gammas": [
+            -3.1374726538718694
+          ],
+          "betas": [
+            0.5634258316636342
+          ],
+          "trivialBypass": false,
+          "resources": {
+            "qubits": 8,
+            "layers": 1,
+            "depth": 124,
+            "twoQubitGates": 108,
+            "operationCounts": {
+              "rz": 263,
+              "sx": 152,
+              "cx": 108,
+              "x": 8
+            },
+            "basisGates": [
+              "rz",
+              "sx",
+              "x",
+              "cx"
+            ],
+            "preparationDepth": 39,
+            "preparationTwoQubitGates": 32,
+            "uniqueCoverageNeighborhoods": 11,
+            "compilationOptimizationLevel": 1
+          },
+          "preparationRecipe": "first k qubits excited; ordered ring XY sweeps at pi/7 then pi/11",
+          "optimizer": "bounded scipy Powell; total maxfev split across starts",
+          "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
+          "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
+          "timingBreakdownMs": {
+            "postTrainingExactAudit": 3.0475000021397136,
+            "compilation": 35.47190000244882
+          }
+        }
+      },
+      "random": {
+        "solver": "random",
+        "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+        "runHash": "e85d68b6048b98c36b571720b65bf947fb14dac8e5cfaf3e2da6a70f50764a05",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-02",
+          "hub-07"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 8140.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 8140.0,
+        "uncoveredCommunityIds": [
+          "community-10",
+          "community-14",
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-02",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-02",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-02",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 0.0,
+          "optimizationMs": 0.0,
+          "samplingMs": 4.308899995521642,
+          "totalMs": 4.308899995521642
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "python": "3.12.14"
+          },
+          "executionMode": "classical",
+          "seed": 42,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        },
+        "diagnostics": {
+          "evaluations": 56,
+          "sampleCount": 256,
+          "counts": {
+            "00000111": 2,
+            "00001011": 8,
+            "00010011": 4,
+            "00100011": 6,
+            "01000011": 2,
+            "10000011": 4,
+            "00001101": 5,
+            "00010101": 5,
+            "00100101": 4,
+            "01000101": 4,
+            "10000101": 3,
+            "00011001": 3,
+            "00101001": 3,
+            "01001001": 3,
+            "10001001": 2,
+            "00110001": 2,
+            "01010001": 13,
+            "10010001": 5,
+            "01100001": 5,
+            "10100001": 5,
+            "11000001": 6,
+            "00001110": 4,
+            "00010110": 1,
+            "00100110": 7,
+            "01000110": 4,
+            "10000110": 1,
+            "00011010": 5,
+            "00101010": 3,
+            "01001010": 6,
+            "10001010": 6,
+            "00110010": 6,
+            "01010010": 4,
+            "10010010": 7,
+            "01100010": 6,
+            "10100010": 5,
+            "11000010": 7,
+            "00011100": 3,
+            "00101100": 7,
+            "01001100": 6,
+            "10001100": 5,
+            "00110100": 3,
+            "01010100": 4,
+            "10010100": 2,
+            "01100100": 5,
+            "10100100": 2,
+            "11000100": 4,
+            "00111000": 4,
+            "01011000": 5,
+            "10011000": 4,
+            "01101000": 7,
+            "10101000": 4,
+            "11001000": 1,
+            "01110000": 10,
+            "10110000": 4,
+            "11010000": 5,
+            "11100000": 5
+          },
+          "feasibleFraction": 1.0,
+          "expectedWeightedCoverage": 6366.2890625,
+          "bestSampleWeightedCoverage": 8140.0,
+          "provenOptimal": false,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        }
+      }
+    },
+    {
+      "case": "bridge closed",
+      "request": {
+        "scenarioId": "riverbend",
+        "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+        "closedEdgeIds": [
+          "bridge-main"
+        ],
+        "hubCount": 3,
+        "responseTimeMinutes": 12.0,
+        "solver": "greedy",
+        "seed": 7,
+        "qaoa": {
+          "layers": 1,
+          "shots": 256,
+          "maxEvaluations": 24,
+          "starts": 1
+        }
+      },
+      "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+      "qaoa": {
+        "solver": "qaoa",
+        "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+        "runHash": "879ed011a91bb9fc80aa8ac689182d0a85a6998b3f9dc152b954dbc002ad06c8",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-02",
+          "hub-07"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 8140.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 8140.0,
+        "uncoveredCommunityIds": [
+          "community-10",
+          "community-14",
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-02",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-02",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-02",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 54.06109999603359,
+          "optimizationMs": 1160.8277000050293,
+          "samplingMs": 44.22999999951571,
+          "totalMs": 1274.876099996618
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "qiskit": "2.6.2",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "executionMode": "ideal-simulator optimization with sampled evaluation",
+          "seed": 7,
+          "parameters": {
+            "layers": 1,
+            "shots": 256,
+            "maxEvaluations": 24,
+            "starts": 1
+          }
+        },
+        "diagnostics": {
+          "counts": {
+            "00000111": 8,
+            "00001011": 10,
+            "00001101": 11,
+            "00010011": 7,
+            "00010101": 13,
+            "00010110": 5,
+            "00011010": 1,
+            "00100101": 4,
+            "00100110": 1,
+            "00110001": 3,
+            "00110100": 3,
+            "01000011": 2,
+            "01000110": 5,
+            "01001001": 5,
+            "01001010": 3,
+            "01001100": 7,
+            "01010001": 5,
+            "01010010": 2,
+            "01010100": 9,
+            "01100001": 2,
+            "01100100": 1,
+            "10000011": 5,
+            "10000110": 22,
+            "10001001": 12,
+            "10001010": 12,
+            "10001100": 23,
+            "10010001": 9,
+            "10010010": 22,
+            "10010100": 35,
+            "10011000": 1,
+            "10100100": 4,
+            "10101000": 1,
+            "10110000": 1,
+            "11000010": 1,
+            "11010000": 1
+          },
+          "shots": 256,
+          "samplingSeed": 4058335883,
+          "bitOrder": "rightmost bit is hubIds[0]; qubit j is hubIds[j]",
+          "expectedWeightedCoverage": 6548.7837262824605,
+          "sampledExpectedWeightedCoverage": 6618.828125,
+          "feasibleFraction": 1.0,
+          "idealFeasibleProbability": 1.0,
+          "infeasibleCounts": {},
+          "idealInfeasibleProbability": 4.74841953879553e-32,
+          "optimalWeightedCoverage": 8140.0,
+          "optimalHubSets": [
+            [
+              "hub-01",
+              "hub-02",
+              "hub-07"
+            ],
+            [
+              "hub-01",
+              "hub-03",
+              "hub-07"
+            ],
+            [
+              "hub-01",
+              "hub-04",
+              "hub-07"
+            ]
+          ],
+          "optimumProbability": 0.019648278528753477,
+          "sampledOptimumProbability": 0.02734375,
+          "expectedApproximationRatio": 0.8045188852926856,
+          "evaluations": 24,
+          "convergence": [
+            {
+              "evaluation": 1,
+              "start": 0,
+              "expectedWeightedCoverage": 6255.027327821413,
+              "bestExpectedWeightedCoverage": 6255.027327821413
+            },
+            {
+              "evaluation": 2,
+              "start": 0,
+              "expectedWeightedCoverage": 6260.271646496044,
+              "bestExpectedWeightedCoverage": 6260.271646496044
+            },
+            {
+              "evaluation": 3,
+              "start": 0,
+              "expectedWeightedCoverage": 6260.271646496046,
+              "bestExpectedWeightedCoverage": 6260.271646496046
+            },
+            {
+              "evaluation": 4,
+              "start": 0,
+              "expectedWeightedCoverage": 6258.180945732812,
+              "bestExpectedWeightedCoverage": 6260.271646496046
+            },
+            {
+              "evaluation": 5,
+              "start": 0,
+              "expectedWeightedCoverage": 6260.806083012456,
+              "bestExpectedWeightedCoverage": 6260.806083012456
+            },
+            {
+              "evaluation": 6,
+              "start": 0,
+              "expectedWeightedCoverage": 6260.80607216809,
+              "bestExpectedWeightedCoverage": 6260.806083012456
+            },
+            {
+              "evaluation": 7,
+              "start": 0,
+              "expectedWeightedCoverage": 6260.806072168093,
+              "bestExpectedWeightedCoverage": 6260.806083012456
+            },
+            {
+              "evaluation": 8,
+              "start": 0,
+              "expectedWeightedCoverage": 5602.223439307794,
+              "bestExpectedWeightedCoverage": 6260.806083012456
+            },
+            {
+              "evaluation": 9,
+              "start": 0,
+              "expectedWeightedCoverage": 6488.7204335434235,
+              "bestExpectedWeightedCoverage": 6488.7204335434235
+            },
+            {
+              "evaluation": 10,
+              "start": 0,
+              "expectedWeightedCoverage": 6323.428315688682,
+              "bestExpectedWeightedCoverage": 6488.7204335434235
+            },
+            {
+              "evaluation": 11,
+              "start": 0,
+              "expectedWeightedCoverage": 6534.854408149272,
+              "bestExpectedWeightedCoverage": 6534.854408149272
+            },
+            {
+              "evaluation": 12,
+              "start": 0,
+              "expectedWeightedCoverage": 6548.175017530643,
+              "bestExpectedWeightedCoverage": 6548.175017530643
+            },
+            {
+              "evaluation": 13,
+              "start": 0,
+              "expectedWeightedCoverage": 6548.692844738913,
+              "bestExpectedWeightedCoverage": 6548.692844738913
+            },
+            {
+              "evaluation": 14,
+              "start": 0,
+              "expectedWeightedCoverage": 6548.783726282434,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            },
+            {
+              "evaluation": 15,
+              "start": 0,
+              "expectedWeightedCoverage": 6548.761443302477,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            },
+            {
+              "evaluation": 16,
+              "start": 0,
+              "expectedWeightedCoverage": 6316.340430564806,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            },
+            {
+              "evaluation": 17,
+              "start": 0,
+              "expectedWeightedCoverage": 6522.980870528475,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            },
+            {
+              "evaluation": 18,
+              "start": 0,
+              "expectedWeightedCoverage": 6524.903551746134,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            },
+            {
+              "evaluation": 19,
+              "start": 0,
+              "expectedWeightedCoverage": 6437.06919819594,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            },
+            {
+              "evaluation": 20,
+              "start": 0,
+              "expectedWeightedCoverage": 6548.774407590196,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            },
+            {
+              "evaluation": 21,
+              "start": 0,
+              "expectedWeightedCoverage": 6548.782152993411,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            },
+            {
+              "evaluation": 22,
+              "start": 0,
+              "expectedWeightedCoverage": 6548.783618642954,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            },
+            {
+              "evaluation": 23,
+              "start": 0,
+              "expectedWeightedCoverage": 6545.043127353474,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            },
+            {
+              "evaluation": 24,
+              "start": 0,
+              "expectedWeightedCoverage": 6548.778797249172,
+              "bestExpectedWeightedCoverage": 6548.783726282434
+            }
+          ],
+          "starts": [
+            {
+              "start": 0,
+              "initialAngles": [
+                2.4957679180609933,
+                0.8660921391741314
+              ],
+              "evaluations": 24,
+              "success": false,
+              "message": "Maximum number of function evaluations has been exceeded."
+            }
+          ],
+          "gammas": [
+            3.6193270602780103e-13
+          ],
+          "betas": [
+            0.5403400674859702
+          ],
+          "trivialBypass": false,
+          "resources": {
+            "qubits": 8,
+            "layers": 1,
+            "depth": 97,
+            "twoQubitGates": 92,
+            "operationCounts": {
+              "rz": 228,
+              "sx": 152,
+              "cx": 92,
+              "x": 8
+            },
+            "basisGates": [
+              "rz",
+              "sx",
+              "x",
+              "cx"
+            ],
+            "preparationDepth": 39,
+            "preparationTwoQubitGates": 32,
+            "uniqueCoverageNeighborhoods": 11,
+            "compilationOptimizationLevel": 1
+          },
+          "preparationRecipe": "first k qubits excited; ordered ring XY sweeps at pi/7 then pi/11",
+          "optimizer": "bounded scipy Powell; total maxfev split across starts",
+          "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
+          "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
+          "timingBreakdownMs": {
+            "postTrainingExactAudit": 2.660599995579105,
+            "compilation": 52.78369999723509
+          }
+        }
+      },
+      "random": {
+        "solver": "random",
+        "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+        "runHash": "6c383cbe187caca2cad6b45c0e19f72075ae22ada5eb1248ce5b1eef86176d22",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-02",
+          "hub-07"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 8140.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 8140.0,
+        "uncoveredCommunityIds": [
+          "community-10",
+          "community-14",
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-02",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-02",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-02",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 0.0,
+          "optimizationMs": 0.0,
+          "samplingMs": 5.149199998413678,
+          "totalMs": 5.149199998413678
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "python": "3.12.14"
+          },
+          "executionMode": "classical",
+          "seed": 7,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        },
+        "diagnostics": {
+          "evaluations": 56,
+          "sampleCount": 256,
+          "counts": {
+            "00000111": 4,
+            "00001011": 5,
+            "00010011": 8,
+            "00100011": 3,
+            "01000011": 5,
+            "10000011": 2,
+            "00001101": 9,
+            "00010101": 8,
+            "00100101": 5,
+            "01000101": 3,
+            "10000101": 8,
+            "00011001": 3,
+            "00101001": 4,
+            "01001001": 4,
+            "10001001": 7,
+            "00110001": 5,
+            "01010001": 7,
+            "10010001": 5,
+            "01100001": 1,
+            "10100001": 7,
+            "11000001": 4,
+            "00001110": 5,
+            "00010110": 6,
+            "00100110": 6,
+            "01000110": 4,
+            "10000110": 5,
+            "00011010": 6,
+            "00101010": 5,
+            "01001010": 4,
+            "10001010": 4,
+            "00110010": 4,
+            "01010010": 1,
+            "10010010": 5,
+            "01100010": 4,
+            "10100010": 7,
+            "11000010": 4,
+            "00011100": 3,
+            "00101100": 4,
+            "01001100": 3,
+            "10001100": 5,
+            "00110100": 4,
+            "01010100": 5,
+            "10010100": 3,
+            "01100100": 2,
+            "10100100": 6,
+            "11000100": 5,
+            "00111000": 4,
+            "01011000": 3,
+            "10011000": 6,
+            "01101000": 3,
+            "10101000": 4,
+            "11001000": 5,
+            "01110000": 1,
+            "10110000": 5,
+            "11010000": 4,
+            "11100000": 4
+          },
+          "feasibleFraction": 1.0,
+          "expectedWeightedCoverage": 6510.703125,
+          "bestSampleWeightedCoverage": 8140.0,
+          "provenOptimal": false,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        }
+      }
+    },
+    {
+      "case": "bridge closed",
+      "request": {
+        "scenarioId": "riverbend",
+        "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+        "closedEdgeIds": [
+          "bridge-main"
+        ],
+        "hubCount": 3,
+        "responseTimeMinutes": 12.0,
+        "solver": "greedy",
+        "seed": 42,
+        "qaoa": {
+          "layers": 2,
+          "shots": 256,
+          "maxEvaluations": 24,
+          "starts": 1
+        }
+      },
+      "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+      "qaoa": {
+        "solver": "qaoa",
+        "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+        "runHash": "5b93e798306f88a676686761d5ae51ccaaea28c4b4bf7778d84758c03a409b35",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-02",
+          "hub-07"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 8140.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 8140.0,
+        "uncoveredCommunityIds": [
+          "community-10",
+          "community-14",
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-02",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-02",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-02",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 39.883999997982755,
+          "optimizationMs": 1652.1686999985832,
+          "samplingMs": 58.07279999862658,
+          "totalMs": 1768.6094000018784
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "qiskit": "2.6.2",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "executionMode": "ideal-simulator optimization with sampled evaluation",
+          "seed": 42,
+          "parameters": {
+            "layers": 2,
+            "shots": 256,
+            "maxEvaluations": 24,
+            "starts": 1
+          }
+        },
+        "diagnostics": {
+          "counts": {
+            "00000111": 11,
+            "00001011": 7,
+            "00001110": 5,
+            "00010011": 6,
+            "00010101": 2,
+            "00010110": 5,
+            "00011001": 16,
+            "00011010": 1,
+            "00011100": 3,
+            "00100011": 4,
+            "00100110": 15,
+            "00101010": 14,
+            "00101100": 1,
+            "00110010": 11,
+            "00110100": 1,
+            "00111000": 9,
+            "01000011": 11,
+            "01000101": 12,
+            "01000110": 1,
+            "01001001": 4,
+            "01001100": 1,
+            "01010001": 20,
+            "01010100": 3,
+            "01011000": 1,
+            "01100001": 1,
+            "01100010": 6,
+            "01100100": 3,
+            "01101000": 8,
+            "01110000": 15,
+            "10000011": 2,
+            "10000101": 2,
+            "10000110": 12,
+            "10010001": 3,
+            "10010010": 3,
+            "10010100": 6,
+            "10100001": 1,
+            "10100010": 13,
+            "10100100": 2,
+            "10110000": 3,
+            "11000001": 2,
+            "11000100": 1,
+            "11100000": 9
+          },
+          "shots": 256,
+          "samplingSeed": 383329928,
+          "bitOrder": "rightmost bit is hubIds[0]; qubit j is hubIds[j]",
+          "expectedWeightedCoverage": 6347.458461449891,
+          "sampledExpectedWeightedCoverage": 6392.3046875,
+          "feasibleFraction": 1.0,
+          "idealFeasibleProbability": 1.0,
+          "infeasibleCounts": {},
+          "idealInfeasibleProbability": 1.042684619118927e-31,
+          "optimalWeightedCoverage": 8140.0,
+          "optimalHubSets": [
+            [
+              "hub-01",
+              "hub-02",
+              "hub-07"
+            ],
+            [
+              "hub-01",
+              "hub-03",
+              "hub-07"
+            ],
+            [
+              "hub-01",
+              "hub-04",
+              "hub-07"
+            ]
+          ],
+          "optimumProbability": 0.07696707339431395,
+          "sampledOptimumProbability": 0.10546875,
+          "expectedApproximationRatio": 0.7797860517751709,
+          "evaluations": 24,
+          "convergence": [
+            {
+              "evaluation": 1,
+              "start": 0,
+              "expectedWeightedCoverage": 6289.161713299137,
+              "bestExpectedWeightedCoverage": 6289.161713299137
+            },
+            {
+              "evaluation": 2,
+              "start": 0,
+              "expectedWeightedCoverage": 6287.395548759486,
+              "bestExpectedWeightedCoverage": 6289.161713299137
+            },
+            {
+              "evaluation": 3,
+              "start": 0,
+              "expectedWeightedCoverage": 6300.010869608044,
+              "bestExpectedWeightedCoverage": 6300.010869608044
+            },
+            {
+              "evaluation": 4,
+              "start": 0,
+              "expectedWeightedCoverage": 6314.3233747027725,
+              "bestExpectedWeightedCoverage": 6314.3233747027725
+            },
+            {
+              "evaluation": 5,
+              "start": 0,
+              "expectedWeightedCoverage": 6325.328031448978,
+              "bestExpectedWeightedCoverage": 6325.328031448978
+            },
+            {
+              "evaluation": 6,
+              "start": 0,
+              "expectedWeightedCoverage": 6332.855100448226,
+              "bestExpectedWeightedCoverage": 6332.855100448226
+            },
+            {
+              "evaluation": 7,
+              "start": 0,
+              "expectedWeightedCoverage": 6337.758400537839,
+              "bestExpectedWeightedCoverage": 6337.758400537839
+            },
+            {
+              "evaluation": 8,
+              "start": 0,
+              "expectedWeightedCoverage": 6340.878354278682,
+              "bestExpectedWeightedCoverage": 6340.878354278682
+            },
+            {
+              "evaluation": 9,
+              "start": 0,
+              "expectedWeightedCoverage": 6342.839231165756,
+              "bestExpectedWeightedCoverage": 6342.839231165756
+            },
+            {
+              "evaluation": 10,
+              "start": 0,
+              "expectedWeightedCoverage": 6344.063211685897,
+              "bestExpectedWeightedCoverage": 6344.063211685897
+            },
+            {
+              "evaluation": 11,
+              "start": 0,
+              "expectedWeightedCoverage": 6344.824202585243,
+              "bestExpectedWeightedCoverage": 6344.824202585243
+            },
+            {
+              "evaluation": 12,
+              "start": 0,
+              "expectedWeightedCoverage": 6345.296229664854,
+              "bestExpectedWeightedCoverage": 6345.296229664854
+            },
+            {
+              "evaluation": 13,
+              "start": 0,
+              "expectedWeightedCoverage": 6345.588606137724,
+              "bestExpectedWeightedCoverage": 6345.588606137724
+            },
+            {
+              "evaluation": 14,
+              "start": 0,
+              "expectedWeightedCoverage": 6345.769550944162,
+              "bestExpectedWeightedCoverage": 6345.769550944162
+            },
+            {
+              "evaluation": 15,
+              "start": 0,
+              "expectedWeightedCoverage": 6345.88147474711,
+              "bestExpectedWeightedCoverage": 6345.88147474711
+            },
+            {
+              "evaluation": 16,
+              "start": 0,
+              "expectedWeightedCoverage": 6345.962511446559,
+              "bestExpectedWeightedCoverage": 6345.962511446559
+            },
+            {
+              "evaluation": 17,
+              "start": 0,
+              "expectedWeightedCoverage": 6317.9909053085685,
+              "bestExpectedWeightedCoverage": 6345.962511446559
+            },
+            {
+              "evaluation": 18,
+              "start": 0,
+              "expectedWeightedCoverage": 6335.356428584068,
+              "bestExpectedWeightedCoverage": 6345.962511446559
+            },
+            {
+              "evaluation": 19,
+              "start": 0,
+              "expectedWeightedCoverage": 6342.886889676181,
+              "bestExpectedWeightedCoverage": 6345.962511446559
+            },
+            {
+              "evaluation": 20,
+              "start": 0,
+              "expectedWeightedCoverage": 6345.85252702396,
+              "bestExpectedWeightedCoverage": 6345.962511446559
+            },
+            {
+              "evaluation": 21,
+              "start": 0,
+              "expectedWeightedCoverage": 6346.946827746616,
+              "bestExpectedWeightedCoverage": 6346.946827746616
+            },
+            {
+              "evaluation": 22,
+              "start": 0,
+              "expectedWeightedCoverage": 6347.321942447328,
+              "bestExpectedWeightedCoverage": 6347.321942447328
+            },
+            {
+              "evaluation": 23,
+              "start": 0,
+              "expectedWeightedCoverage": 6347.457835521698,
+              "bestExpectedWeightedCoverage": 6347.457835521698
+            },
+            {
+              "evaluation": 24,
+              "start": 0,
+              "expectedWeightedCoverage": 6347.458461449821,
+              "bestExpectedWeightedCoverage": 6347.458461449821
+            }
+          ],
+          "starts": [
+            {
+              "start": 0,
+              "initialAngles": [
+                -0.38403808930179695,
+                2.2531371815723604,
+                0.6200499501463943,
+                -1.2749294625364866
+              ],
+              "evaluations": 24,
+              "success": false,
+              "message": "Maximum number of function evaluations has been exceeded."
+            }
+          ],
+          "gammas": [
+            3.13747266526428,
+            3.0224686680610144
+          ],
+          "betas": [
+            0.6200499501463943,
+            -1.2749294625364866
+          ],
+          "trivialBypass": false,
+          "resources": {
+            "qubits": 8,
+            "layers": 2,
+            "depth": 209,
+            "twoQubitGates": 184,
+            "operationCounts": {
+              "rz": 402,
+              "sx": 208,
+              "cx": 184,
+              "x": 14
+            },
+            "basisGates": [
+              "rz",
+              "sx",
+              "x",
+              "cx"
+            ],
+            "preparationDepth": 39,
+            "preparationTwoQubitGates": 32,
+            "uniqueCoverageNeighborhoods": 11,
+            "compilationOptimizationLevel": 1
+          },
+          "preparationRecipe": "first k qubits excited; ordered ring XY sweeps at pi/7 then pi/11",
+          "optimizer": "bounded scipy Powell; total maxfev split across starts",
+          "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
+          "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
+          "timingBreakdownMs": {
+            "postTrainingExactAudit": 1.5390000044135377,
+            "compilation": 39.05259999737609
+          }
+        }
+      },
+      "random": {
+        "solver": "random",
+        "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+        "runHash": "0ca6ea295759fe9d57e698af902039104762abdbb7f5a754c12567e1c1442c92",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-02",
+          "hub-07"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 8140.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 8140.0,
+        "uncoveredCommunityIds": [
+          "community-10",
+          "community-14",
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-02",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-02",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-02",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 0.0,
+          "optimizationMs": 0.0,
+          "samplingMs": 2.61799999861978,
+          "totalMs": 2.61799999861978
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "python": "3.12.14"
+          },
+          "executionMode": "classical",
+          "seed": 42,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        },
+        "diagnostics": {
+          "evaluations": 56,
+          "sampleCount": 256,
+          "counts": {
+            "00000111": 2,
+            "00001011": 8,
+            "00010011": 4,
+            "00100011": 6,
+            "01000011": 2,
+            "10000011": 4,
+            "00001101": 5,
+            "00010101": 5,
+            "00100101": 4,
+            "01000101": 4,
+            "10000101": 3,
+            "00011001": 3,
+            "00101001": 3,
+            "01001001": 3,
+            "10001001": 2,
+            "00110001": 2,
+            "01010001": 13,
+            "10010001": 5,
+            "01100001": 5,
+            "10100001": 5,
+            "11000001": 6,
+            "00001110": 4,
+            "00010110": 1,
+            "00100110": 7,
+            "01000110": 4,
+            "10000110": 1,
+            "00011010": 5,
+            "00101010": 3,
+            "01001010": 6,
+            "10001010": 6,
+            "00110010": 6,
+            "01010010": 4,
+            "10010010": 7,
+            "01100010": 6,
+            "10100010": 5,
+            "11000010": 7,
+            "00011100": 3,
+            "00101100": 7,
+            "01001100": 6,
+            "10001100": 5,
+            "00110100": 3,
+            "01010100": 4,
+            "10010100": 2,
+            "01100100": 5,
+            "10100100": 2,
+            "11000100": 4,
+            "00111000": 4,
+            "01011000": 5,
+            "10011000": 4,
+            "01101000": 7,
+            "10101000": 4,
+            "11001000": 1,
+            "01110000": 10,
+            "10110000": 4,
+            "11010000": 5,
+            "11100000": 5
+          },
+          "feasibleFraction": 1.0,
+          "expectedWeightedCoverage": 6366.2890625,
+          "bestSampleWeightedCoverage": 8140.0,
+          "provenOptimal": false,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        }
+      }
+    },
+    {
+      "case": "bridge closed",
+      "request": {
+        "scenarioId": "riverbend",
+        "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+        "closedEdgeIds": [
+          "bridge-main"
+        ],
+        "hubCount": 3,
+        "responseTimeMinutes": 12.0,
+        "solver": "greedy",
+        "seed": 7,
+        "qaoa": {
+          "layers": 2,
+          "shots": 256,
+          "maxEvaluations": 24,
+          "starts": 1
+        }
+      },
+      "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+      "qaoa": {
+        "solver": "qaoa",
+        "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+        "runHash": "ed3375518395a763cf3f53d38c7451afb0e7fe60f7f9bbd1bef7657668f4a3dc",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-02",
+          "hub-07"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 8140.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 8140.0,
+        "uncoveredCommunityIds": [
+          "community-10",
+          "community-14",
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-02",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-02",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-02",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 39.34790000494104,
+          "optimizationMs": 1847.0898999948986,
+          "samplingMs": 90.15540000109468,
+          "totalMs": 1993.3842999962508
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "qiskit": "2.6.2",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "executionMode": "ideal-simulator optimization with sampled evaluation",
+          "seed": 7,
+          "parameters": {
+            "layers": 2,
+            "shots": 256,
+            "maxEvaluations": 24,
+            "starts": 1
+          }
+        },
+        "diagnostics": {
+          "counts": {
+            "00000111": 30,
+            "00001011": 4,
+            "00001110": 2,
+            "00010011": 1,
+            "00010101": 2,
+            "00010110": 8,
+            "00011001": 1,
+            "00011010": 1,
+            "00100011": 6,
+            "00100101": 1,
+            "00100110": 3,
+            "00101010": 1,
+            "00110010": 1,
+            "00110100": 1,
+            "01000011": 1,
+            "01000101": 1,
+            "01000110": 15,
+            "01001001": 1,
+            "01001010": 4,
+            "01010100": 1,
+            "01100010": 1,
+            "10000011": 3,
+            "10000101": 11,
+            "10000110": 86,
+            "10001001": 3,
+            "10001010": 9,
+            "10001100": 3,
+            "10010001": 1,
+            "10010100": 7,
+            "10011000": 3,
+            "10100001": 2,
+            "10100010": 16,
+            "10100100": 3,
+            "10101000": 1,
+            "10110000": 3,
+            "11000100": 17,
+            "11001000": 1,
+            "11100000": 1
+          },
+          "shots": 256,
+          "samplingSeed": 4058335883,
+          "bitOrder": "rightmost bit is hubIds[0]; qubit j is hubIds[j]",
+          "expectedWeightedCoverage": 6566.228490626393,
+          "sampledExpectedWeightedCoverage": 6664.53125,
+          "feasibleFraction": 1.0,
+          "idealFeasibleProbability": 1.0,
+          "infeasibleCounts": {},
+          "idealInfeasibleProbability": 2.189877476265112e-31,
+          "optimalWeightedCoverage": 8140.0,
+          "optimalHubSets": [
+            [
+              "hub-01",
+              "hub-02",
+              "hub-07"
+            ],
+            [
+              "hub-01",
+              "hub-03",
+              "hub-07"
+            ],
+            [
+              "hub-01",
+              "hub-04",
+              "hub-07"
+            ]
+          ],
+          "optimumProbability": 0.013478943131079897,
+          "sampledOptimumProbability": 0.01171875,
+          "expectedApproximationRatio": 0.8066619767354292,
+          "evaluations": 24,
+          "convergence": [
+            {
+              "evaluation": 1,
+              "start": 0,
+              "expectedWeightedCoverage": 6553.1360008507045,
+              "bestExpectedWeightedCoverage": 6553.1360008507045
+            },
+            {
+              "evaluation": 2,
+              "start": 0,
+              "expectedWeightedCoverage": 6514.5361208937975,
+              "bestExpectedWeightedCoverage": 6553.1360008507045
+            },
+            {
+              "evaluation": 3,
+              "start": 0,
+              "expectedWeightedCoverage": 6528.272217568501,
+              "bestExpectedWeightedCoverage": 6553.1360008507045
+            },
+            {
+              "evaluation": 4,
+              "start": 0,
+              "expectedWeightedCoverage": 6540.260845502265,
+              "bestExpectedWeightedCoverage": 6553.1360008507045
+            },
+            {
+              "evaluation": 5,
+              "start": 0,
+              "expectedWeightedCoverage": 6548.793007101187,
+              "bestExpectedWeightedCoverage": 6553.1360008507045
+            },
+            {
+              "evaluation": 6,
+              "start": 0,
+              "expectedWeightedCoverage": 6554.436515034933,
+              "bestExpectedWeightedCoverage": 6554.436515034933
+            },
+            {
+              "evaluation": 7,
+              "start": 0,
+              "expectedWeightedCoverage": 6558.051129489929,
+              "bestExpectedWeightedCoverage": 6558.051129489929
+            },
+            {
+              "evaluation": 8,
+              "start": 0,
+              "expectedWeightedCoverage": 6560.329910072256,
+              "bestExpectedWeightedCoverage": 6560.329910072256
+            },
+            {
+              "evaluation": 9,
+              "start": 0,
+              "expectedWeightedCoverage": 6561.75453708024,
+              "bestExpectedWeightedCoverage": 6561.75453708024
+            },
+            {
+              "evaluation": 10,
+              "start": 0,
+              "expectedWeightedCoverage": 6562.641012514784,
+              "bestExpectedWeightedCoverage": 6562.641012514784
+            },
+            {
+              "evaluation": 11,
+              "start": 0,
+              "expectedWeightedCoverage": 6563.191130639967,
+              "bestExpectedWeightedCoverage": 6563.191130639967
+            },
+            {
+              "evaluation": 12,
+              "start": 0,
+              "expectedWeightedCoverage": 6563.531968823016,
+              "bestExpectedWeightedCoverage": 6563.531968823016
+            },
+            {
+              "evaluation": 13,
+              "start": 0,
+              "expectedWeightedCoverage": 6563.742939018544,
+              "bestExpectedWeightedCoverage": 6563.742939018544
+            },
+            {
+              "evaluation": 14,
+              "start": 0,
+              "expectedWeightedCoverage": 6563.873447592128,
+              "bestExpectedWeightedCoverage": 6563.873447592128
+            },
+            {
+              "evaluation": 15,
+              "start": 0,
+              "expectedWeightedCoverage": 6563.9541527068495,
+              "bestExpectedWeightedCoverage": 6563.9541527068495
+            },
+            {
+              "evaluation": 16,
+              "start": 0,
+              "expectedWeightedCoverage": 6564.012575150477,
+              "bestExpectedWeightedCoverage": 6564.012575150477
+            },
+            {
+              "evaluation": 17,
+              "start": 0,
+              "expectedWeightedCoverage": 6531.71552779255,
+              "bestExpectedWeightedCoverage": 6564.012575150477
+            },
+            {
+              "evaluation": 18,
+              "start": 0,
+              "expectedWeightedCoverage": 6555.334409777887,
+              "bestExpectedWeightedCoverage": 6564.012575150477
+            },
+            {
+              "evaluation": 19,
+              "start": 0,
+              "expectedWeightedCoverage": 6563.583072564586,
+              "bestExpectedWeightedCoverage": 6564.012575150477
+            },
+            {
+              "evaluation": 20,
+              "start": 0,
+              "expectedWeightedCoverage": 6566.002803089045,
+              "bestExpectedWeightedCoverage": 6566.002803089045
+            },
+            {
+              "evaluation": 21,
+              "start": 0,
+              "expectedWeightedCoverage": 6566.2269756218275,
+              "bestExpectedWeightedCoverage": 6566.2269756218275
+            },
+            {
+              "evaluation": 22,
+              "start": 0,
+              "expectedWeightedCoverage": 6566.228407473935,
+              "bestExpectedWeightedCoverage": 6566.228407473935
+            },
+            {
+              "evaluation": 23,
+              "start": 0,
+              "expectedWeightedCoverage": 6566.228490626343,
+              "bestExpectedWeightedCoverage": 6566.228490626343
+            },
+            {
+              "evaluation": 24,
+              "start": 0,
+              "expectedWeightedCoverage": 6566.228447207701,
+              "bestExpectedWeightedCoverage": 6566.228490626343
+            }
+          ],
+          "starts": [
+            {
+              "start": 0,
+              "initialAngles": [
+                2.4957679180609933,
+                1.7321842783482628,
+                -0.8632870731848524,
+                -0.6277961312624499
+              ],
+              "evaluations": 24,
+              "success": false,
+              "message": "Maximum number of function evaluations has been exceeded."
+            }
+          ],
+          "gammas": [
+            3.137472622549854,
+            2.5147698887923875
+          ],
+          "betas": [
+            -0.8632870731848524,
+            -0.6277961312624499
+          ],
+          "trivialBypass": false,
+          "resources": {
+            "qubits": 8,
+            "layers": 2,
+            "depth": 209,
+            "twoQubitGates": 184,
+            "operationCounts": {
+              "rz": 402,
+              "sx": 208,
+              "cx": 184,
+              "x": 14
+            },
+            "basisGates": [
+              "rz",
+              "sx",
+              "x",
+              "cx"
+            ],
+            "preparationDepth": 39,
+            "preparationTwoQubitGates": 32,
+            "uniqueCoverageNeighborhoods": 11,
+            "compilationOptimizationLevel": 1
+          },
+          "preparationRecipe": "first k qubits excited; ordered ring XY sweeps at pi/7 then pi/11",
+          "optimizer": "bounded scipy Powell; total maxfev split across starts",
+          "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
+          "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
+          "timingBreakdownMs": {
+            "postTrainingExactAudit": 1.676499996392522,
+            "compilation": 38.34140000253683
+          }
+        }
+      },
+      "random": {
+        "solver": "random",
+        "problemHash": "d341db5b2fbbae6b435bd941fa31a47a20768ff97f37141b002b54fa5ee9090d",
+        "runHash": "aa4c603be784c3ea7ed57e1726bf0501d13f99e5eb03cd75ca86cf1ea100418b",
+        "selectedHubIds": [
+          "hub-01",
+          "hub-02",
+          "hub-07"
+        ],
+        "feasible": true,
+        "deployedHubCount": 3,
+        "coveredPopulation": 8140.0,
+        "totalPopulation": 9200.0,
+        "weightedCoverage": 8140.0,
+        "uncoveredCommunityIds": [
+          "community-10",
+          "community-14",
+          "community-15"
+        ],
+        "assignments": [
+          {
+            "communityId": "community-01",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-02",
+            "hubId": "hub-02",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-03",
+            "hubId": "hub-01",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-04",
+            "hubId": "hub-02",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-05",
+            "hubId": "hub-01",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-06",
+            "hubId": "hub-02",
+            "travelMinutes": 4.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-07",
+            "hubId": "hub-01",
+            "travelMinutes": 12.0,
+            "covered": true
+          },
+          {
+            "communityId": "community-08",
+            "hubId": "hub-01",
+            "travelMinutes": 11.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-09",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-10",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-11",
+            "hubId": "hub-07",
+            "travelMinutes": 7.5,
+            "covered": true
+          },
+          {
+            "communityId": "community-12",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-13",
+            "hubId": "hub-07",
+            "travelMinutes": 8.25,
+            "covered": true
+          },
+          {
+            "communityId": "community-14",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          },
+          {
+            "communityId": "community-15",
+            "hubId": null,
+            "travelMinutes": null,
+            "covered": false
+          }
+        ],
+        "timing": {
+          "preprocessMs": 0.0,
+          "constructionMs": 0.0,
+          "optimizationMs": 0.0,
+          "samplingMs": 4.6828999984427355,
+          "totalMs": 4.6828999984427355
+        },
+        "provenance": {
+          "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
+          "modelVersion": "1",
+          "codeRevision": "working-tree",
+          "versions": {
+            "python": "3.12.14"
+          },
+          "executionMode": "classical",
+          "seed": 7,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        },
+        "diagnostics": {
+          "evaluations": 56,
+          "sampleCount": 256,
+          "counts": {
+            "00000111": 4,
+            "00001011": 5,
+            "00010011": 8,
+            "00100011": 3,
+            "01000011": 5,
+            "10000011": 2,
+            "00001101": 9,
+            "00010101": 8,
+            "00100101": 5,
+            "01000101": 3,
+            "10000101": 8,
+            "00011001": 3,
+            "00101001": 4,
+            "01001001": 4,
+            "10001001": 7,
+            "00110001": 5,
+            "01010001": 7,
+            "10010001": 5,
+            "01100001": 1,
+            "10100001": 7,
+            "11000001": 4,
+            "00001110": 5,
+            "00010110": 6,
+            "00100110": 6,
+            "01000110": 4,
+            "10000110": 5,
+            "00011010": 6,
+            "00101010": 5,
+            "01001010": 4,
+            "10001010": 4,
+            "00110010": 4,
+            "01010010": 1,
+            "10010010": 5,
+            "01100010": 4,
+            "10100010": 7,
+            "11000010": 4,
+            "00011100": 3,
+            "00101100": 4,
+            "01001100": 3,
+            "10001100": 5,
+            "00110100": 4,
+            "01010100": 5,
+            "10010100": 3,
+            "01100100": 2,
+            "10100100": 6,
+            "11000100": 5,
+            "00111000": 4,
+            "01011000": 3,
+            "10011000": 6,
+            "01101000": 3,
+            "10101000": 4,
+            "11001000": 5,
+            "01110000": 1,
+            "10110000": 5,
+            "11010000": 4,
+            "11100000": 4
+          },
+          "feasibleFraction": 1.0,
+          "expectedWeightedCoverage": 6510.703125,
+          "bestSampleWeightedCoverage": 8140.0,
+          "provenOptimal": false,
+          "parameters": {
+            "samples": 256,
+            "distribution": "uniform fixed-k subsets with replacement"
+          }
+        }
+      }
+    }
+  ],
+  "heldOut": [
+    {
+      "trained case": "nominal",
+      "p": 1,
+      "seed": 42,
+      "extra closure": "east-ridge",
+      "fixed deployment score": 8680.0,
+      "stress optimum": 8680.0,
+      "loss": 0.0
+    },
+    {
+      "trained case": "nominal",
+      "p": 1,
+      "seed": 42,
+      "extra closure": "orchard-return",
+      "fixed deployment score": 8680.0,
+      "stress optimum": 9060.0,
+      "loss": 380.0
+    },
+    {
+      "trained case": "nominal",
+      "p": 1,
+      "seed": 7,
+      "extra closure": "east-ridge",
+      "fixed deployment score": 8520.0,
+      "stress optimum": 8680.0,
+      "loss": 160.0
+    },
+    {
+      "trained case": "nominal",
+      "p": 1,
+      "seed": 7,
+      "extra closure": "orchard-return",
+      "fixed deployment score": 9060.0,
+      "stress optimum": 9060.0,
+      "loss": 0.0
+    },
+    {
+      "trained case": "nominal",
+      "p": 2,
+      "seed": 42,
+      "extra closure": "east-ridge",
+      "fixed deployment score": 8520.0,
+      "stress optimum": 8680.0,
+      "loss": 160.0
+    },
+    {
+      "trained case": "nominal",
+      "p": 2,
+      "seed": 42,
+      "extra closure": "orchard-return",
+      "fixed deployment score": 9060.0,
+      "stress optimum": 9060.0,
+      "loss": 0.0
+    },
+    {
+      "trained case": "nominal",
+      "p": 2,
+      "seed": 7,
+      "extra closure": "east-ridge",
+      "fixed deployment score": 7960.0,
+      "stress optimum": 8680.0,
+      "loss": 720.0
+    },
+    {
+      "trained case": "nominal",
+      "p": 2,
+      "seed": 7,
+      "extra closure": "orchard-return",
+      "fixed deployment score": 8500.0,
+      "stress optimum": 9060.0,
+      "loss": 560.0
+    },
+    {
+      "trained case": "bridge closed",
+      "p": 1,
+      "seed": 42,
+      "extra closure": "east-ridge",
+      "fixed deployment score": 8140.0,
+      "stress optimum": 8140.0,
+      "loss": 0.0
+    },
+    {
+      "trained case": "bridge closed",
+      "p": 1,
+      "seed": 42,
+      "extra closure": "orchard-return",
+      "fixed deployment score": 8140.0,
+      "stress optimum": 8140.0,
+      "loss": 0.0
+    },
+    {
+      "trained case": "bridge closed",
+      "p": 1,
+      "seed": 7,
+      "extra closure": "east-ridge",
+      "fixed deployment score": 8140.0,
+      "stress optimum": 8140.0,
+      "loss": 0.0
+    },
+    {
+      "trained case": "bridge closed",
+      "p": 1,
+      "seed": 7,
+      "extra closure": "orchard-return",
+      "fixed deployment score": 8140.0,
+      "stress optimum": 8140.0,
+      "loss": 0.0
+    },
+    {
+      "trained case": "bridge closed",
+      "p": 2,
+      "seed": 42,
+      "extra closure": "east-ridge",
+      "fixed deployment score": 8140.0,
+      "stress optimum": 8140.0,
+      "loss": 0.0
+    },
+    {
+      "trained case": "bridge closed",
+      "p": 2,
+      "seed": 42,
+      "extra closure": "orchard-return",
+      "fixed deployment score": 8140.0,
+      "stress optimum": 8140.0,
+      "loss": 0.0
+    },
+    {
+      "trained case": "bridge closed",
+      "p": 2,
+      "seed": 7,
+      "extra closure": "east-ridge",
+      "fixed deployment score": 8140.0,
+      "stress optimum": 8140.0,
+      "loss": 0.0
+    },
+    {
+      "trained case": "bridge closed",
+      "p": 2,
+      "seed": 7,
+      "extra closure": "orchard-return",
+      "fixed deployment score": 8140.0,
+      "stress optimum": 8140.0,
+      "loss": 0.0
+    }
+  ],
+  "ablations": {
+    "gammas": [
+      1.1
+    ],
+    "betas": [
+      0.6
+    ],
+    "coherent": {
+      "expectedWeightedCoverage": 6.066432903015524,
+      "probabilities": [
+        0.0,
+        0.16629678726900873,
+        0.4423723965253536,
+        0.0,
+        0.39133081620563764,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "gammaZero": {
+      "expectedWeightedCoverage": 5.740049334089766,
+      "probabilities": [
+        0.0,
+        0.3039927401983894,
+        0.2830003711303776,
+        0.0,
+        0.4130068886712332,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "dephased": {
+      "expectedWeightedCoverage": 5.409348669865377,
+      "probabilities": [
+        0.0,
+        0.3249145579634335,
+        0.32906235609764756,
+        0.0,
+        0.3460230859389192,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "coherentGammaZeroTotalVariation": 0.15937202539497608,
+    "coherentDephasedTotalVariation": 0.15861777069442465
+  },
+  "resources": [
+    {
+      "case": "nominal",
+      "p": 1,
+      "seed": 42,
+      "qubits": 8,
+      "depth": 266,
+      "2-qubit gates": 166,
+      "evaluations": 24,
+      "feasible fraction": 1.0,
+      "optimum probability": 0.0022247596911525633,
+      "expected ratio": 0.7262199202706385,
+      "total ms": 1682.6585000017076
+    },
+    {
+      "case": "nominal",
+      "p": 1,
+      "seed": 7,
+      "qubits": 8,
+      "depth": 213,
+      "2-qubit gates": 148,
+      "evaluations": 24,
+      "feasible fraction": 1.0,
+      "optimum probability": 0.0019982846746831764,
+      "expected ratio": 0.7307207612484926,
+      "total ms": 1662.1169000063674
+    },
+    {
+      "case": "nominal",
+      "p": 2,
+      "seed": 42,
+      "qubits": 8,
+      "depth": 492,
+      "2-qubit gates": 300,
+      "evaluations": 24,
+      "feasible fraction": 1.0,
+      "optimum probability": 0.012429600622172736,
+      "expected ratio": 0.7340949367956549,
+      "total ms": 3876.768699999957
+    },
+    {
+      "case": "nominal",
+      "p": 2,
+      "seed": 7,
+      "qubits": 8,
+      "depth": 492,
+      "2-qubit gates": 300,
+      "evaluations": 24,
+      "feasible fraction": 1.0,
+      "optimum probability": 0.0007960842491227111,
+      "expected ratio": 0.7295977544261109,
+      "total ms": 3824.675299998489
+    },
+    {
+      "case": "bridge closed",
+      "p": 1,
+      "seed": 42,
+      "qubits": 8,
+      "depth": 124,
+      "2-qubit gates": 108,
+      "evaluations": 24,
+      "feasible fraction": 1.0,
+      "optimum probability": 0.019717231360922384,
+      "expected ratio": 0.7982634981146236,
+      "total ms": 1381.1736999996356
+    },
+    {
+      "case": "bridge closed",
+      "p": 1,
+      "seed": 7,
+      "qubits": 8,
+      "depth": 97,
+      "2-qubit gates": 92,
+      "evaluations": 24,
+      "feasible fraction": 1.0,
+      "optimum probability": 0.019648278528753477,
+      "expected ratio": 0.8045188852926856,
+      "total ms": 1274.876099996618
+    },
+    {
+      "case": "bridge closed",
+      "p": 2,
+      "seed": 42,
+      "qubits": 8,
+      "depth": 209,
+      "2-qubit gates": 184,
+      "evaluations": 24,
+      "feasible fraction": 1.0,
+      "optimum probability": 0.07696707339431395,
+      "expected ratio": 0.7797860517751709,
+      "total ms": 1768.6094000018784
+    },
+    {
+      "case": "bridge closed",
+      "p": 2,
+      "seed": 7,
+      "qubits": 8,
+      "depth": 209,
+      "2-qubit gates": 184,
+      "evaluations": 24,
+      "feasible fraction": 1.0,
+      "optimum probability": 0.013478943131079897,
+      "expected ratio": 0.8066619767354292,
+      "total ms": 1993.3842999962508
+    }
+  ],
+  "versions": {
+    "qiskit": "2.6.2",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pydantic": "2.14.3",
+    "networkx": "3.7"
+  }
+}

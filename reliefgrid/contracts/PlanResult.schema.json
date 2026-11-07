@@ -1,0 +1,223 @@
+{
+  "$defs": {
+    "Assignment": {
+      "additionalProperties": false,
+      "properties": {
+        "communityId": {
+          "title": "Communityid",
+          "type": "string"
+        },
+        "hubId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Hubid"
+        },
+        "travelMinutes": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Travelminutes"
+        },
+        "covered": {
+          "title": "Covered",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "communityId",
+        "hubId",
+        "travelMinutes",
+        "covered"
+      ],
+      "title": "Assignment",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "scenarioRevision": {
+          "title": "Scenariorevision",
+          "type": "string"
+        },
+        "modelVersion": {
+          "default": "1",
+          "title": "Modelversion",
+          "type": "string"
+        },
+        "codeRevision": {
+          "default": "working-tree",
+          "title": "Coderevision",
+          "type": "string"
+        },
+        "versions": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Versions",
+          "type": "object"
+        },
+        "executionMode": {
+          "default": "classical",
+          "title": "Executionmode",
+          "type": "string"
+        },
+        "seed": {
+          "title": "Seed",
+          "type": "integer"
+        },
+        "parameters": {
+          "additionalProperties": true,
+          "title": "Parameters",
+          "type": "object"
+        }
+      },
+      "required": [
+        "scenarioRevision",
+        "seed"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Timing": {
+      "additionalProperties": false,
+      "properties": {
+        "preprocessMs": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Preprocessms",
+          "type": "number"
+        },
+        "constructionMs": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Constructionms",
+          "type": "number"
+        },
+        "optimizationMs": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Optimizationms",
+          "type": "number"
+        },
+        "samplingMs": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Samplingms",
+          "type": "number"
+        },
+        "totalMs": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Totalms",
+          "type": "number"
+        }
+      },
+      "title": "Timing",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "solver": {
+      "enum": [
+        "exact",
+        "greedy",
+        "random",
+        "qaoa"
+      ],
+      "title": "Solver",
+      "type": "string"
+    },
+    "problemHash": {
+      "title": "Problemhash",
+      "type": "string"
+    },
+    "runHash": {
+      "title": "Runhash",
+      "type": "string"
+    },
+    "selectedHubIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Selectedhubids",
+      "type": "array"
+    },
+    "feasible": {
+      "title": "Feasible",
+      "type": "boolean"
+    },
+    "deployedHubCount": {
+      "minimum": 0,
+      "title": "Deployedhubcount",
+      "type": "integer"
+    },
+    "coveredPopulation": {
+      "minimum": 0,
+      "title": "Coveredpopulation",
+      "type": "number"
+    },
+    "totalPopulation": {
+      "minimum": 0,
+      "title": "Totalpopulation",
+      "type": "number"
+    },
+    "weightedCoverage": {
+      "minimum": 0,
+      "title": "Weightedcoverage",
+      "type": "number"
+    },
+    "uncoveredCommunityIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Uncoveredcommunityids",
+      "type": "array"
+    },
+    "assignments": {
+      "items": {
+        "$ref": "#/$defs/Assignment"
+      },
+      "title": "Assignments",
+      "type": "array"
+    },
+    "timing": {
+      "$ref": "#/$defs/Timing"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "diagnostics": {
+      "additionalProperties": true,
+      "title": "Diagnostics",
+      "type": "object"
+    }
+  },
+  "required": [
+    "solver",
+    "problemHash",
+    "runHash",
+    "selectedHubIds",
+    "feasible",
+    "deployedHubCount",
+    "coveredPopulation",
+    "totalPopulation",
+    "weightedCoverage",
+    "uncoveredCommunityIds",
+    "assignments",
+    "provenance"
+  ],
+  "title": "PlanResult",
+  "type": "object"
+}

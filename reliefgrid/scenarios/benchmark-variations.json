@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1",
+  "variations": [
+    {
+      "id": "nominal",
+      "scenarioId": "riverbend",
+      "closedEdgeIds": []
+    },
+    {
+      "id": "bridge-closed",
+      "scenarioId": "riverbend",
+      "closedEdgeIds": [
+        "bridge-main"
+      ]
+    },
+    {
+      "id": "ridge-closed",
+      "scenarioId": "riverbend",
+      "closedEdgeIds": [
+        "east-ridge"
+      ]
+    },
+    {
+      "id": "combined",
+      "scenarioId": "riverbend",
+      "closedEdgeIds": [
+        "bridge-main",
+        "orchard-return"
+      ]
+    },
+    {
+      "id": "upland-detour",
+      "scenarioId": "upland",
+      "closedEdgeIds": [
+        "bridge-main"
+      ]
+    }
+  ]
+}
