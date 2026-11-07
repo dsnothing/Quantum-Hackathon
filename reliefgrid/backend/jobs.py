@@ -12,13 +12,13 @@ import uuid
 
 from .domain import PlanningRequest, PreparedProblem, Scenario, run_hash
 from .graph import shortest_service_path
+from .solvers.classical import classical_parameters, solve_exact, solve_greedy, solve_random
 
 TERMINAL = {"succeeded", "failed", "cancelled", "timed_out"}
 
 
 def execute_job(snapshot: dict) -> dict:
     """Spawn-safe entry point: all scientific inputs are immutable JSON snapshots."""
-    from .solvers.classical import solve_exact, solve_greedy, solve_random
     request = PlanningRequest.model_validate(snapshot["request"])
     problem = PreparedProblem.model_validate(snapshot["preparedProblem"])
     scenario = Scenario.model_validate(snapshot["scenario"])
@@ -88,9 +88,10 @@ class JobManager:
             snapshot = deepcopy(snapshot)
             request = PlanningRequest.model_validate(snapshot["request"])
             problem = PreparedProblem.model_validate(snapshot["preparedProblem"])
+            parameters = None if request.solver == "qaoa" else classical_parameters(request)
             run_id = uuid.uuid4().hex
             job = dict(runId=run_id, status="queued", problemHash=problem.problemHash,
-                       runHash=run_hash(problem, request), createdAt=time.time(), snapshot=snapshot)
+                       runHash=run_hash(problem, request, parameters=parameters), createdAt=time.time(), snapshot=snapshot)
             self._jobs[run_id] = job
             self._persist(job)
             self._pending.append(run_id)
@@ -183,7 +184,6 @@ class JobManager:
                 if job["status"] not in TERMINAL:
                     if message and "result" in message:
                         job.update(status="succeeded", result=message["result"])
-                        job["runHash"] = message["result"].get("runHash", job["runHash"])
                     else:
                         job.update(status="failed", error=(message or {}).get("error", {"code": "worker_failed", "message": "Solver process exited unexpectedly.", "retryable": True}))
                 job["finishedAt"] = time.time()

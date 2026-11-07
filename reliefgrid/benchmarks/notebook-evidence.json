@@ -11,7 +11,7 @@
       "expected score": 9060.0,
       "population": 9060.0,
       "feasible": true,
-      "total ms": 1.9739999988814816
+      "total ms": 1.029999999445863
     },
     {
       "case": "nominal",
@@ -22,7 +22,7 @@
       "expected score": 9060.0,
       "population": 9060.0,
       "feasible": true,
-      "total ms": 0.30730000435141847
+      "total ms": 0.20080000103916973
     },
     {
       "case": "nominal",
@@ -33,7 +33,7 @@
       "expected score": 6684.921875,
       "population": 9060.0,
       "feasible": true,
-      "total ms": 3.8563999987673014
+      "total ms": 2.5049999967450276
     },
     {
       "case": "nominal",
@@ -44,7 +44,7 @@
       "expected score": 6579.552477651985,
       "population": 8680.0,
       "feasible": true,
-      "total ms": 1891.2137000006624
+      "total ms": 993.328600001405
     },
     {
       "case": "bridge closed",
@@ -55,7 +55,7 @@
       "expected score": 8140.0,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 1.530300003651064
+      "total ms": 0.9662000011303462
     },
     {
       "case": "bridge closed",
@@ -66,7 +66,7 @@
       "expected score": 8140.0,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 0.3133999998681247
+      "total ms": 0.1733999961288646
     },
     {
       "case": "bridge closed",
@@ -77,7 +77,7 @@
       "expected score": 6366.2890625,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 4.0312999990419485
+      "total ms": 2.164400000765454
     },
     {
       "case": "bridge closed",
@@ -88,7 +88,7 @@
       "expected score": 6497.864874653036,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 1419.5231999983662
+      "total ms": 546.4426999969874
     }
   ],
   "benchmark": [
@@ -101,7 +101,7 @@
       "expected score": 6579.552477651985,
       "population": 8680.0,
       "feasible": true,
-      "total ms": 1682.6585000017076,
+      "total ms": 805.8712999991258,
       "p": 1,
       "seed": 42
     },
@@ -114,7 +114,7 @@
       "expected score": 6684.921875,
       "population": 9060.0,
       "feasible": true,
-      "total ms": 5.085800003143959,
+      "total ms": 2.78729999990901,
       "p": 1,
       "seed": 42
     },
@@ -127,7 +127,7 @@
       "expected score": 6620.330096911343,
       "population": 9060.0,
       "feasible": true,
-      "total ms": 1662.1169000063674,
+      "total ms": 760.6856999991578,
       "p": 1,
       "seed": 7
     },
@@ -140,7 +140,7 @@
       "expected score": 6722.7734375,
       "population": 9060.0,
       "feasible": true,
-      "total ms": 4.929399998218287,
+      "total ms": 2.2509000045829453,
       "p": 1,
       "seed": 7
     },
@@ -153,7 +153,7 @@
       "expected score": 6650.900127368633,
       "population": 9060.0,
       "feasible": true,
-      "total ms": 3876.768699999957,
+      "total ms": 1445.09719999769,
       "p": 2,
       "seed": 42
     },
@@ -166,7 +166,7 @@
       "expected score": 6684.921875,
       "population": 9060.0,
       "feasible": true,
-      "total ms": 6.308700001682155,
+      "total ms": 1.254700000572484,
       "p": 2,
       "seed": 42
     },
@@ -179,7 +179,7 @@
       "expected score": 6610.155655100564,
       "population": 8500.0,
       "feasible": true,
-      "total ms": 3824.675299998489,
+      "total ms": 438.1606000024476,
       "p": 2,
       "seed": 7
     },
@@ -192,7 +192,7 @@
       "expected score": 6722.7734375,
       "population": 9060.0,
       "feasible": true,
-      "total ms": 2.997000003233552,
+      "total ms": 0.8809999999357387,
       "p": 2,
       "seed": 7
     },
@@ -205,7 +205,7 @@
       "expected score": 6497.864874653036,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 1381.1736999996356,
+      "total ms": 151.18210000218824,
       "p": 1,
       "seed": 42
     },
@@ -218,7 +218,7 @@
       "expected score": 6366.2890625,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 4.308899995521642,
+      "total ms": 0.6494999979622662,
       "p": 1,
       "seed": 42
     },
@@ -231,7 +231,7 @@
       "expected score": 6548.7837262824605,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 1274.876099996618,
+      "total ms": 143.5468999989098,
       "p": 1,
       "seed": 7
     },
@@ -244,7 +244,7 @@
       "expected score": 6510.703125,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 5.149199998413678,
+      "total ms": 0.6709000008413568,
       "p": 1,
       "seed": 7
     },
@@ -257,7 +257,7 @@
       "expected score": 6347.458461449891,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 1768.6094000018784,
+      "total ms": 265.62729999568546,
       "p": 2,
       "seed": 42
     },
@@ -270,7 +270,7 @@
       "expected score": 6366.2890625,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 2.61799999861978,
+      "total ms": 0.6587000025319867,
       "p": 2,
       "seed": 42
     },
@@ -283,7 +283,7 @@
       "expected score": 6566.228490626393,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 1993.3842999962508,
+      "total ms": 563.209400002961,
       "p": 2,
       "seed": 7
     },
@@ -296,7 +296,7 @@
       "expected score": 6510.703125,
       "population": 8140.0,
       "feasible": true,
-      "total ms": 4.6828999984427355,
+      "total ms": 0.989500003925059,
       "p": 2,
       "seed": 7
     }
@@ -432,10 +432,10 @@
         ],
         "timing": {
           "preprocessMs": 0.0,
-          "constructionMs": 39.01570000016363,
-          "optimizationMs": 1557.0034999982454,
-          "samplingMs": 65.39820000034524,
-          "totalMs": 1682.6585000017076
+          "constructionMs": 24.345699996047188,
+          "optimizationMs": 736.7809999996098,
+          "samplingMs": 33.354399995005224,
+          "totalMs": 805.8712999991258
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
@@ -712,8 +712,8 @@
           "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
           "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
           "timingBreakdownMs": {
-            "postTrainingExactAudit": 3.1466000000364147,
-            "compilation": 38.04890000174055
+            "postTrainingExactAudit": 1.4872000028844923,
+            "compilation": 23.64579999994021
           }
         }
       },
@@ -830,15 +830,15 @@
           "preprocessMs": 0.0,
           "constructionMs": 0.0,
           "optimizationMs": 0.0,
-          "samplingMs": 5.085800003143959,
-          "totalMs": 5.085800003143959
+          "samplingMs": 2.78729999990901,
+          "totalMs": 2.78729999990901
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
           "modelVersion": "1",
           "codeRevision": "working-tree",
           "versions": {
-            "python": "3.12.14"
+            "python": "3.12.12"
           },
           "executionMode": "classical",
           "seed": 42,
@@ -1048,10 +1048,10 @@
         ],
         "timing": {
           "preprocessMs": 0.0,
-          "constructionMs": 43.93299999355804,
-          "optimizationMs": 1534.3408000044292,
-          "samplingMs": 60.70020000333898,
-          "totalMs": 1662.1169000063674
+          "constructionMs": 20.927899997332133,
+          "optimizationMs": 691.9507999991765,
+          "samplingMs": 37.37869999895338,
+          "totalMs": 760.6856999991578
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
@@ -1325,8 +1325,8 @@
           "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
           "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
           "timingBreakdownMs": {
-            "postTrainingExactAudit": 2.6409999991301447,
-            "compilation": 43.13159999583149
+            "postTrainingExactAudit": 1.4676999999210238,
+            "compilation": 20.247000000381377
           }
         }
       },
@@ -1443,15 +1443,15 @@
           "preprocessMs": 0.0,
           "constructionMs": 0.0,
           "optimizationMs": 0.0,
-          "samplingMs": 4.929399998218287,
-          "totalMs": 4.929399998218287
+          "samplingMs": 2.2509000045829453,
+          "totalMs": 2.2509000045829453
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
           "modelVersion": "1",
           "codeRevision": "working-tree",
           "versions": {
-            "python": "3.12.14"
+            "python": "3.12.12"
           },
           "executionMode": "classical",
           "seed": 7,
@@ -1661,10 +1661,10 @@
         ],
         "timing": {
           "preprocessMs": 0.0,
-          "constructionMs": 74.23660000495147,
-          "optimizationMs": 3641.313399995852,
-          "samplingMs": 127.37320000451291,
-          "totalMs": 3876.768699999957
+          "constructionMs": 11.053799993533175,
+          "optimizationMs": 1411.3718000007793,
+          "samplingMs": 17.198700006701984,
+          "totalMs": 1445.09719999769
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
@@ -1946,8 +1946,8 @@
           "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
           "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
           "timingBreakdownMs": {
-            "postTrainingExactAudit": 3.0155999993439764,
-            "compilation": 73.32400000450434
+            "postTrainingExactAudit": 0.49679999938234687,
+            "compilation": 10.519199997361284
           }
         }
       },
@@ -2064,15 +2064,15 @@
           "preprocessMs": 0.0,
           "constructionMs": 0.0,
           "optimizationMs": 0.0,
-          "samplingMs": 6.308700001682155,
-          "totalMs": 6.308700001682155
+          "samplingMs": 1.254700000572484,
+          "totalMs": 1.254700000572484
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
           "modelVersion": "1",
           "codeRevision": "working-tree",
           "versions": {
-            "python": "3.12.14"
+            "python": "3.12.12"
           },
           "executionMode": "classical",
           "seed": 42,
@@ -2283,10 +2283,10 @@
         ],
         "timing": {
           "preprocessMs": 0.0,
-          "constructionMs": 65.65229999978328,
-          "optimizationMs": 3527.062399996794,
-          "samplingMs": 205.32149999780813,
-          "totalMs": 3824.675299998489
+          "constructionMs": 10.51309999456862,
+          "optimizationMs": 405.665999998746,
+          "samplingMs": 17.654199997195974,
+          "totalMs": 438.1606000024476
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
@@ -2563,8 +2563,8 @@
           "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
           "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
           "timingBreakdownMs": {
-            "postTrainingExactAudit": 2.656699994986411,
-            "compilation": 64.87180000112858
+            "postTrainingExactAudit": 0.4788000005646609,
+            "compilation": 10.238899994874373
           }
         }
       },
@@ -2681,15 +2681,15 @@
           "preprocessMs": 0.0,
           "constructionMs": 0.0,
           "optimizationMs": 0.0,
-          "samplingMs": 2.997000003233552,
-          "totalMs": 2.997000003233552
+          "samplingMs": 0.8809999999357387,
+          "totalMs": 0.8809999999357387
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
           "modelVersion": "1",
           "codeRevision": "working-tree",
           "versions": {
-            "python": "3.12.14"
+            "python": "3.12.12"
           },
           "executionMode": "classical",
           "seed": 7,
@@ -2903,10 +2903,10 @@
         ],
         "timing": {
           "preprocessMs": 0.0,
-          "constructionMs": 37.03210000094259,
-          "optimizationMs": 1271.392399998149,
-          "samplingMs": 51.3379000040004,
-          "totalMs": 1381.1736999996356
+          "constructionMs": 7.443399998010136,
+          "optimizationMs": 134.85409999702824,
+          "samplingMs": 6.069299997761846,
+          "totalMs": 151.18210000218824
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
@@ -3190,8 +3190,8 @@
           "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
           "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
           "timingBreakdownMs": {
-            "postTrainingExactAudit": 3.0475000021397136,
-            "compilation": 35.47190000244882
+            "postTrainingExactAudit": 0.490699996589683,
+            "compilation": 7.213600001705345
           }
         }
       },
@@ -3310,15 +3310,15 @@
           "preprocessMs": 0.0,
           "constructionMs": 0.0,
           "optimizationMs": 0.0,
-          "samplingMs": 4.308899995521642,
-          "totalMs": 4.308899995521642
+          "samplingMs": 0.6494999979622662,
+          "totalMs": 0.6494999979622662
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
           "modelVersion": "1",
           "codeRevision": "working-tree",
           "versions": {
-            "python": "3.12.14"
+            "python": "3.12.12"
           },
           "executionMode": "classical",
           "seed": 42,
@@ -3532,10 +3532,10 @@
         ],
         "timing": {
           "preprocessMs": 0.0,
-          "constructionMs": 54.06109999603359,
-          "optimizationMs": 1160.8277000050293,
-          "samplingMs": 44.22999999951571,
-          "totalMs": 1274.876099996618
+          "constructionMs": 7.045800011837855,
+          "optimizationMs": 127.73929999821121,
+          "samplingMs": 6.157100004202221,
+          "totalMs": 143.5468999989098
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
@@ -3816,8 +3816,8 @@
           "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
           "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
           "timingBreakdownMs": {
-            "postTrainingExactAudit": 2.660599995579105,
-            "compilation": 52.78369999723509
+            "postTrainingExactAudit": 0.42180000309599563,
+            "compilation": 6.8405000056372955
           }
         }
       },
@@ -3936,15 +3936,15 @@
           "preprocessMs": 0.0,
           "constructionMs": 0.0,
           "optimizationMs": 0.0,
-          "samplingMs": 5.149199998413678,
-          "totalMs": 5.149199998413678
+          "samplingMs": 0.6709000008413568,
+          "totalMs": 0.6709000008413568
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
           "modelVersion": "1",
           "codeRevision": "working-tree",
           "versions": {
-            "python": "3.12.14"
+            "python": "3.12.12"
           },
           "executionMode": "classical",
           "seed": 7,
@@ -4158,10 +4158,10 @@
         ],
         "timing": {
           "preprocessMs": 0.0,
-          "constructionMs": 39.883999997982755,
-          "optimizationMs": 1652.1686999985832,
-          "samplingMs": 58.07279999862658,
-          "totalMs": 1768.6094000018784
+          "constructionMs": 10.871900005440693,
+          "optimizationMs": 239.35740000160877,
+          "samplingMs": 12.038699998811353,
+          "totalMs": 265.62729999568546
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
@@ -4453,8 +4453,8 @@
           "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
           "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
           "timingBreakdownMs": {
-            "postTrainingExactAudit": 1.5390000044135377,
-            "compilation": 39.05259999737609
+            "postTrainingExactAudit": 0.4334999975981191,
+            "compilation": 10.673700002371334
           }
         }
       },
@@ -4573,15 +4573,15 @@
           "preprocessMs": 0.0,
           "constructionMs": 0.0,
           "optimizationMs": 0.0,
-          "samplingMs": 2.61799999861978,
-          "totalMs": 2.61799999861978
+          "samplingMs": 0.6587000025319867,
+          "totalMs": 0.6587000025319867
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
           "modelVersion": "1",
           "codeRevision": "working-tree",
           "versions": {
-            "python": "3.12.14"
+            "python": "3.12.12"
           },
           "executionMode": "classical",
           "seed": 42,
@@ -4795,10 +4795,10 @@
         ],
         "timing": {
           "preprocessMs": 0.0,
-          "constructionMs": 39.34790000494104,
-          "optimizationMs": 1847.0898999948986,
-          "samplingMs": 90.15540000109468,
-          "totalMs": 1993.3842999962508
+          "constructionMs": 13.204399991082028,
+          "optimizationMs": 523.3688000007533,
+          "samplingMs": 19.25620000110939,
+          "totalMs": 563.209400002961
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
@@ -5086,8 +5086,8 @@
           "selectionRule": "best feasible finite-shot sample; stable hub-ID ties",
           "audit": "exact feasible enumeration after training; never used by circuit or optimizer",
           "timingBreakdownMs": {
-            "postTrainingExactAudit": 1.676499996392522,
-            "compilation": 38.34140000253683
+            "postTrainingExactAudit": 0.5644000048050657,
+            "compilation": 13.035699994361494
           }
         }
       },
@@ -5206,15 +5206,15 @@
           "preprocessMs": 0.0,
           "constructionMs": 0.0,
           "optimizationMs": 0.0,
-          "samplingMs": 4.6828999984427355,
-          "totalMs": 4.6828999984427355
+          "samplingMs": 0.989500003925059,
+          "totalMs": 0.989500003925059
         },
         "provenance": {
           "scenarioRevision": "20f810dc56126ac9242ed9596542d9c8857dc8d00d3a646a71025b83042f1a6e",
           "modelVersion": "1",
           "codeRevision": "working-tree",
           "versions": {
-            "python": "3.12.14"
+            "python": "3.12.12"
           },
           "executionMode": "classical",
           "seed": 7,
@@ -5503,7 +5503,7 @@
       "feasible fraction": 1.0,
       "optimum probability": 0.0022247596911525633,
       "expected ratio": 0.7262199202706385,
-      "total ms": 1682.6585000017076
+      "total ms": 805.8712999991258
     },
     {
       "case": "nominal",
@@ -5516,7 +5516,7 @@
       "feasible fraction": 1.0,
       "optimum probability": 0.0019982846746831764,
       "expected ratio": 0.7307207612484926,
-      "total ms": 1662.1169000063674
+      "total ms": 760.6856999991578
     },
     {
       "case": "nominal",
@@ -5529,7 +5529,7 @@
       "feasible fraction": 1.0,
       "optimum probability": 0.012429600622172736,
       "expected ratio": 0.7340949367956549,
-      "total ms": 3876.768699999957
+      "total ms": 1445.09719999769
     },
     {
       "case": "nominal",
@@ -5542,7 +5542,7 @@
       "feasible fraction": 1.0,
       "optimum probability": 0.0007960842491227111,
       "expected ratio": 0.7295977544261109,
-      "total ms": 3824.675299998489
+      "total ms": 438.1606000024476
     },
     {
       "case": "bridge closed",
@@ -5555,7 +5555,7 @@
       "feasible fraction": 1.0,
       "optimum probability": 0.019717231360922384,
       "expected ratio": 0.7982634981146236,
-      "total ms": 1381.1736999996356
+      "total ms": 151.18210000218824
     },
     {
       "case": "bridge closed",
@@ -5568,7 +5568,7 @@
       "feasible fraction": 1.0,
       "optimum probability": 0.019648278528753477,
       "expected ratio": 0.8045188852926856,
-      "total ms": 1274.876099996618
+      "total ms": 143.5468999989098
     },
     {
       "case": "bridge closed",
@@ -5581,7 +5581,7 @@
       "feasible fraction": 1.0,
       "optimum probability": 0.07696707339431395,
       "expected ratio": 0.7797860517751709,
-      "total ms": 1768.6094000018784
+      "total ms": 265.62729999568546
     },
     {
       "case": "bridge closed",
@@ -5594,7 +5594,7 @@
       "feasible fraction": 1.0,
       "optimum probability": 0.013478943131079897,
       "expected ratio": 0.8066619767354292,
-      "total ms": 1993.3842999962508
+      "total ms": 563.209400002961
     }
   ],
   "versions": {

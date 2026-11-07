@@ -53,7 +53,10 @@ The notebook uses standard IPython display support and inline SVG, so no plottin
     for title, relative in [("Validated contracts and canonical hashes", "domain.py"), ("Independent overlap-safe evaluator", "objective.py")]:
         md("## " + title)
         code(embedded_source(ROOT / "backend" / relative))
-    scenarios = {p.stem: json.loads(p.read_text(encoding="utf-8")) for p in sorted((ROOT / "scenarios").glob("*.json"))}
+    scenarios = {
+        scenario_id: json.loads((ROOT / "scenarios" / f"{scenario_id}.json").read_text(encoding="utf-8"))
+        for scenario_id in ("riverbend", "upland")
+    }
     md("## Embedded synthetic scenarios and directed road engine\nRoad travel runs from a hub to a community. Closed roads are removed before shortest paths are calculated; unreachable travel is represented by null. Coverage includes the threshold boundary.")
     code("SCENARIOS = json.loads(" + repr(json.dumps(scenarios, ensure_ascii=False)) + ")\n\ndef load_scenario(scenario_id: str) -> Scenario:\n    if scenario_id not in SCENARIOS:\n        raise KeyError(f'Unknown scenario: {scenario_id}')\n    return Scenario.model_validate(SCENARIOS[scenario_id])\n\ndef list_scenarios() -> list[dict]:\n    return [{'id': key, 'title': load_scenario(key).title, 'scenarioRevision': scenario_revision(load_scenario(key))} for key in sorted(SCENARIOS)]")
     code(embedded_source(ROOT / "backend" / "graph.py"))

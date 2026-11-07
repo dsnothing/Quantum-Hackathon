@@ -206,6 +206,12 @@ def problem_hash(**payload: Any) -> str:
     return canonical_hash(payload)
 
 
-def run_hash(problem: PreparedProblem, request: PlanningRequest) -> str:
-    return canonical_hash({"problemHash": problem.problemHash, "solver": request.solver,
-                           "seed": request.seed, "qaoa": request.qaoa.model_dump(mode="json") if request.qaoa else None})
+def run_hash(problem: PreparedProblem, request: PlanningRequest, *, parameters: dict | None = None) -> str:
+    options = request.qaoa
+    if request.solver == "qaoa" and options is None:
+        options = QaoaOptions()
+    request_hash = canonical_hash({"problemHash": problem.problemHash, "solver": request.solver,
+                                   "seed": request.seed, "qaoa": options.model_dump(mode="json") if options else None})
+    if parameters is not None:
+        return canonical_hash({"requestRunHash": request_hash, "parameters": parameters})
+    return request_hash

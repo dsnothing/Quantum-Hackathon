@@ -63,10 +63,18 @@ def test_notebook_evidence_and_backend_agree():
 
 
 def test_embedded_implementation_matches_current_sources():
+    from reliefgrid.backend.domain import Scenario, scenario_revision
+    from reliefgrid.backend.graph import list_scenarios
     from reliefgrid.build_notebook import embedded_source
     notebook = nbformat.read(NOTEBOOK, as_version=4)
     code = [cell.source for cell in notebook.cells if cell.cell_type == "code"]
     for relative in ("domain.py", "objective.py", "graph.py", "solvers/classical.py", "solvers/qaoa.py"):
         assert embedded_source(ROOT / "backend" / relative) in code
+    scenario_cell = next(source for source in code if source.startswith("SCENARIOS = "))
+    scenario_assignment = ast.parse(scenario_cell).body[0]
+    scenarios = json.loads(ast.literal_eval(scenario_assignment.value.args[0]))
+    assert {key: scenario_revision(Scenario.model_validate(value)) for key, value in scenarios.items()} == {
+        entry["id"]: entry["scenarioRevision"] for entry in list_scenarios()
+    }
     assert notebook.metadata["standaloneVerification"]["freshKernel"] is True
     assert notebook.metadata["standaloneVerification"]["pythonPathRemoved"] is True

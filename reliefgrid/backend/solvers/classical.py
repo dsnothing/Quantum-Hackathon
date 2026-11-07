@@ -8,10 +8,24 @@ import platform
 import random
 from time import perf_counter
 
-from ..domain import PlanResult, PlanningRequest, PreparedProblem, Provenance, Timing, canonical_hash, run_hash
+from ..domain import PlanResult, PlanningRequest, PreparedProblem, Provenance, Timing, run_hash
 from ..objective import evaluate_plan
 
 MAX_EXACT_COMBINATIONS = 100_000
+
+
+def classical_parameters(request: PlanningRequest, *, max_combinations: int = MAX_EXACT_COMBINATIONS,
+                         samples: int | None = None) -> dict:
+    """Return the effective parameters used for classical results and queued run IDs."""
+    if request.solver == "exact":
+        return {"maxCombinations": max_combinations}
+    if request.solver == "greedy":
+        return {"tieBreak": "hubId"}
+    if request.solver == "random":
+        if samples is None:
+            samples = request.qaoa.shots if request.qaoa else 512
+        return {"samples": samples, "distribution": "uniform fixed-k subsets with replacement"}
+    raise ValueError(f"Unknown classical solver: {request.solver}")
 
 
 def _request(problem: PreparedProblem, request: PlanningRequest, solver: str) -> PlanningRequest:
@@ -33,14 +47,13 @@ def _result(problem, request, selected, started, diagnostics, *, sampling=False)
     elapsed = (perf_counter() - started) * 1000
     return PlanResult(
         solver=request.solver, problemHash=problem.problemHash,
-        runHash=canonical_hash({"requestRunHash": run_hash(problem, request),
-                                "parameters": diagnostics.get("parameters", {})}), **metrics,
+        runHash=run_hash(problem, request, parameters=diagnostics["parameters"]), **metrics,
         timing=Timing(totalMs=elapsed, samplingMs=elapsed if sampling else 0,
                       optimizationMs=0 if sampling else elapsed),
         provenance=Provenance(scenarioRevision=problem.scenarioRevision,
                               modelVersion=problem.modelVersion, seed=request.seed,
                               versions={"python": platform.python_version()},
-                              parameters=diagnostics.get("parameters", {})),
+                              parameters=diagnostics["parameters"]),
         diagnostics=diagnostics,
     )
 
@@ -73,7 +86,7 @@ def solve_exact(problem: PreparedProblem, request: PlanningRequest, *,
         "evaluations": count, "combinationCount": count, "provenOptimal": True,
         "optimalWeightedCoverage": best_score, "optimumCount": optimum_count,
         "optimalHubSets": optimal_sets, "tieSetsTruncated": optimum_count > len(optimal_sets),
-        "parameters": {"maxCombinations": max_combinations},
+        "parameters": classical_parameters(request, max_combinations=max_combinations),
     })
 
 
@@ -97,7 +110,7 @@ def solve_greedy(problem: PreparedProblem, request: PlanningRequest) -> PlanResu
         steps.append({"hubId": problem.hubIds[chosen], "marginalWeightedCoverage": gain})
     return _result(problem, request, [problem.hubIds[j] for j in selected], started, {
         "evaluations": evaluations, "provenOptimal": problem.hubCount in (0, len(problem.hubIds)),
-        "steps": steps, "parameters": {"tieBreak": "hubId"},
+        "steps": steps, "parameters": classical_parameters(request),
     })
 
 
@@ -105,7 +118,8 @@ def solve_random(problem: PreparedProblem, request: PlanningRequest, *, samples:
     """Sample uniform k-subsets with replacement and recommend the best sample."""
     started = perf_counter()
     request = _request(problem, request, "random")
-    samples = samples if samples is not None else (request.qaoa.shots if request.qaoa else 512)
+    parameters = classical_parameters(request, samples=samples)
+    samples = parameters["samples"]
     if isinstance(samples, bool) or not isinstance(samples, int) or not 1 <= samples <= 100_000:
         raise ValueError("samples must be an integer from 1 through 100000")
     rng = random.Random(request.seed)
@@ -121,5 +135,5 @@ def solve_random(problem: PreparedProblem, request: PlanningRequest, *, samples:
         "evaluations": len(counts), "sampleCount": samples, "counts": bit_counts,
         "feasibleFraction": 1.0, "expectedWeightedCoverage": expected,
         "bestSampleWeightedCoverage": scores[best], "provenOptimal": False,
-        "parameters": {"samples": samples, "distribution": "uniform fixed-k subsets with replacement"},
+        "parameters": parameters,
     }, sampling=True)

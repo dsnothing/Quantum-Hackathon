@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import atexit
+import json
 from pathlib import Path
 
 from flask import Flask, jsonify, request, send_from_directory
@@ -9,7 +10,7 @@ from pydantic import ValidationError
 from werkzeug.exceptions import HTTPException
 
 from .domain import PlanningRequest, scenario_revision
-from .graph import list_scenarios, load_scenario, prepare_problem
+from .graph import SCENARIO_DIR, list_scenarios, load_scenario, prepare_problem
 from .jobs import JobManager, QueueFullError
 from .objective import evaluate_plan
 
@@ -59,8 +60,6 @@ def create_app(*, job_manager=None, static_dir=None, storage_dir=None):
         payload = request.get_json() if payload is None else payload
         model = PlanningRequest.model_validate(payload)
         scenario = load_scenario(model.scenarioId)
-        if len(scenario.candidateHubs) > 12:
-            raise ValueError("The optional workbench supports at most 12 candidate hubs")
         problem = prepare_problem(scenario, model)
         return model, scenario, problem
 
@@ -91,6 +90,11 @@ def create_app(*, job_manager=None, static_dir=None, storage_dir=None):
     @app.post("/api/v1/runs")
     def submit():
         model, scenario, problem = planning()
+        if model.solver == "qaoa":
+            from .solvers.qaoa import MAX_QUBITS
+            if len(problem.hubIds) > MAX_QUBITS:
+                return error("qaoa_hub_limit", f"QAOA statevector limit is {MAX_QUBITS} hubs. Choose a classical method.",
+                             field="solver")
         snapshot = dict(request=model.model_dump(mode="json"), scenario=scenario.model_dump(mode="json"),
                         preparedProblem=problem.model_dump(mode="json"))
         try:
@@ -126,18 +130,21 @@ def create_app(*, job_manager=None, static_dir=None, storage_dir=None):
         model, scenario, problem = planning(payload)
         if not isinstance(selected, list) or any(not isinstance(x, str) for x in selected):
             raise ValueError("selectedHubIds must be a list of hub IDs")
-        if not evaluate_plan(problem, selected)["feasible"]:
+        current = evaluate_plan(problem, selected)
+        if not current["feasible"]:
             raise ValueError("selectedHubIds must identify exactly hubCount unique candidate hubs")
-        variants = [("Current closures", model.closedEdgeIds), ("All roads open", ())]
-        # A bounded, disclosed set of individual road closures, evaluated on a fixed plan.
-        variants.extend((f"Close {edge.name or edge.id}", tuple(sorted(set(model.closedEdgeIds) | {edge.id})))
-                        for edge in sorted(scenario.edges, key=lambda e: e.id)[:8])
-        rows = []
-        for title, closures in variants:
+        fixtures = json.loads((SCENARIO_DIR / "benchmark-variations.json").read_text(encoding="utf-8"))
+        variants = {"nominal": ()}
+        variants.update((variant["id"], tuple(variant["closedEdgeIds"])) for variant in fixtures["variations"]
+                        if variant["scenarioId"] == scenario.id)
+        rows = [dict(id="current", title="Current closures", closedEdgeIds=list(problem.closedEdgeIds),
+                     problemHash=problem.problemHash, **current)]
+        for variant_id, closures in variants.items():
             prepared = prepare_problem(scenario, model.model_copy(update={"closedEdgeIds": closures}))
-            rows.append(dict(title=title, closedEdgeIds=list(closures), problemHash=prepared.problemHash,
+            title = "All roads open" if variant_id == "nominal" else variant_id.replace("-", " ").capitalize()
+            rows.append(dict(id=variant_id, title=title, closedEdgeIds=list(prepared.closedEdgeIds), problemHash=prepared.problemHash,
                              **evaluate_plan(prepared, selected)))
-        return jsonify(selectedHubIds=selected, variants=rows, nominalCoveredPopulation=rows[0]["coveredPopulation"],
+        return jsonify(selectedHubIds=selected, variants=rows, nominalCoveredPopulation=rows[1]["coveredPopulation"],
                        worstCoveredPopulation=min(row["coveredPopulation"] for row in rows),
                        interpretation="Fixed deployment evaluated across these scenarios; no robust optimization performed.")
 

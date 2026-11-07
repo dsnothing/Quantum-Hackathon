@@ -54,6 +54,14 @@ def service(tmp_path):
     manager.close()
 
 
+@pytest.fixture
+def larger_scenario():
+    scenario = load_scenario("riverbend")
+    hubs = (*scenario.candidateHubs,
+            *(Hub(id=f"hub-extra-{i}", nodeId=scenario.nodes[i].id) for i in range(5)))
+    return scenario.model_copy(update={"candidateHubs": hubs})
+
+
 def test_health_scenarios_unknown_routes_and_static(service, tmp_path):
     client, _ = service
     assert client.get("/api/v1/health").json == dict(app="reliefgrid", version="1", ready=True)
@@ -111,11 +119,16 @@ def test_preview_closure_changes_hash_reachability_and_nulls(service):
     assert any(all(t is None for t in row) for row in after["preparedProblem"]["travelMinutes"])
 
 
-@pytest.mark.parametrize("solver", ["exact", "greedy", "random", "qaoa"])
-def test_real_spawn_results_paths_export_and_independent_score(service, solver):
+@pytest.mark.parametrize("solver, options", [
+    ("exact", None), ("greedy", None), ("random", None), ("random", {"shots": 32}),
+    ("qaoa", {"layers": 1, "shots": 32, "maxEvaluations": 2}),
+])
+def test_real_spawn_results_paths_export_and_independent_score(service, solver, options):
     client, manager = service
     data = payload(closedEdgeIds=["bridge-main"])
-    data.update(solver=solver, qaoa={"layers": 1, "shots": 32, "maxEvaluations": 2})
+    data.update(solver=solver)
+    if options is not None:
+        data["qaoa"] = options
     response = client.post("/api/v1/runs", json=data)
     assert response.status_code == 202
     run_id = response.json["runId"]
@@ -127,6 +140,7 @@ def test_real_spawn_results_paths_export_and_independent_score(service, solver):
     for key, value in score.items():
         assert result[key] == json.loads(json.dumps(value)), key
     assert result["feasible"] and result["problemHash"] == response.json["problemHash"]
+    assert result["runHash"] == job["runHash"] == response.json["runHash"]
     paths = result["diagnostics"]["servicePaths"]
     for assignment in result["assignments"]:
         if assignment["covered"]:
@@ -148,21 +162,83 @@ def test_real_spawn_results_paths_export_and_independent_score(service, solver):
     assert client.delete(f"/api/v1/runs/{run_id}").json["status"] == "succeeded"
 
 
-def test_stress_tests_fixed_plan_and_rejects_invalid_selection(service):
-    client, _ = service
+def test_qaoa_run_hash_normalizes_omitted_and_default_options(service):
+    client, manager = service
     data = payload()
-    data["selectedHubIds"] = ["hub-01", "hub-07", "hub-08"]
+    data.update(solver="qaoa", hubCount=0)
+    hashes = []
+    for options in ({}, {"qaoa": {}}):
+        response = client.post("/api/v1/runs", json={**data, **options})
+        assert response.status_code == 202
+        queued = response.json
+        job = wait_for(manager, queued["runId"])
+        assert job["status"] == "succeeded", job
+        assert job["result"]["runHash"] == job["runHash"] == queued["runHash"]
+        hashes.append(queued["runHash"])
+    assert hashes[0] == hashes[1]
+
+
+def test_larger_candidate_set_is_available_for_classical_runs(service, larger_scenario, monkeypatch):
+    client, manager = service
+    monkeypatch.setattr("backend.api.load_scenario", lambda _: larger_scenario)
+    data = payload()
+    data["scenarioRevision"] = scenario_revision(larger_scenario)
+
+    response = client.post("/api/v1/runs", json=data)
+    assert response.status_code == 202
+    job = wait_for(manager, response.json["runId"])
+    assert job["status"] == "succeeded", job
+    assert job["result"]["diagnostics"]["combinationCount"] == 286  # 13 choose 3
+
+    data["solver"] = "qaoa"
+    preview = client.post("/api/v1/preview", json=data)
+    assert preview.status_code == 200
+    assert len(preview.json["preparedProblem"]["hubIds"]) == 13
+    rejected = client.post("/api/v1/runs", json=data)
+    assert rejected.status_code == 400
+    assert rejected.json["error"]["code"] == "qaoa_hub_limit"
+    assert "limit is 12 hubs" in rejected.json["error"]["message"]
+
+
+@pytest.mark.parametrize("scenario_id, closures, expected", [
+    ("riverbend", ["east-ridge", "bridge-main", "east-ridge"], [
+        ("current", "Current closures", ["bridge-main", "east-ridge"], 7550),
+        ("nominal", "All roads open", [], 9060),
+        ("bridge-closed", "Bridge closed", ["bridge-main"], 8090),
+        ("ridge-closed", "Ridge closed", ["east-ridge"], 8520),
+        ("combined", "Combined", ["bridge-main", "orchard-return"], 8090),
+    ]),
+    ("upland", ["east-ridge"], [
+        ("current", "Current closures", ["east-ridge"], 6850),
+        ("nominal", "All roads open", [], 7390),
+        ("upland-detour", "Upland detour", ["bridge-main"], 7390),
+    ]),
+])
+def test_stress_tests_evaluate_fixed_plan_under_named_closures(service, scenario_id, closures, expected):
+    client, _ = service
+    scenario = load_scenario(scenario_id)
+    data = dict(scenarioId=scenario.id, scenarioRevision=scenario_revision(scenario),
+                hubCount=3, responseTimeMinutes=12, closedEdgeIds=closures)
+    selected = ["hub-01", "hub-07", "hub-08"]
+    data["selectedHubIds"] = selected
     response = client.post("/api/v1/stress-test", json=data)
     assert response.status_code == 200
     result = response.json
-    assert result["nominalCoveredPopulation"] == 9060
-    assert result["worstCoveredPopulation"] <= result["nominalCoveredPopulation"]
+    assert [(row["id"], row["title"], row["closedEdgeIds"], row["coveredPopulation"])
+            for row in result["variants"]] == expected
+    assert result["nominalCoveredPopulation"] == expected[1][3]
+    assert result["worstCoveredPopulation"] == min(row[3] for row in expected)
     for variant in result["variants"]:
         request_data = {k: v for k, v in data.items() if k != "selectedHubIds"}
         request_data["closedEdgeIds"] = variant["closedEdgeIds"]
-        problem = prepare_problem(load_scenario("riverbend"), PlanningRequest.model_validate(request_data))
+        problem = prepare_problem(scenario, PlanningRequest.model_validate(request_data))
         assert variant["problemHash"] == problem.problemHash
-        assert variant["coveredPopulation"] == evaluate_plan(problem, data["selectedHubIds"])["coveredPopulation"]
+        assert variant["selectedHubIds"] == selected
+
+
+def test_stress_test_rejects_invalid_selection(service):
+    client, _ = service
+    data = payload()
     for selected in (None, [], ["hub-01"] * 3, ["unknown", "hub-01", "hub-02"]):
         data["selectedHubIds"] = selected
         assert client.post("/api/v1/stress-test", json=data).status_code == 400
@@ -234,11 +310,8 @@ def test_restart_marks_unfinished_run_failed(tmp_path):
         manager.close()
 
 
-def test_quantum_resource_limit_is_explicit_worker_failure(tmp_path):
-    scenario = load_scenario("riverbend")
-    hubs = (*scenario.candidateHubs,
-            *(Hub(id=f"hub-extra-{i}", nodeId=scenario.nodes[i].id) for i in range(5)))
-    scenario = scenario.model_copy(update={"candidateHubs": hubs})
+def test_quantum_resource_limit_is_explicit_worker_failure(tmp_path, larger_scenario):
+    scenario = larger_scenario
     request = PlanningRequest(scenarioId=scenario.id, scenarioRevision=scenario_revision(scenario),
                               solver="qaoa", hubCount=3, responseTimeMinutes=12)
     problem = prepare_problem(scenario, request)

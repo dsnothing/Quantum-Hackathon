@@ -17,7 +17,7 @@ Open the notebook in Jupyter or VS Code, select that environment, and run all ce
 
 ## Run the optional workbench
 
-Prerequisites: Python 3.12, Node.js **20.19+ or 22.12+**, and pnpm available on PATH. On Windows, run from the extracted project folder:
+Prerequisites are Python 3.12, Node.js **20.19+ or 22.12+**, and pnpm **10.26+** available on PATH. Use Node.js 22.12+ with pnpm 11. On Windows, extract to a short folder path, then run from that folder:
 
 ```powershell
 python reliefgrid/launch.py --setup
@@ -51,9 +51,9 @@ reliefgrid/.venv/Scripts/python.exe -m reliefgrid.build_notebook --execute
 reliefgrid/.venv/Scripts/python.exe -m reliefgrid.package_submission
 ```
 
-The builder executes the notebook in a temporary working directory. Packaging requires a fully executed notebook without errors, notebook evidence, and the compiled companion. It writes `output/ReliefGrid_Submission.zip` with the standalone notebook, source, scenarios, compiled UI and SHA256 manifest. It excludes environments, node_modules, private build files and the original Quantum 2048 artifacts. Original Quantum 2048 submission files remain separate.
+The builder executes the notebook in a temporary working directory. Packaging requires a fully executed notebook without errors, notebook evidence, the final PowerPoint, and the compiled companion. It writes `output/ReliefGrid_Submission.zip` with the standalone notebook, slides, source, scenarios, compiled UI and SHA256 manifest. It excludes environments, node_modules, private build files and the original Quantum 2048 artifacts. Original Quantum 2048 submission files remain separate.
 
-Run tests from `reliefgrid`: `.venv/Scripts/python.exe -m pytest tests -q`. See [verification](docs/VERIFICATION.md) for recorded checks and limitations and [the slide content draft](docs/Presentation_Draft.md) for the presentation story. Final PowerPoint formatting awaits the user's template.
+Run tests from `reliefgrid`: `.venv/Scripts/python.exe -m pytest tests -q`. See [verification](docs/VERIFICATION.md) for recorded checks and limitations. Find the five-minute deck [in the repository](../output/ReliefGrid_Presentation.pptx) or [at the root of the submission zip](../ReliefGrid_Presentation.pptx) after extraction.
 
 ## Model and interpretation
 
