@@ -1,5 +1,9 @@
 # ReliefGrid session handoff
 
+## Latest map UI revision
+
+The user clarified Felt's interactive map workspace as the reference, then requested finalization and push. `reliefgrid/frontend/src/workspace.css` supplies the revised chrome, legend, inspector, responsive overrides and menu styling. `App.tsx` adds map search, basemap menu and actual inspector/legend visibility. `PlanningMap.tsx` adds synthetic building detail and palette switching while retaining solver geography. TypeScript and the final Vite build pass; desktop 9,060/8,140 closure workflow, search, map selection, layer visibility, menus and table were checked live. Phone-size live viewport verification was unavailable. The screenshot is `evidence/ReliefGrid_UI_Updated.png`; detailed checks are in `reliefgrid/docs/VERIFICATION.md`. Keep the backend/notebook and its earlier test evidence intact.
+
 ## November 7 review update
 
 Yichen's linked branch at `86d1f159` was fetched and fast-forwarded into the clean checkout. New changes remain local and unpushed. Read `reliefgrid/docs/Optimization_Review.md` and the November 7 section of `reliefgrid/docs/VERIFICATION.md` before relying on the older checkpoint below. The improved deck is `output/ReliefGrid_Improved.pptx`; the notebook now contains 14 freshly executed code cells, including the matched-budget warm-start comparison. QAOA supports `warmStartGreedy` and `phaseScale` with original defaults preserved; a separate portfolio helper retains a classical guard. Full suite: 75 passed. Warm-start QAOA matched exact sampled quality in 8/8 runs, but classical exact remains much faster. No hardware advantage is claimed. The optional web UI still uses original first-k settings.

@@ -1,5 +1,14 @@
 # ReliefGrid verification record
 
+## November 7 map workspace revision
+
+- Compared the live public Felt emergency-response map workspace, including its light basemap, compact 48-pixel toolbar and floating legend. ReliefGrid now uses a compact toolbar, serif wordmark, floating legend, optional deployment inspector, search popover and Standard/Light/Dark synthetic basemap styles. Its own branding, synthetic data and planning model remain visible.
+- Added denser illustrative building footprints without changing roads, coverage, population or solver inputs. Hub/community symbols match the legend. Road features, communities and hubs expose keyboard handlers; a resize observer keeps map projection aligned as the table changes canvas size.
+- TypeScript build checks passed. Vite production build passed in 16.64 seconds, retaining its existing large-chunk warning. This was a UI-only revision; the earlier 75-test backend/notebook regression result remains the recorded scientific validation, not a new test run for this revision.
+- Live desktop checks at 1440×900 confirmed nominal greedy coverage 9,060, search for Bridgeview and its inspector, bridge closure clearing stale coverage, a rerun at 8,140, opening the comparison table, Standard/Light/Dark switching, legend hiding/restoring, map-click bridge inspection and closing the inspector. No document horizontal overflow was observed. Additional 1280×720 rendering was inspected.
+- Responsive CSS remains included, but the browser's viewport override did not establish a live phone-size viewport during this pass; phone-size behavior is not newly verified. SVG locator click/press automation failed on a zero-height road bounding box; clicking the visible bridge directly successfully opened its road inspector.
+- Final desktop preview: `evidence/ReliefGrid_UI_Updated.png`. Visual matching is an adaptation of the public workspace, not a claim of identical content or every Felt feature. No Felt code, logo or map assets were incorporated.
+
 ## November 7 optimization review
 
 - Retrieved Yichen's linked commit `86d1f159` and incorporated it by fast-forward. The reviewed changes remain local and unpushed.
